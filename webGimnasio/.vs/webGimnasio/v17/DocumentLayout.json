@@ -1,50 +1,54 @@
 {
   "Version": 1,
-<<<<<<< HEAD
   "WorkspaceRootPath": "C:\\Users\\sanch\\OneDrive\\Documentos\\Proyecto git\\webGimnasio\\",
-  "Documents": [],
-=======
-  "WorkspaceRootPath": "D:\\Desarrollo Software\\Proyecto\\webGimnasio\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{3F9935D3-1715-41B0-82C3-20FF78F4AA61}|webGimnasio\\webGimnasio.csproj|d:\\desarrollo software\\proyecto\\webgimnasio\\webgimnasio\\paginas\\menu.html||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "AbsoluteMoniker": "D:0:0:{3F9935D3-1715-41B0-82C3-20FF78F4AA61}|webGimnasio\\webGimnasio.csproj|c:\\users\\sanch\\onedrive\\documentos\\proyecto git\\webgimnasio\\webgimnasio\\paginas\\frmempleado.html||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{3F9935D3-1715-41B0-82C3-20FF78F4AA61}|webGimnasio\\webGimnasio.csproj|solutionrelative:webgimnasio\\paginas\\frmempleado.html||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{3F9935D3-1715-41B0-82C3-20FF78F4AA61}|webGimnasio\\webGimnasio.csproj|c:\\users\\sanch\\onedrive\\documentos\\proyecto git\\webgimnasio\\webgimnasio\\paginas\\menu.html||{40D31677-CBC0-4297-A9EF-89D907823A98}",
       "RelativeMoniker": "D:0:0:{3F9935D3-1715-41B0-82C3-20FF78F4AA61}|webGimnasio\\webGimnasio.csproj|solutionrelative:webgimnasio\\paginas\\menu.html||{40D31677-CBC0-4297-A9EF-89D907823A98}"
     }
   ],
->>>>>>> c68940caa48bfdce7f1fe4c7338c6915408023b4
   "DocumentGroupContainers": [
     {
       "Orientation": 0,
       "VerticalTabListWidth": 256,
-<<<<<<< HEAD
-      "DocumentGroups": []
-=======
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 1,
+          "SelectedChildIndex": 0,
           "Children": [
-            {
-              "$type": "Bookmark",
-              "Name": "ST:0:0:{3ae79031-e1bc-11d0-8f78-00a0c9110057}"
-            },
             {
               "$type": "Document",
               "DocumentIndex": 0,
-              "Title": "Menu.html",
-              "DocumentMoniker": "D:\\Desarrollo Software\\Proyecto\\webGimnasio\\webGimnasio\\Paginas\\Menu.html",
-              "RelativeDocumentMoniker": "webGimnasio\\Paginas\\Menu.html",
-              "ToolTip": "D:\\Desarrollo Software\\Proyecto\\webGimnasio\\webGimnasio\\Paginas\\Menu.html",
-              "RelativeToolTip": "webGimnasio\\Paginas\\Menu.html",
-              "ViewState": "AgIAABUAAAAAAAAAAAAAACYAAABHAAAAAAAAAA==",
+              "Title": "frmEmpleado.html",
+              "DocumentMoniker": "C:\\Users\\sanch\\OneDrive\\Documentos\\Proyecto git\\webGimnasio\\webGimnasio\\Paginas\\frmEmpleado.html",
+              "RelativeDocumentMoniker": "webGimnasio\\Paginas\\frmEmpleado.html",
+              "ToolTip": "C:\\Users\\sanch\\OneDrive\\Documentos\\Proyecto git\\webGimnasio\\webGimnasio\\Paginas\\frmEmpleado.html",
+              "RelativeToolTip": "webGimnasio\\Paginas\\frmEmpleado.html",
+              "ViewState": "AgIAAJkAAAAAAAAAAAAAALEAAAAEAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001512|",
-              "WhenOpened": "2024-11-07T17:37:41.981Z",
+              "WhenOpened": "2024-11-07T18:00:50.509Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "Menu.html",
+              "DocumentMoniker": "C:\\Users\\sanch\\OneDrive\\Documentos\\Proyecto git\\webGimnasio\\webGimnasio\\Paginas\\Menu.html",
+              "RelativeDocumentMoniker": "webGimnasio\\Paginas\\Menu.html",
+              "ToolTip": "C:\\Users\\sanch\\OneDrive\\Documentos\\Proyecto git\\webGimnasio\\webGimnasio\\Paginas\\Menu.html",
+              "RelativeToolTip": "webGimnasio\\Paginas\\Menu.html",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAIAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001512|",
+              "WhenOpened": "2024-11-07T17:53:14.099Z",
               "EditorCaption": ""
             }
           ]
         }
       ]
->>>>>>> c68940caa48bfdce7f1fe4c7338c6915408023b4
     }
   ]
 }
