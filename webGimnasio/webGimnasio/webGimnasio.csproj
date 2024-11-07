@@ -122,7 +122,7 @@
     <Content Include="favicon.ico" />
     <Content Include="Global.asax" />
     <Content Include="Imagenes\LOGO.png" />
-<<<<<<< HEAD
+
     <Content Include="Paginas\frmAparato.html" />
     <Content Include="Paginas\frmCiudad.html" />
     <Content Include="Paginas\frmClase.html" />
@@ -139,7 +139,6 @@
     <Content Include="Paginas\frmTipDoc.html" />
     <Content Include="Paginas\frmTipSala.html" />
     <Content Include="Paginas\frmUsuario.html" />
-=======
     <Content Include="Paginas\Estilos\adminlte.css" />
     <Content Include="Paginas\Estilos\adminlte.min.css" />
     <Content Include="Paginas\Estilos\all.min.css" />
@@ -176,7 +175,6 @@
     <Content Include="Paginas\Estilos\webfonts\fa-regular-400.svg" />
     <Content Include="Paginas\Estilos\webfonts\fa-solid-900.svg" />
     <Content Include="Paginas\frmEmpleado.html" />
->>>>>>> bbe94c5750ebd3dd5df9fe85b1536e457124c818
     <Content Include="Paginas\Menu.html" />
     <Content Include="Content\bootstrap.rtl.min.css.map" />
     <Content Include="Content\bootstrap.rtl.css.map" />
