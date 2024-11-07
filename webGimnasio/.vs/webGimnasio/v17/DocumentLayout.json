@@ -3,6 +3,10 @@
   "WorkspaceRootPath": "D:\\Desarrollo Software\\Proyecto\\webGimnasio\\",
   "Documents": [
     {
+      "AbsoluteMoniker": "D:0:0:{3F9935D3-1715-41B0-82C3-20FF78F4AA61}|webGimnasio\\webGimnasio.csproj|d:\\desarrollo software\\proyecto\\webgimnasio\\webgimnasio\\paginas\\frmsplash.html||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{3F9935D3-1715-41B0-82C3-20FF78F4AA61}|webGimnasio\\webGimnasio.csproj|solutionrelative:webgimnasio\\paginas\\frmsplash.html||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
       "AbsoluteMoniker": "D:0:0:{3F9935D3-1715-41B0-82C3-20FF78F4AA61}|webGimnasio\\webGimnasio.csproj|d:\\desarrollo software\\proyecto\\webgimnasio\\webgimnasio\\paginas\\menu.html||{40D31677-CBC0-4297-A9EF-89D907823A98}",
       "RelativeMoniker": "D:0:0:{3F9935D3-1715-41B0-82C3-20FF78F4AA61}|webGimnasio\\webGimnasio.csproj|solutionrelative:webgimnasio\\paginas\\menu.html||{40D31677-CBC0-4297-A9EF-89D907823A98}"
     }
@@ -23,12 +27,25 @@
             {
               "$type": "Document",
               "DocumentIndex": 0,
+              "Title": "frmSplash.html",
+              "DocumentMoniker": "D:\\Desarrollo Software\\Proyecto\\webGimnasio\\webGimnasio\\Paginas\\frmSplash.html",
+              "RelativeDocumentMoniker": "webGimnasio\\Paginas\\frmSplash.html",
+              "ToolTip": "D:\\Desarrollo Software\\Proyecto\\webGimnasio\\webGimnasio\\Paginas\\frmSplash.html",
+              "RelativeToolTip": "webGimnasio\\Paginas\\frmSplash.html",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAcAAAAGAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001512|",
+              "WhenOpened": "2024-11-07T18:20:57.475Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
               "Title": "Menu.html",
               "DocumentMoniker": "D:\\Desarrollo Software\\Proyecto\\webGimnasio\\webGimnasio\\Paginas\\Menu.html",
               "RelativeDocumentMoniker": "webGimnasio\\Paginas\\Menu.html",
               "ToolTip": "D:\\Desarrollo Software\\Proyecto\\webGimnasio\\webGimnasio\\Paginas\\Menu.html",
               "RelativeToolTip": "webGimnasio\\Paginas\\Menu.html",
-              "ViewState": "AgIAABUAAAAAAAAAAAAAACYAAABHAAAAAAAAAA==",
+              "ViewState": "AgIAABIAAAAAAAAAAAAAADgAAAAGAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001512|",
               "WhenOpened": "2024-11-07T17:37:41.981Z",
               "EditorCaption": ""
