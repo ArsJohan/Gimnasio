@@ -121,8 +121,9 @@
     <Content Include="Default.aspx" />
     <Content Include="favicon.ico" />
     <Content Include="Global.asax" />
+    <Content Include="Imagenes\img_splash.jpg" />
+    <Content Include="Imagenes\Inicio.jpg" />
     <Content Include="Imagenes\LOGO.png" />
-
     <Content Include="Paginas\frmAparato.html" />
     <Content Include="Paginas\frmCiudad.html" />
     <Content Include="Paginas\frmClase.html" />
@@ -130,6 +131,7 @@
     <Content Include="Paginas\frmEspecialidad.html" />
     <Content Include="Paginas\frmEstado.html" />
     <Content Include="Paginas\frmHora.html" />
+    <Content Include="Paginas\frmInicio.html" />
     <Content Include="Paginas\frmLogin.html" />
     <Content Include="Paginas\frmMonitor.html" />
     <Content Include="Paginas\frmProfesion.html" />
@@ -192,6 +194,8 @@
     <Content Include="Content\bootstrap-grid.rtl.css.map" />
     <Content Include="Content\bootstrap-grid.min.css.map" />
     <Content Include="Content\bootstrap-grid.css.map" />
+    <Content Include="Paginas\PaginaBase.html" />
+    <Content Include="Paginas\Scripts\frmInicio.js" />
     <Content Include="Scripts\adminlte.js" />
     <Content Include="Scripts\adminlte.min.js" />
     <Content Include="Scripts\bootstrap.bundle.js" />

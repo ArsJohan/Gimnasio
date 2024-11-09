@@ -1,7 +1,28 @@
 {
   "Version": 1,
   "WorkspaceRootPath": "D:\\Desarrollo Software\\Proyecto\\webGimnasio\\",
-  "Documents": [],
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{3F9935D3-1715-41B0-82C3-20FF78F4AA61}|webGimnasio\\webGimnasio.csproj|D:\\Desarrollo Software\\Proyecto\\webGimnasio\\webgimnasio\\paginas\\menu.html||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{3F9935D3-1715-41B0-82C3-20FF78F4AA61}|webGimnasio\\webGimnasio.csproj|solutionrelative:webgimnasio\\paginas\\menu.html||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{3F9935D3-1715-41B0-82C3-20FF78F4AA61}|webGimnasio\\webGimnasio.csproj|d:\\desarrollo software\\proyecto\\webgimnasio\\webgimnasio\\paginas\\frminicio.html||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{3F9935D3-1715-41B0-82C3-20FF78F4AA61}|webGimnasio\\webGimnasio.csproj|solutionrelative:webgimnasio\\paginas\\frminicio.html||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{3F9935D3-1715-41B0-82C3-20FF78F4AA61}|webGimnasio\\webGimnasio.csproj|D:\\Desarrollo Software\\Proyecto\\webGimnasio\\webgimnasio\\paginas\\frmsplash.html||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{3F9935D3-1715-41B0-82C3-20FF78F4AA61}|webGimnasio\\webGimnasio.csproj|solutionrelative:webgimnasio\\paginas\\frmsplash.html||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{3F9935D3-1715-41B0-82C3-20FF78F4AA61}|webGimnasio\\webGimnasio.csproj|D:\\Desarrollo Software\\Proyecto\\webGimnasio\\webgimnasio\\paginas\\frmlogin.html||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{3F9935D3-1715-41B0-82C3-20FF78F4AA61}|webGimnasio\\webGimnasio.csproj|solutionrelative:webgimnasio\\paginas\\frmlogin.html||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{3F9935D3-1715-41B0-82C3-20FF78F4AA61}|webGimnasio\\webGimnasio.csproj|D:\\Desarrollo Software\\Proyecto\\webGimnasio\\webgimnasio\\paginas\\scripts\\frminicio.js||{14D17961-FE51-464D-9111-C4AF11D7D99A}",
+      "RelativeMoniker": "D:0:0:{3F9935D3-1715-41B0-82C3-20FF78F4AA61}|webGimnasio\\webGimnasio.csproj|solutionrelative:webgimnasio\\paginas\\scripts\\frminicio.js||{14D17961-FE51-464D-9111-C4AF11D7D99A}"
+    }
+  ],
   "DocumentGroupContainers": [
     {
       "Orientation": 0,
@@ -9,11 +30,76 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": -1,
+          "SelectedChildIndex": 1,
           "Children": [
             {
               "$type": "Bookmark",
               "Name": "ST:0:0:{3ae79031-e1bc-11d0-8f78-00a0c9110057}"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "Menu.html",
+              "DocumentMoniker": "D:\\Desarrollo Software\\Proyecto\\webGimnasio\\webGimnasio\\Paginas\\Menu.html",
+              "RelativeDocumentMoniker": "webGimnasio\\Paginas\\Menu.html",
+              "ToolTip": "D:\\Desarrollo Software\\Proyecto\\webGimnasio\\webGimnasio\\Paginas\\Menu.html*",
+              "RelativeToolTip": "webGimnasio\\Paginas\\Menu.html*",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAsAAAAsAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001512|",
+              "WhenOpened": "2024-11-09T01:03:10.969Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "frmInicio.js",
+              "DocumentMoniker": "D:\\Desarrollo Software\\Proyecto\\webGimnasio\\webGimnasio\\Paginas\\Scripts\\frmInicio.js",
+              "RelativeDocumentMoniker": "webGimnasio\\Paginas\\Scripts\\frmInicio.js",
+              "ToolTip": "D:\\Desarrollo Software\\Proyecto\\webGimnasio\\webGimnasio\\Paginas\\Scripts\\frmInicio.js",
+              "RelativeToolTip": "webGimnasio\\Paginas\\Scripts\\frmInicio.js",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001646|",
+              "WhenOpened": "2024-11-08T23:20:05.627Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "frmInicio.html",
+              "DocumentMoniker": "D:\\Desarrollo Software\\Proyecto\\webGimnasio\\webGimnasio\\Paginas\\frmInicio.html",
+              "RelativeDocumentMoniker": "webGimnasio\\Paginas\\frmInicio.html",
+              "ToolTip": "D:\\Desarrollo Software\\Proyecto\\webGimnasio\\webGimnasio\\Paginas\\frmInicio.html",
+              "RelativeToolTip": "webGimnasio\\Paginas\\frmInicio.html",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABEAAAAKAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001512|",
+              "WhenOpened": "2024-11-08T23:15:36.621Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "frmLogin.html",
+              "DocumentMoniker": "D:\\Desarrollo Software\\Proyecto\\webGimnasio\\webGimnasio\\Paginas\\frmLogin.html",
+              "RelativeDocumentMoniker": "webGimnasio\\Paginas\\frmLogin.html",
+              "ToolTip": "D:\\Desarrollo Software\\Proyecto\\webGimnasio\\webGimnasio\\Paginas\\frmLogin.html",
+              "RelativeToolTip": "webGimnasio\\Paginas\\frmLogin.html",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001512|",
+              "WhenOpened": "2024-11-08T22:32:05.187Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "frmSplash.html",
+              "DocumentMoniker": "D:\\Desarrollo Software\\Proyecto\\webGimnasio\\webGimnasio\\Paginas\\frmSplash.html",
+              "RelativeDocumentMoniker": "webGimnasio\\Paginas\\frmSplash.html",
+              "ToolTip": "D:\\Desarrollo Software\\Proyecto\\webGimnasio\\webGimnasio\\Paginas\\frmSplash.html",
+              "RelativeToolTip": "webGimnasio\\Paginas\\frmSplash.html",
+              "ViewState": "AgIAAAkAAAAAAAAAAAAAADkAAAAPAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001512|",
+              "WhenOpened": "2024-11-07T21:19:18.645Z",
+              "EditorCaption": ""
             }
           ]
         }

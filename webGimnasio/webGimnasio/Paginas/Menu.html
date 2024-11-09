@@ -1,64 +1,105 @@
 ﻿
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Ubuntu:ital,wght@0,300;0,400;0,500;0,700;1,300;1,400;1,500;1,700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400..900&family=Ubuntu:ital,wght@0,300;0,400;0,500;0,700;1,300;1,400;1,500;1,700&display=swap" rel="stylesheet">
+<style>
+    @media (hover: hover) {
+        a:hover {
+            color: #8e6e10;
+        }
+        .dropdown-menu a:hover {
+            background-color: lightslategrey;
+            
+        }
+    }
 
-<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+    .dropdown-menu {
+        background: radial-gradient(circle at 10% 20%, rgb(0, 0, 0) 0%, rgb(64, 64, 64) 90.2%);
+        border-radius: 10px;
+    }
+    .navbar {
+        background: radial-gradient(circle at 10% 20%, rgb(0, 0, 0) 0%, rgb(64, 64, 64) 90.2%);
+
+    }
+
+    .logo {
+        max-width: 350px;
+        display: flex;
+    }
+    a:not(:hover) {
+        color: #c59400;
+    }
+    
+</style>
+<nav class="navbar navbar-expand-lg navbar-gray-dark ">
 
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
     </button>
-
+    
     <div class="row">
         <div class="col-md-12">
             <div class="form-group">
+
                 <div align="center">
-                    <img src="../Imagenes/LogoFestRock.jpg" />
+
+                    <img src="../Imagenes/LOGO.png" class="logo" />
+
                 </div>
             </div>
         </div>
     </div>
-    &nbsp;&nbsp;&nbsp;&nbsp;<a class="navbar-brand" href="#">Sistema Festival de Bandas de Rock</a>
 
-    <div class="collapse navbar-collapse" id="navbarSupportedContent">
-        <ul class="navbar-nav mr-auto">
-            <li class="nav-item active">
-                <a class="nav-link" href="frmInicio.html">Inicio <span class="sr-only"></span></a>
+    <div class="row ">
+        <div class="col-md-12">
+            <div class="form-group">
 
-            </li>
-            <li class="nav-item dropdown">
-                <a class="nav-link dropdown-toggle" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                    Actividades
-                </a>
-                <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                    <a class="dropdown-item" href="frmMatricula.html">Matrícula</a>
+                <div align="center" style="padding:50px;">
+
+                    <h1 class="navbar-brand" style=" font-family: 'Cinzel' ; font-size: 30px;">Sistema Gimnasio Siempre en Forma</h1>
+                    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+
+                        <ul class="navbar-nav mr-auto">
+
+                            <li class="nav-item active">
+                                <a class="nav-link" href="frmInicio.html" style=" font-family: 'Ubuntu',sans-serif;">Inicio <span class="sr-only"></span></a>
+
+                            </li>
+                            <li class="nav-item dropdown">
+                                <a class="nav-link dropdown-toggle" id="navbarDropdown" style=" font-family: 'Ubuntu',sans-serif; " role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" >
+                                    Actividades
+                                </a>
+                                <div class="dropdown-menu" aria-labelledby="navbarDropdown" style=" font-family: 'Ubuntu',sans-serif; ">
+                                    <a class="dropdown-item" href="frmMatricula.html">Matrícula</a>
+                                </div>
+                            </li>
+                            <li class="nav-item dropdown">
+                                <a class="nav-link dropdown-toggle" id="navbarDropdown" style=" font-family: 'Ubuntu',sans-serif;" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                    Maestros
+                                </a>
+                                <div class="dropdown-menu" aria-labelledby="navbarDropdown" style=" font-family: 'Ubuntu',sans-serif;">
+                                    <a class="dropdown-item" href="frmUsuario.html">Usuarios</a>
+                                    <a class="dropdown-item" href="frmEmpleado.html">Empleados</a>
+                                    <a class="dropdown-item" href="frmSocio.html">Socios</a>
+                                    <a class="dropdown-item" href="frmMonitor.html">Monitor</a>
+                                    <a class="dropdown-item" href="frmSala.html">Salas</a>
+                                    <a class="dropdown-item" href="frmTipSala.html">Tipo Sala</a>
+                                    <a class="dropdown-item" href="frmClase.html">Clases</a>
+                                    <a class="dropdown-item" href="frmAparato.html">Aparatos</a>
+                                    <a class="dropdown-item" href="frmEstado.html">Estados</a>
+                                    <a class="dropdown-item" href="frmProfesion.html">Profesiones</a>
+                                    <a class="dropdown-item" href="frmEspecialidad.html">Especialidades</a>
+                                    <a class="dropdown-item" href="frmCiudad.html">Ciudades</a>
+                                    <a class="dropdown-item" href="frmTipDoc.html">Tipo Documento</a>
+                                    <a class="dropdown-item" href="frmDia.html">Dia</a>
+                                    <a class="dropdown-item" href="frmHora.html">Horas</a>
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
                 </div>
-            </li>
-            <li class="nav-item dropdown">
-                <a class="nav-link dropdown-toggle" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                    Maestros
-                </a>
-                <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                    <a class="dropdown-item" href="frmUsuario.html">Usuarios</a>
-                    <a class="dropdown-item" href="frmEmpleado.html">Empleados</a>
-                    <a class="dropdown-item" href="frmSocio.html">Socios</a>
-                    <a class="dropdown-item" href="frmMonitor.html">Monitor</a>
-                    <a class="dropdown-item" href="frmSala.html">Salas</a>
-                    <a class="dropdown-item" href="frmTipSala.html">Tipo Sala</a>
-                    <a class="dropdown-item" href="frmClase.html">Clases</a>
-                    <a class="dropdown-item" href="frmAparato.html">Aparatos</a>
-                    <a class="dropdown-item" href="frmEstado.html">Estados</a>
-                    <a class="dropdown-item" href="frmProfesion.html">Profesiones</a>
-                    <a class="dropdown-item" href="frmEspecialidad.html">Especialidades</a>
-                    <a class="dropdown-item" href="frmCiudad.html">Ciudades</a>
-                    <a class="dropdown-item" href="frmTipDoc.html">Tipo Documento</a>
-<<<<<<< HEAD
-                    <a class="dropdown-item" href="frmDia.html">Dia</a>
-                    <a class="dropdown-item" href="frmHora.html">Horas</a>
-=======
-
-
-
->>>>>>> bbe94c5750ebd3dd5df9fe85b1536e457124c818
-                </div>
-            </li>
-        </ul>
-    </div>
+            </div>
+        </div>
+    </div>  
 </nav>
