@@ -122,7 +122,6 @@
     <Content Include="favicon.ico" />
     <Content Include="Global.asax" />
     <Content Include="Imagenes\LOGO.png" />
-
     <Content Include="Paginas\frmAparato.html" />
     <Content Include="Paginas\frmCiudad.html" />
     <Content Include="Paginas\frmClase.html" />
@@ -131,12 +130,15 @@
     <Content Include="Paginas\frmEstado.html" />
     <Content Include="Paginas\frmHora.html" />
     <Content Include="Paginas\frmLogin.html" />
+    <Content Include="Paginas\frmMatricula.html" />
     <Content Include="Paginas\frmMonitor.html" />
     <Content Include="Paginas\frmProfesion.html" />
     <Content Include="Paginas\frmSala.html" />
     <Content Include="Paginas\frmSocio.html" />
     <Content Include="Paginas\frmSplash.html" />
+    <Content Include="Paginas\frmTelefono.html" />
     <Content Include="Paginas\frmTipDoc.html" />
+    <Content Include="Paginas\frmTipoTel.html" />
     <Content Include="Paginas\frmTipSala.html" />
     <Content Include="Paginas\frmUsuario.html" />
     <Content Include="Paginas\Estilos\adminlte.css" />

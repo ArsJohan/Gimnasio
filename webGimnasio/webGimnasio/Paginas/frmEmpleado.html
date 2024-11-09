@@ -3,7 +3,7 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Maestro Artistas</title>
+    <title>Maestro de Empleado</title>
     <!-- Scripts Base Sup -->
     <!-- Google Font: Source Sans Pro -->
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700&display=fallback">
@@ -28,7 +28,7 @@
                 <div class="col-md-12">
                     <div class="card card-primary">
                         <div class="card-header">
-                            <h3 class="card-title">Maestro de Artista</h3>
+                            <h3 class="card-title">Maestro de Empleado</h3>
                         </div>
                         <form id="frmDatosIn">
                             <div class="card-body">
@@ -43,54 +43,75 @@
                                             <div class="col-md-2">
                                                 <div class="form-group">
                                                     <label for="txtCodigo">Código:</label>
-                                                    <input type="text" class="form-control" id="txtCodigo" width="15" placeholder="Ingrese Código..." disabled>
+                                                    <input type="text" class="form-control" id="txtCodigo" width="15" placeholder="Ingrese Código..." disabled value="0">
                                                 </div>
                                             </div>
-                                            <div class="col-md-6">
+                                            <div class="col-md-5">
                                                 <div class="form-group">
                                                     <label for="txtNombre">Nombre</label>
                                                     <input type="text" class="form-control" id="txtNombre" placeholder="Ingrese Nombre...">
                                                 </div>
                                             </div>
-
+                                            <div class="col-md-5">
+                                                <div class="form-group">
+                                                    <label for="txtApellido">Apellido</label>
+                                                    <input type="text" class="form-control" id="txtApellido" placeholder="Ingrese Apellido...">
+                                                </div>
+                                            </div>
+                                             <div class="col-md-3">
+                                                <div class="form-group">
+                                                    <label for="lbFechaIng">Fecha Ingreso</label>
+                                                    <!--<input id="lbFechaIng" class="label_2" disabled />-->
+                                                    <input type="text" class="form-control" id="lbFechaIng" disabled >
+                                                </div>
+                                            </div>
+                                            <div class="col-md-3">
+                                                <div class="form-group">
+                                                    <label for="lbFechaNac">Fecha Nacimiento</label>
+                                                    <!--<input id="lbFechaNac" class="label_2" disabled />-->
+                                                     <input type="text" class="form-control" id="lbFechaNac">
+                                                </div>
+                                            </div>
                                             <div class="col-md-4">
                                                 <div class="form-group">
-                                                    <label for="cboGenero">Género</label>
-                                                    <select id="cboGenero" class="form-control">
-                                                    </select>
+                                                    <label for="txtTelefono">Telefono</label>
+                                                    <input type="text" class="form-control" id="txtTelefono" placeholder="Ingrese Telefono...">
                                                 </div>
                                             </div>
                                         </div>
-
                                         <div class="row">
+                                             <div class="col-md-3">
+                                                 <div class="form-group">
+                                                     <label for="cboTipDoc">Tipo Documento</label>
+                                                     <select id="cboTipDoc" class="form-control">
+                                                     </select>
+                                                 </div>
+                                             </div>
+                                             <div class="col-md-3">
+                                                 <div class="form-group">
+                                                     <label for="txtNroDoc">Nro. Documento</label>
+                                                     <input type="text" class="form-control" id="txtNroDoc"  placeholder="Ingrese Nro Documento...">
+                                                 </div>
+                                             </div>
                                             <div class="col-md-3">
                                                 <div class="form-group">
-                                                    <label for="cboTipDoc">Tipo Documento</label>
-                                                    <select id="cboTipDoc" class="form-control">
-                                                    </select>
+                                                    <label for="txtSalario">Salario</label>
+                                                    <input type="text" class="form-control" id="txtSalario" placeholder="Ingrese Telefono...">
                                                 </div>
                                             </div>
-                                            <div class="col-md-3">
-                                                <div class="form-group">
-                                                    <label for="txtNroDoc">Nro. Documento</label>
-                                                    <input type="text" class="form-control" id="txtNroDoc"  placeholder="Ingrese Nro Documento...">
-                                                </div>
-                                            </div>
+                                             <div class="col-md-2">
+                                                 <div class="form-group">
+                                                     <label for="txtIdEmpleado">id_Empleado:</label>
+                                                     <input type="text" class="form-control" id="txtIdEmpleado" width="15" placeholder="Ingrese id_Empleado..." disabled value="0">
+                                                 </div>
+                                             </div>
+                                             <div class="row-col-md-2">
+                                                 <div class="form-group">
+                                                     <label for="chkActivo">Activo:</label>
+                                                     <input type="checkbox" id="chkActivo" class="form-control" />
+                                                 </div>
+                                             </div>
 
-                                            <div class="col-md-3">
-                                                <div class="form-group">
-                                                    <label for="cboDpto">Departamento</label>
-                                                    <select id="cboDpto" class="form-control" onchange="llenarComboCiudad();">
-                                                    </select>
-                                                </div>
-                                            </div>
-                                            <div class="col-md-3">
-                                                <div class="form-group">
-                                                    <label for="cboCiudad">Ciudad</label>
-                                                    <select id="cboCiudad" class="form-control">
-                                                    </select>
-                                                </div>
-                                            </div>
                                         </div>
                                         <!-- Acá para más rows para datos -->
                                     </div>

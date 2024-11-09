@@ -1,10 +1,170 @@
 ﻿<!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-    <meta charset="utf-8" />
-    <title></title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Maestro de Aparato</title>
+    <!-- Scripts Base Sup -->
+    <!-- Google Font: Source Sans Pro -->
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700&display=fallback">
+
+    <!-- Select2 -->
+    <link href="Estilos/select2.min.css" rel="stylesheet" />
+    <link href="Estilos/select2-bootstrap4.min.css" rel="stylesheet" />
+    <!--Estilos para las tablas(datatables)-->
+    <link href="Estilos/dataTables.min.css" rel="stylesheet" />
+    <link href="Estilos/dataTables.bootstrap4.min.css" rel="stylesheet" />
+    <link href="Estilos/adminlte.min.css" rel="stylesheet" />
+
 </head>
-<body>
+<body class="hold-transition sidebar-mini">
+    <section class="content">
+        <div class="container-fluid">
+            <div class="row">
+                <!-- left column -->
+                <div class="col-md-12" id="dvMenu">
+                    <!-- Para incrustar la página que contiene el ménu de navegación-->
+                </div>
+                <div class="col-md-12">
+                    <div class="card card-primary">
+                        <div class="card-header">
+                            <h3 class="card-title">Maestro de Aparato</h3>
+                        </div>
+                        <form id="frmDatosIn">
+                            <div class="card-body">
+                                <div class="card card-gray-dark">
+                                    <div class="card-header">
+                                        <h3 class="card-title">Datos de Entrada</h3>
+                                    </div>
+
+                                    <div class="card-body">
+
+                                        <div class="row">
+                                            <div class="col-md-2">
+                                                <div class="form-group">
+                                                    <label for="txtCodigo">Código:</label>
+                                                    <input type="text" class="form-control" id="txtCodigo" width="15" placeholder="Ingrese Código..." disabled value="0">
+                                                </div>
+                                            </div>
+                                            <div class="col-md-5">
+                                                <div class="form-group">
+                                                    <label for="cboEstado">Estado</label>
+                                                    <select id="cboEstado" class="form-control">
+                                                    </select>
+                                                </div>
+                                            </div>
+                                            <div class="col-md-2">
+                                                <div class="form-group">
+                                                    <label for="txtIdSala">id_Sala:</label>
+                                                    <input type="text" class="form-control" id="txtIdSala" width="15" placeholder="Ingrese id_Empleado..." disabled value="0">
+                                                </div>
+                                            </div>
+                                            <div class="row-col-md-2">
+                                                <div class="form-group">
+                                                    <label for="chkActivo">Activo:</label>
+                                                    <input type="checkbox" id="chkActivo" class="form-control" />
+                                                </div>
+                                            </div>
+                                            <div class="col-md-10">
+                                                <div class="form-group">
+                                                    <label for="txtDescripcion">Descripción</label>
+                                                    <input type="text" class="form-control" id="lbDescripcion">
+                                                </div>
+                                            </div>
+                                            <div class="col-md-2">
+                                                <div class="form-group">
+                                                    <label for="txtIdEmpleado">id_Empleado:</label>
+                                                    <input type="text" class="form-control" id="txtIdEmpleado" width="15" placeholder="Ingrese id_Empleado..." disabled value="0">
+                                                </div>
+                                            </div>
+
+                                        </div>
+                                        <!-- Acá para más rows para datos -->
+                                    </div>
+
+                                    <!-- Menú de Opciones -->
+                                    <div class="card-body">
+                                        <div class="row">
+                                            <div class="col-md-3">
+                                                <div class="form-group">
+                                                    <button type="button" id="btnAgre" class="btn-block btn-lg btn-primary">Agregar</button>
+                                                </div>
+                                            </div>
+                                            <div class="col-md-3">
+                                                <div class="form-group">
+                                                    <button type="button" id="btnModi" class="btn-block btn-lg btn-primary">Modificar</button>
+                                                </div>
+                                            </div>
+                                            <div class="col-md-2">
+                                                <div class="form-group">
+                                                    <button type="button" id="btnBusc" class="btn-block btn-lg btn-primary">Buscar</button>
+                                                </div>
+                                            </div>
+
+                                            <div class="col-md-2">
+                                                <div class="form-group">
+                                                    <button type="button" id="btnCanc" class="btn-block btn-lg btn-primary">Cancelar</button>
+                                                </div>
+                                            </div>
+                                            <div class="col-md-2">
+                                                <div class="form-group">
+                                                    <button type="button" id="btnImpr" class="btn-block btn-lg btn-primary">Impresión</button>
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                        <!-- Zona de Mensajes -->
+                                        <div class="card-footer">
+                                            <div id="dvMensaje" class=""></div>
+                                        </div>
+
+                                        <!-- Fin Menú de Opciones-->
+                                    </div>
+                                </div><!-- card card-gray-dark -->
+                                <!-- Acá row para la tabla -->
+                                <div class="row">
+                                    <div class="col-md-12">
+                                        <table id="tablaDatos" class="table table-bordered table-striped">
+                                            <thead>
+                                                <tr>
+                                                    <th></th>
+                                                    <th></th>
+                                                    <th></th>
+                                                    <th></th>
+                                                    <th></th>
+                                                    <th></th>
+                                                    <th></th>
+                                                    <th></th>
+                                                    <th></th>
+                                                    <th></th>
+                                                    <th></th>
+                                                    <th></th>
+                                                </tr>
+                                            </thead>
+                                        </table>
+                                    </div>
+                                </div>
+                                <!-- Fin row para la tabla -->
+
+                            </div>  <!-- /.card-body -->
+
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- Para los script de uso -->
+    <script src="../Scripts/jquery-3.7.0.js"></script>
+    <script src="../Scripts/bootstrap.bundle.min.js"></script>
+    <!-- Select2 -->
+    <script src="../Scripts/select2.min.js"></script>
+    <script src="Scripts/Comunes/Combos.js"></script>
+
+    <!-- Tabla -->
+    <!--Librerías comunes de JavaScript para las Tablas -->
+    <!-- Impresión -->
+    <!-- Para el script de control del form -->
 
 </body>
 </html>

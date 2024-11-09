@@ -3,7 +3,7 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Maestro de Días</title>
+    <title>Maestro de Telefono </title>
     <!-- Scripts Base Sup -->
     <!-- Google Font: Source Sans Pro -->
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700&display=fallback">
@@ -28,7 +28,7 @@
                 <div class="col-md-12">
                     <div class="card card-primary">
                         <div class="card-header">
-                            <h3 class="card-title">Maestro de Día</h3>
+                            <h3 class="card-title">Maestro de Telefono </h3>
                         </div>
                         <form id="frmDatosIn">
                             <div class="card-body">
@@ -46,14 +46,26 @@
                                                     <input type="text" class="form-control" id="txtCodigo" width="15" placeholder="Ingrese Código..." disabled value="0">
                                                 </div>
                                             </div>
-                                            <div class="col-md-10">
+                                            <div class="col-md-5">
                                                 <div class="form-group">
-                                                    <label for="cboDia">Días</label>
-                                                    <select id="cboDia" class="form-control">
+                                                    <label for="cboTipoTelefono">Tipo de Teléfono</label>
+                                                    <select id="cboTipoTelefono" class="form-control">
                                                     </select>
                                                 </div>
                                             </div>
-
+                                            <div class="col-md-4">
+                                                <div class="form-group">
+                                                    <label for="txtTelefono">Teléfono</label>
+                                                    <input id="txtTelefono" class="form-control" placeholder="Telefono Repre." />
+                                                </div>
+                                            </div>
+                                            <div class="col-md-6">
+                                                <div class="form-group">
+                                                    <label for="cboSocio">Socio</label>
+                                                    <select id="cboSocio" class="form-control">
+                                                    </select>
+                                                </div>
+                                            </div>
                                         </div>
                                         <!-- Acá para más rows para datos -->
                                     </div>
