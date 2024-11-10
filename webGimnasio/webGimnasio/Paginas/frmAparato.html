@@ -6,6 +6,10 @@
     <title>Maestro de Aparato</title>
     <!-- Scripts Base Sup -->
     <!-- Google Font: Source Sans Pro -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Ubuntu:ital,wght@0,300;0,400;0,500;0,700;1,300;1,400;1,500;1,700&display=swap" rel="stylesheet">
+
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700&display=fallback">
 
     <!-- Select2 -->
@@ -15,6 +19,8 @@
     <link href="Estilos/dataTables.min.css" rel="stylesheet" />
     <link href="Estilos/dataTables.bootstrap4.min.css" rel="stylesheet" />
     <link href="Estilos/adminlte.min.css" rel="stylesheet" />
+    <link href="Estilos/frmGym.css" rel="stylesheet" />
+
 
 </head>
 <body class="hold-transition sidebar-mini">
@@ -26,13 +32,13 @@
                     <!-- Para incrustar la página que contiene el ménu de navegación-->
                 </div>
                 <div class="col-md-12">
-                    <div class="card card-primary">
+                    <div class="card">
                         <div class="card-header">
                             <h3 class="card-title">Maestro de Aparato</h3>
                         </div>
                         <form id="frmDatosIn">
                             <div class="card-body">
-                                <div class="card card-gray-dark">
+                                <div class="card">
                                     <div class="card-header">
                                         <h3 class="card-title">Datos de Entrada</h3>
                                     </div>
@@ -62,7 +68,7 @@
                                             <div class="row-col-md-2">
                                                 <div class="form-group">
                                                     <label for="chkActivo">Activo:</label>
-                                                    <input type="checkbox" id="chkActivo" class="form-control" />
+                                                    <input type="checkbox" id="chkActivo" class="form-control custom-checkbox" />
                                                 </div>
                                             </div>
                                             <div class="col-md-10">
@@ -87,28 +93,28 @@
                                         <div class="row">
                                             <div class="col-md-3">
                                                 <div class="form-group">
-                                                    <button type="button" id="btnAgre" class="btn-block btn-lg btn-primary">Agregar</button>
+                                                    <button type="button" id="btnAgre" class="btn-block btn-lg">Agregar</button>
                                                 </div>
                                             </div>
                                             <div class="col-md-3">
                                                 <div class="form-group">
-                                                    <button type="button" id="btnModi" class="btn-block btn-lg btn-primary">Modificar</button>
+                                                    <button type="button" id="btnModi" class="btn-block btn-lg ">Modificar</button>
                                                 </div>
                                             </div>
                                             <div class="col-md-2">
                                                 <div class="form-group">
-                                                    <button type="button" id="btnBusc" class="btn-block btn-lg btn-primary">Buscar</button>
+                                                    <button type="button" id="btnBusc" class="btn-block btn-lg ">Buscar</button>
                                                 </div>
                                             </div>
 
                                             <div class="col-md-2">
                                                 <div class="form-group">
-                                                    <button type="button" id="btnCanc" class="btn-block btn-lg btn-primary">Cancelar</button>
+                                                    <button type="button" id="btnCanc" class="btn-block btn-lg ">Cancelar</button>
                                                 </div>
                                             </div>
                                             <div class="col-md-2">
                                                 <div class="form-group">
-                                                    <button type="button" id="btnImpr" class="btn-block btn-lg btn-primary">Impresión</button>
+                                                    <button type="button" id="btnImpr" class="btn-block btn-lg ">Impresión</button>
                                                 </div>
                                             </div>
                                         </div>
@@ -165,6 +171,6 @@
     <!--Librerías comunes de JavaScript para las Tablas -->
     <!-- Impresión -->
     <!-- Para el script de control del form -->
-
+    <script src="Scripts/frmInicio.js"></script>
 </body>
 </html>

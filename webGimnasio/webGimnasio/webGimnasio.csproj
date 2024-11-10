@@ -124,6 +124,7 @@
     <Content Include="Imagenes\img_splash.jpg" />
     <Content Include="Imagenes\Inicio.jpg" />
     <Content Include="Imagenes\LOGO.png" />
+    <Content Include="Paginas\Estilos\frmGym.css" />
     <Content Include="Paginas\frmAparato.html" />
     <Content Include="Paginas\frmCiudad.html" />
     <Content Include="Paginas\frmClase.html" />
@@ -198,7 +199,9 @@
     <Content Include="Content\bootstrap-grid.min.css.map" />
     <Content Include="Content\bootstrap-grid.css.map" />
     <Content Include="Paginas\PaginaBase.html" />
+    <Content Include="Paginas\Scripts\frmEmpleado.js" />
     <Content Include="Paginas\Scripts\frmInicio.js" />
+    <Content Include="Paginas\Scripts\frmMatricula.js" />
     <Content Include="Scripts\adminlte.js" />
     <Content Include="Scripts\adminlte.min.js" />
     <Content Include="Scripts\bootstrap.bundle.js" />

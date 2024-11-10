@@ -1,0 +1,20 @@
+﻿.card-header {
+    font-family: 'Ubuntu', sans-serif;
+    background-color: #D2B48C;
+    color: black;
+}
+
+#frmDatosIn .card-header {
+    color: white;
+    background: radial-gradient(circle at 10% 20%, rgb(0, 0, 0) 0%, rgb(64, 64, 64) 90.2%);
+}
+
+.custom-checkbox {
+    accent-color: black;
+}
+
+.btn-block {
+    font-family: 'Ubuntu',sans-serif;
+    background-color: #D2B48C;
+    border-color: #D2B48C;
+}

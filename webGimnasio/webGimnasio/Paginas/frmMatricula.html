@@ -6,6 +6,9 @@
     <title>Maestro de Inscripciones</title>
     <!-- Scripts Base Sup -->
     <!-- Google Font: Source Sans Pro -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Ubuntu:ital,wght@0,300;0,400;0,500;0,700;1,300;1,400;1,500;1,700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700&display=fallback">
 
     <!-- Select2 -->
@@ -15,11 +18,11 @@
     <link href="Estilos/dataTables.min.css" rel="stylesheet" />
     <link href="Estilos/dataTables.bootstrap4.min.css" rel="stylesheet" />
     <link href="Estilos/adminlte.min.css" rel="stylesheet" />
-
+    <link href="Estilos/frmGym.css" rel="stylesheet" />
     <style>
         .label_1 {
             width: 100%;
-            height: 30px;
+            height: 38px;
             border-radius: 5px;
             background-color: #f2eded;
             border-style: solid;
@@ -28,7 +31,7 @@
 
         .label_2 {
             width: 100%;
-            height: 30px;
+            height: 38px;
             border-radius: 5px;
             background-color: #f2eded;
             border-style: solid;
@@ -39,7 +42,7 @@
 
 </head>
 <body class="hold-transition sidebar-mini">
-    <section class="content">
+    <section class="content"/>
         <div class="container-fluid">
             <div class="row">
                 <!-- left column -->
@@ -47,13 +50,13 @@
                     <!-- Para incrustar la página que contiene el ménu de navegación-->
                 </div>
                 <div class="col-md-12">
-                    <div class="card card-primary">
+                    <div class="card">
                         <div class="card-header">
                             <h3 class="card-title">Maestro de Inscripción</h3>
                         </div>
                         <form id="frmDatosIn">
-                            <div class="card-body">
-                                <div class="card card-gray-dark">
+                            <div class="card-body"/>
+                                <div class="card">
                                     <div class="card-header">
                                         <h3 class="card-title">Datos de Entrada</h3>
                                     </div>
@@ -93,7 +96,7 @@
                                                 </div>
                                             </div>
                                         </div>
-                                   
+
                                         <div class="row">
                                             <div class="col-md-3">
                                                 <div class="form-group">
@@ -104,8 +107,8 @@
                                             </div>
                                             <div class="col-md-3">
                                                 <div class="form-group">
-                                                    <label for="lbMonitor">Monitor</label>
-                                                    <input id="lbMonitor" class="label_2" placeholder="Nombre del Monitor" disabled />
+                                                    <label for="txtMonitor">Monitor</label>
+                                                    <input id="txtMonitor" class="label_2" placeholder="Nombre del Monitor" disabled />
                                                 </div>
                                             </div>
                                             <div class="col-md-3">
@@ -158,66 +161,66 @@
                                             <!-- Acá para más rows para datos -->
                                         </div>
 
-                                    <!-- Menú de Opciones -->
-                                    <div class="card-body">
-                                        <div class="row">
-                                            <div class="col-md-3">
-                                                <div class="form-group">
-                                                    <button type="button" id="btnAgre" class="btn-block btn-lg btn-primary">Agregar</button>
+                                        <!-- Menú de Opciones -->
+                                        <div class="card-body">
+                                            <div class="row">
+                                                <div class="col-md-3">
+                                                    <div class="form-group">
+                                                        <button type="button" id="btnAgre" class="btn-block btn-lg btn-primary">Agregar</button>
+                                                    </div>
                                                 </div>
-                                            </div>
-                                            <div class="col-md-3">
-                                                <div class="form-group">
-                                                    <button type="button" id="btnModi" class="btn-block btn-lg btn-primary">Modificar</button>
+                                                <div class="col-md-3">
+                                                    <div class="form-group">
+                                                        <button type="button" id="btnModi" class="btn-block btn-lg btn-primary">Modificar</button>
+                                                    </div>
                                                 </div>
-                                            </div>
-                                            <div class="col-md-2">
-                                                <div class="form-group">
-                                                    <button type="button" id="btnBusc" class="btn-block btn-lg btn-primary">Buscar</button>
+                                                <div class="col-md-2">
+                                                    <div class="form-group">
+                                                        <button type="button" id="btnBusc" class="btn-block btn-lg btn-primary">Buscar</button>
+                                                    </div>
+                                                </div>
+
+                                                <div class="col-md-2">
+                                                    <div class="form-group">
+                                                        <button type="button" id="btnCanc" class="btn-block btn-lg btn-primary">Cancelar</button>
+                                                    </div>
+                                                </div>
+                                                <div class="col-md-2">
+                                                    <div class="form-group">
+                                                        <button type="button" id="btnImpr" class="btn-block btn-lg btn-primary">Impresión</button>
+                                                    </div>
                                                 </div>
                                             </div>
 
-                                            <div class="col-md-2">
-                                                <div class="form-group">
-                                                    <button type="button" id="btnCanc" class="btn-block btn-lg btn-primary">Cancelar</button>
-                                                </div>
+                                            <!-- Zona de Mensajes -->
+                                            <div class="card-footer">
+                                                <div id="dvMensaje" class=""></div>
                                             </div>
-                                            <div class="col-md-2">
-                                                <div class="form-group">
-                                                    <button type="button" id="btnImpr" class="btn-block btn-lg btn-primary">Impresión</button>
-                                                </div>
-                                            </div>
+
+                                            <!-- Fin Menú de Opciones-->
                                         </div>
-
-                                        <!-- Zona de Mensajes -->
-                                        <div class="card-footer">
-                                            <div id="dvMensaje" class=""></div>
+                                    </div><!-- card card-gray-dark -->
+                                    <!-- Acá row para la tabla -->
+                                    <div class="row">
+                                        <div class="col-md-12">
+                                            <table id="tablaDatos" class="table table-bordered table-striped">
+                                                <thead>
+                                                    <tr>
+                                                        <th></th>
+                                                        <th></th>
+                                                        <th></th>
+                                                        <th></th>
+                                                        <th></th>
+                                                        <th></th>
+                                                        <th></th>
+                                                    </tr>
+                                                </thead>
+                                            </table>
                                         </div>
-
-                                        <!-- Fin Menú de Opciones-->
                                     </div>
-                                </div><!-- card card-gray-dark -->
-                                <!-- Acá row para la tabla -->
-                                <div class="row">
-                                    <div class="col-md-12">
-                                        <table id="tablaDatos" class="table table-bordered table-striped">
-                                            <thead>
-                                                <tr>
-                                                    <th></th>
-                                                    <th></th>
-                                                    <th></th>
-                                                    <th></th>
-                                                    <th></th>
-                                                    <th></th>
-                                                    <th></th>
-                                                </tr>
-                                            </thead>
-                                        </table>
-                                    </div>
-                                </div>
-                                <!-- Fin row para la tabla -->
+                                    <!-- Fin row para la tabla -->
 
-                            </div>  <!-- /.card-body -->
+                                </div>  <!-- /.card-body -->
 
                         </form>
                     </div>
@@ -232,11 +235,9 @@
         <script src="Scripts/Comunes/Combos.js"></script>
 
         <!-- Tabla -->
-        <script src="../Scripts/jquery.dataTables.min.js"></script>
-        <script src="../Scripts/dataTables.bootstrap4.min.js"></script>
         <!--Librerías comunes de JavaScript para las Tablas -->
-        <script src="Scripts/Comunes/Tablas.js"></script>
         <!-- Impresión -->
         <!-- Para el script de control del form -->
+        <script src="Scripts/frmMatricula.js"></script>
 </body>
 </html>

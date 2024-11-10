@@ -13,11 +13,18 @@
             
         }
     }
+    .navContainer{
+        padding: 50px;
+    }
 
     .dropdown-menu {
         background: radial-gradient(circle at 10% 20%, rgb(0, 0, 0) 0%, rgb(64, 64, 64) 90.2%);
         border-radius: 10px;
     }
+    a {
+        font-family: 'Ubuntu', sans-serif;
+    }
+    
     .navbar {
         background: radial-gradient(circle at 10% 20%, rgb(0, 0, 0) 0%, rgb(64, 64, 64) 90.2%);
 
@@ -55,7 +62,7 @@
         <div class="col-md-12">
             <div class="form-group">
 
-                <div align="center" style="padding:50px;">
+                <div align="center"  class="navContainer">
 
                     <h1 class="navbar-brand" style=" font-family: 'Cinzel' ; font-size: 30px;">Sistema Gimnasio Siempre en Forma</h1>
                     <div class="collapse navbar-collapse" id="navbarSupportedContent">
@@ -63,22 +70,22 @@
                         <ul class="navbar-nav mr-auto">
 
                             <li class="nav-item active">
-                                <a class="nav-link" href="frmInicio.html" style=" font-family: 'Ubuntu',sans-serif;">Inicio <span class="sr-only"></span></a>
+                                <a class="nav-link" href="frmInicio.html" >Inicio <span class="sr-only"></span></a>
 
                             </li>
                             <li class="nav-item dropdown">
-                                <a class="nav-link dropdown-toggle" id="navbarDropdown" style=" font-family: 'Ubuntu',sans-serif; " role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" >
+                                <a class="nav-link dropdown-toggle" id="navbarDropdown"  role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" >
                                     Actividades
                                 </a>
-                                <div class="dropdown-menu" aria-labelledby="navbarDropdown" style=" font-family: 'Ubuntu',sans-serif; ">
+                                <div class="dropdown-menu" aria-labelledby="navbarDropdown" >
                                     <a class="dropdown-item" href="frmMatricula.html">Matrícula</a>
                                 </div>
                             </li>
                             <li class="nav-item dropdown">
-                                <a class="nav-link dropdown-toggle" id="navbarDropdown" style=" font-family: 'Ubuntu',sans-serif;" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                <a class="nav-link dropdown-toggle" id="navbarDropdown"  role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                                     Maestros
                                 </a>
-                                <div class="dropdown-menu" aria-labelledby="navbarDropdown" style=" font-family: 'Ubuntu',sans-serif;">
+                                <div class="dropdown-menu" aria-labelledby="navbarDropdown">
                                     <a class="dropdown-item" href="frmUsuario.html">Usuarios</a>
                                     <a class="dropdown-item" href="frmEmpleado.html">Empleados</a>
                                     <a class="dropdown-item" href="frmSocio.html">Socios</a>
@@ -94,6 +101,9 @@
                                     <a class="dropdown-item" href="frmTipDoc.html">Tipo Documento</a>
                                     <a class="dropdown-item" href="frmDia.html">Dia</a>
                                     <a class="dropdown-item" href="frmHora.html">Horas</a>
+                                    <a class="dropdown-item" href="frmTipoTel.html">Tipo Telefono</a>
+                                    <a class="dropdown-item" href="frmTelefono.html">Telefono</a>
+                                    <a class="dropdown-item" href="frmMatricula.html">Matricula</a>
                                 </div>
                             </li>
                         </ul>
