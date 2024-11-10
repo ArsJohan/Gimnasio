@@ -1,88 +1,125 @@
 ﻿<!DOCTYPE html>
-<html>
+<html lang="es">
 <head>
-    <meta charset="utf-8" />
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Imagen con Degradado y Texto</title>
+
+    <!-- Enlace para las fuentes de Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Ubuntu:ital,wght@0,300;0,400;0,500;0,700;1,300;1,400;1,500;1,700&display=swap" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400..900&family=Ubuntu:ital,wght@0,300;0,400;0,500;0,700;1,300;1,400;1,500;1,700&display=swap" rel="stylesheet">
-    <title>Siempre en Forma</title>
+    <link href="https://fonts.googleapis.com/css2?family=Ubuntu:ital,wght@0,300;0,400;0,500;0,700;1,300;1,400;1,500;1,700&display=swap" rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400..900&display=swap" rel="stylesheet">
+
+    <!-- Estilos internos CSS -->
     <style>
-        body {
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            height: 100vh;
+        /* CSS principal para el diseño de la página */
+        body, html {
             margin: 0;
-            background-image: url('../imagenes/img_splash.jpg');
-        }
-
-        .splash-card {
+            padding: 0;
+            width: 100%;
+            height: 100%;
             display: flex;
-            align-items: center;
-            background-color: #fff;
-            border-radius: 8px;
-            box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.1);
-            max-width: 800px;
-            padding: 1.5rem;
-            gap: 1.5rem;
-            animation: fadeIn 1.2s ease-in-out;
+            font-family: Arial, sans-serif;
+            color: white;
+            background-color: black;
+            overflow: hidden;
         }
 
-            .splash-card h1 {
-                font-family: 'Cinzel';
-                font-size: 24px;
-                color: #333;
-                margin-bottom: 1rem;
-            }
-
-            .splash-card p {
-                font-family: 'Ubuntu', sans-serif;
-                font-size: 16px;
-                color: #666;
-                margin-bottom: 1.5rem;
-            }
-
+        /* Animación de aparición */
         @keyframes fadeIn {
             from {
                 opacity: 0;
-                transform: translateY(20px);
             }
 
             to {
                 opacity: 1;
-                transform: translateY(0);
             }
         }
 
-        .logo {
-            max-width: 230px; /* Ajusta este tamaño según sea necesario */
+        /* Contenedor de texto */
+        .text-container {
+            width: 50%; /* Ocupa la mitad de la pantalla */
+            padding: 40px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            animation: fadeIn 3s ease-in-out forwards; /* Animación para que aparezca suavemente */
+            color: #F7E7CE;
         }
 
-        .logo-container {
-            display: flex;
-            align-items: center;
-            justify-content: center;
+            /* Estilo del título principal */
+            .text-container h1 {
+                font-size: 3em;
+                margin-bottom: 10px;
+                font-family: 'Cinzel', serif; /* Fuente decorativa */
+            }
+
+            /* Estilo del subtítulo */
+            .text-container h2 {
+                font-size: 1.5em; /* Tamaño más pequeño */
+                margin-bottom: 20px;
+                font-weight: 900;
+                font-family: 'Ubuntu', serif;
+            }
+
+            /* Estilo para los títulos de sección (Integrantes y Fecha) */
+            .text-container .section-title {
+                font-size: 1.5em;
+                margin-top: 20px;
+                font-weight: 400;
+                font-family: 'Ubuntu';
+            }
+
+            /* Estilo para los párrafos */
+            .text-container p {
+                font-size: 1.2em;
+                line-height: 1.5;
+                margin: 5px 0;
+                font-family: 'Ubuntu';
+            }
+
+        /* Contenedor de imagen */
+        .image-container {
+            position: relative;
+            width: 50%; /* Ocupa la otra mitad de la pantalla */
+            height: 100vh;
+            background-image: url('../imagenes/splashyeahonoyeah.jpg'); /* Imagen de fondo */
+            background-size: cover;
+            background-position: center;
+            mask-image: linear-gradient(to right, black 80%, transparent); /* Efecto de degradado */
+            animation: fadeIn 2.5s ease-in-out forwards; /* Animación de aparición */
+        }
+
+        /* Superposición de color en la imagen */
+        .overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            animation: fadeIn 1s ease-in-out forwards;
         }
     </style>
 </head>
+
 <body>
-    <div class="splash-card">
-        <div class="logo-container">
-            <img src="../Imagenes/LOGO.png" class="logo" />
-        </div>
-        <div class="content">
-            <h1> Gimnasio "Siempre en Forma"</h1>
-            <p>
-
-                <strong>Integrantes:</strong> Johan Esteban Arias Arboleda,
-                <br />Yeison Andres Sanchez Rodas<br><br />
-                <strong>Fecha:</strong> 7 de noviembre de 2024
-            </p>
-        </div>
-       
-
+    <!-- Contenedor de imagen con superposición -->
+    <div class="image-container">
+        <div class="overlay"></div>
     </div>
-   
+
+    <!-- Contenedor de texto con títulos y contenido -->
+    <div class="text-container">
+        <h1>Siempre En Forma</h1> <!-- Título grande -->
+        <h2>Gimnasio</h2> <!-- Título secundario -->
+
+        <p class="section-title">Integrantes:</p> <!-- Título de sección -->
+        <p>Yeison Andres Sanchez Rodas</p>
+        <p>Johan Arias Arboleda</p>
+
+        <p class="section-title">Fecha:</p> <!-- Otro título de sección -->
+        <p>10 de noviembre de 2024</p>
+    </div>
 </body>
 </html>
