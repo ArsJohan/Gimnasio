@@ -2,9 +2,87 @@
 <html>
 <head>
     <meta charset="utf-8" />
-    <title></title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Ubuntu:ital,wght@0,300;0,400;0,500;0,700;1,300;1,400;1,500;1,700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400..900&family=Ubuntu:ital,wght@0,300;0,400;0,500;0,700;1,300;1,400;1,500;1,700&display=swap" rel="stylesheet">
+    <title>Siempre en Forma</title>
+    <style>
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            background-image: url('../imagenes/img_splash.jpg');
+        }
+
+        .splash-card {
+            display: flex;
+            align-items: center;
+            background-color: #fff;
+            border-radius: 8px;
+            box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.1);
+            max-width: 800px;
+            padding: 1.5rem;
+            gap: 1.5rem;
+            animation: fadeIn 1.2s ease-in-out;
+        }
+
+            .splash-card h1 {
+                font-family: 'Cinzel';
+                font-size: 24px;
+                color: #333;
+                margin-bottom: 1rem;
+            }
+
+            .splash-card p {
+                font-family: 'Ubuntu', sans-serif;
+                font-size: 16px;
+                color: #666;
+                margin-bottom: 1.5rem;
+            }
+
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .logo {
+            max-width: 230px; /* Ajusta este tamaño según sea necesario */
+        }
+
+        .logo-container {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+    </style>
 </head>
 <body>
+    <div class="splash-card">
+        <div class="logo-container">
+            <img src="../Imagenes/LOGO.png" class="logo" />
+        </div>
+        <div class="content">
+            <h1> Gimnasio "Siempre en Forma"</h1>
+            <p>
+
+                <strong>Integrantes:</strong> Johan Esteban Arias Arboleda,
+                <br />Yeison Andres Sanchez Rodas<br><br />
+                <strong>Fecha:</strong> 7 de noviembre de 2024
+            </p>
+        </div>
+
+
+    </div>
 
 </body>
 </html>

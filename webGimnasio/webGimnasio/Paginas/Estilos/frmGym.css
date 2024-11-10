@@ -18,3 +18,12 @@
     background-color: #D2B48C;
     border-color: #D2B48C;
 }
+
+@media (hover: hover) {
+    .btn-block:hover {
+        background-color: #7a6d5d;
+        border-color: #7a6d5d;
+    }
+
+    
+}
