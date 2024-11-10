@@ -206,6 +206,7 @@
     <Content Include="Paginas\Scripts\frmInicio.js" />
     <Content Include="Paginas\Scripts\frmLogin.js" />
     <Content Include="Paginas\Scripts\frmMatricula.js" />
+    <Content Include="Paginas\Scripts\frmSplash.js" />
     <Content Include="Scripts\adminlte.js" />
     <Content Include="Scripts\adminlte.min.js" />
     <Content Include="Scripts\bootstrap.bundle.js" />
