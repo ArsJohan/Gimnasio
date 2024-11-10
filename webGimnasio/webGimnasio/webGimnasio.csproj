@@ -122,10 +122,8 @@
     <Content Include="favicon.ico" />
     <Content Include="Global.asax" />
     <Content Include="Imagenes\door-open-solid.svg" />
-    <Content Include="Imagenes\img_splash.jpg" />
     <Content Include="Imagenes\Inicio.jpg" />
     <Content Include="Imagenes\LOGO.png" />
-    <Content Include="Imagenes\SplashGimnasio.jpg" />
     <Content Include="Imagenes\SplashYeahONoYeah.jpg" />
     <Content Include="Imagenes\user-solid.svg" />
     <Content Include="Paginas\Estilos\frmMenu.css" />
@@ -206,6 +204,7 @@
     <Content Include="Paginas\PaginaBase.html" />
     <Content Include="Paginas\Scripts\frmEmpleado.js" />
     <Content Include="Paginas\Scripts\frmInicio.js" />
+    <Content Include="Paginas\Scripts\frmLogin.js" />
     <Content Include="Paginas\Scripts\frmMatricula.js" />
     <Content Include="Scripts\adminlte.js" />
     <Content Include="Scripts\adminlte.min.js" />

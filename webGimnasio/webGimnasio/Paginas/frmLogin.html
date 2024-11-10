@@ -6,6 +6,7 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Ubuntu:ital,wght@0,300;0,400;0,500;0,700;1,300;1,400;1,500;1,700&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400..900&family=Ubuntu:ital,wght@0,300;0,400;0,500;0,700;1,300;1,400;1,500;1,700&display=swap" rel="stylesheet">
+    <link href="Estilos/adminlte.min.css" rel="stylesheet" />
     <title>Siempre en Forma</title>
     <style>
         body {
@@ -14,7 +15,7 @@
             align-items: center;
             height: 100vh;
             margin: 0;
-            background-image: url('../imagenes/img_splash.jpg');
+            background-color: black;
         }
 
         .splash-card {
@@ -26,7 +27,6 @@
             max-width: 800px;
             padding: 1.5rem;
             gap: 1.5rem;
-            animation: fadeIn 1.2s ease-in-out;
         }
 
             .splash-card h1 {
@@ -34,26 +34,17 @@
                 font-size: 24px;
                 color: #333;
                 margin-bottom: 1rem;
+                text-align:center;
             }
 
-            .splash-card p {
+            .splash-card label {
                 font-family: 'Ubuntu', sans-serif;
                 font-size: 16px;
                 color: #666;
-                margin-bottom: 1.5rem;
+                margin-bottom: 0.5rem;
             }
 
-        @keyframes fadeIn {
-            from {
-                opacity: 0;
-                transform: translateY(20px);
-            }
 
-            to {
-                opacity: 1;
-                transform: translateY(0);
-            }
-        }
 
         .logo {
             max-width: 230px; /* Ajusta este tamaño según sea necesario */
@@ -64,6 +55,22 @@
             align-items: center;
             justify-content: center;
         }
+
+        .btn-block{
+            background-color: black;
+            border-radius: 4em;
+            height: 2em;
+            width: 10em;
+            color:whitesmoke;
+            font-family: 'Ubuntu',sans-serif;
+        }
+        @media (hover: hover) {
+            .btn-block:hover {
+                background-color: #333;
+                border-color: #333;
+                
+            }
+        }
     </style>
 </head>
 <body>
@@ -72,17 +79,38 @@
             <img src="../Imagenes/LOGO.png" class="logo" />
         </div>
         <div class="content">
-            <h1> Gimnasio "Siempre en Forma"</h1>
-            <p>
+            <h1> Login</h1>
+            <div class="row">
 
-                <strong>Integrantes:</strong> Johan Esteban Arias Arboleda,
-                <br />Yeison Andres Sanchez Rodas<br><br />
-                <strong>Fecha:</strong> 7 de noviembre de 2024
-            </p>
+                <div class="form_clave">
+                    <div class="form-group">
+                        <label for="user_clave">Clave</label>
+                        <input type="text" class="form-control" id="user_calve" />
+
+                    </div>
+
+
+                </div>
+            </div>
+            <div class="row">
+                <div class="form_pass">
+                    <div class="form-group">
+                        <label for="user_password">Contraseña</label>
+                        <input type="password" class="form-control" id="user_password" />
+
+                    </div>
+                </div>
+            </div>
+            <div class="row" style="justify-content:center;">
+                <button class="btn-block" id="btnIngresar">Ingresar</button>
+            </div>
+
         </div>
 
 
     </div>
-
+    <script src="../Scripts/jquery-3.7.0.js"></script>
+    <script src="../Scripts/bootstrap.bundle.min.js"></script>
+    <script src="Scripts/frmLogin.js"></script>
 </body>
 </html>

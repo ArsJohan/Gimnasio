@@ -9,7 +9,7 @@
 }
 .navbar-brand {
     font-family: 'Cinzel';
-    font-size: 3.5em !important;
+    font-size: 2.5em !important;
     color: lightgray;
     margin-left: 20px;
     margin-right: 40px;
@@ -28,11 +28,11 @@
 h4 {
     color: white;
     font-family: 'Ubuntu', sans-serif;
-    font-size: 1.5em;
+    font-size: 1em;
 }
 a{
     font-family: 'Ubuntu', sans-serif;
-    font-size: 1.8em;
+    font-size: 1.1em;
 }
 
 .dropdown-menu {

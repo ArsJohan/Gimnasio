@@ -1,4 +1,13 @@
-﻿.card-header {
+﻿@media (hover: hover) {
+    .btn-block:hover {
+        background-color: #7a6d5d;
+        border-color: #7a6d5d;
+    }
+    
+}
+
+
+.card-header {
     font-family: 'Ubuntu', sans-serif;
     background-color: #D2B48C;
     color: black;
@@ -9,9 +18,7 @@
     background: radial-gradient(circle at 10% 20%, rgb(0, 0, 0) 0%, rgb(64, 64, 64) 90.2%);
 }
 
-.custom-checkbox {
-    accent-color: black;
-}
+
 
 .btn-block {
     font-family: 'Ubuntu',sans-serif;
@@ -19,11 +26,3 @@
     border-color: #D2B48C;
 }
 
-@media (hover: hover) {
-    .btn-block:hover {
-        background-color: #7a6d5d;
-        border-color: #7a6d5d;
-    }
-
-    
-}
