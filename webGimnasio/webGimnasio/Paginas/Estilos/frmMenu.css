@@ -1,0 +1,54 @@
+﻿@media (hover: hover) {
+    a:hover {
+        color: #8e6e10;
+    }
+
+    .dropdown-menu a:hover {
+        background-color: lightslategrey;
+    }
+}
+.navbar-brand {
+    font-family: 'Cinzel';
+    font-size: 35px !important;
+    color: lightgray;
+    margin-left: 20px;
+    margin-right: 40px;
+}
+
+.door-open{
+    width:40px;
+}
+
+.User-Name {
+    margin-top: 30px;
+    margin-left: 30px;
+    justify-content: left;
+    
+}
+h4 {
+    color: white;
+    font-family: 'Ubuntu', sans-serif;
+    font-size: 15px;
+}
+a{
+    font-family: 'Ubuntu', sans-serif;
+    font-size: 18px;
+}
+
+.dropdown-menu {
+    background: radial-gradient(circle at 10% 20%, rgb(0, 0, 0) 0%, rgb(64, 64, 64) 90.2%);
+    border-radius: 10px;
+}
+
+.navbar {
+    background: radial-gradient(circle at 10% 20%, rgb(0, 0, 0) 0%, rgb(64, 64, 64) 90.2%);
+}
+
+.logo {
+    max-width: 350px;
+    display: flex;
+}
+
+a:not(:hover) {
+    color: #c59400;
+}

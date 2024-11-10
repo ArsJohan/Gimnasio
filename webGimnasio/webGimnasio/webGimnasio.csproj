@@ -121,9 +121,12 @@
     <Content Include="Default.aspx" />
     <Content Include="favicon.ico" />
     <Content Include="Global.asax" />
+    <Content Include="Imagenes\door-open-solid.svg" />
     <Content Include="Imagenes\img_splash.jpg" />
     <Content Include="Imagenes\Inicio.jpg" />
     <Content Include="Imagenes\LOGO.png" />
+    <Content Include="Imagenes\user-solid.svg" />
+    <Content Include="Paginas\Estilos\frmMenu.css" />
     <Content Include="Paginas\frmAparato.html" />
     <Content Include="Paginas\frmCiudad.html" />
     <Content Include="Paginas\frmClase.html" />
