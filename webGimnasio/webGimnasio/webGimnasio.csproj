@@ -125,12 +125,12 @@
     <Content Include="Imagenes\img_splash.jpg" />
     <Content Include="Imagenes\Inicio.jpg" />
     <Content Include="Imagenes\LOGO.png" />
-<<<<<<< HEAD
+
     <Content Include="Imagenes\user-solid.svg" />
     <Content Include="Paginas\Estilos\frmMenu.css" />
-=======
+
     <Content Include="Paginas\Estilos\frmGym.css" />
->>>>>>> 0d9cafe62a6239ff72879bf85611ed6e2c37eb17
+
     <Content Include="Paginas\frmAparato.html" />
     <Content Include="Paginas\frmCiudad.html" />
     <Content Include="Paginas\frmClase.html" />
