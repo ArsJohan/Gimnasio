@@ -18,15 +18,20 @@
             background-color: black;
         }
 
+        .row{
+            justify-content: center;
+        }
         .splash-card {
             display: flex;
             align-items: center;
             background-color: #fff;
             border-radius: 8px;
             box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.1);
+            min-width: 450px;
             max-width: 800px;
             padding: 1.5rem;
             gap: 1.5rem;
+         
         }
 
             .splash-card h1 {
@@ -78,14 +83,14 @@
         <div class="logo-container">
             <img src="../Imagenes/LOGO.png" class="logo" />
         </div>
-        <div class="content">
+        <div class="content" >
             <h1> Login</h1>
-            <div class="row">
+            <div class="row" >
 
                 <div class="form_clave">
                     <div class="form-group">
                         <label for="user_clave">Clave</label>
-                        <input type="text" class="form-control" id="user_calve" />
+                        <input type="text" class="form-control" id="user_clave" />
 
                     </div>
 
@@ -104,8 +109,12 @@
             <div class="row" style="justify-content:center;">
                 <button class="btn-block" id="btnIngresar">Ingresar</button>
             </div>
-
+            <!-- Zona de Mensajes -->
+            <div class="card-footer bg-white">
+                <div id="dvMensaje" class=""></div>
+            </div>
         </div>
+        
 
 
     </div>
