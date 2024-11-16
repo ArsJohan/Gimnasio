@@ -1,0 +1,1591 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+      <Schema Namespace="GIMNASIOModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityType Name="APARATO">
+          <Key>
+            <PropertyRef Name="codigo_Aparato" />
+          </Key>
+          <Property Name="codigo_Aparato" Type="int" Nullable="false" />
+          <Property Name="Activo" Type="bit" />
+          <Property Name="Descripcion" Type="varchar" MaxLength="80" Nullable="false" />
+          <Property Name="codigo_Estado" Type="int" Nullable="false" />
+          <Property Name="codigo_Sala" Type="int" Nullable="false" />
+          <Property Name="codigo_Empleado" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="CIUDAD">
+          <Key>
+            <PropertyRef Name="codigo_Ciudad" />
+          </Key>
+          <Property Name="codigo_Ciudad" Type="int" Nullable="false" />
+          <Property Name="Descripcion" Type="varchar" MaxLength="80" Nullable="false" />
+        </EntityType>
+        <EntityType Name="CLASE">
+          <Key>
+            <PropertyRef Name="codigo_Clase" />
+          </Key>
+          <Property Name="codigo_Clase" Type="int" Nullable="false" />
+          <Property Name="Activo" Type="bit" />
+          <Property Name="Descripcion" Type="varchar" MaxLength="80" Nullable="false" />
+          <Property Name="codigo_Dia" Type="int" Nullable="false" />
+          <Property Name="codigo_hora" Type="int" Nullable="false" />
+          <Property Name="codigo_Monitor" Type="int" Nullable="false" />
+          <Property Name="codigo_Sala" Type="int" Nullable="false" />
+          <Property Name="codigo_Empleado" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="DETALLE_MATRICULA">
+          <Key>
+            <PropertyRef Name="codigo_DetallesMatr" />
+          </Key>
+          <Property Name="codigo_DetallesMatr" Type="int" Nullable="false" />
+          <Property Name="Fecha_Inicio" Type="date" Nullable="false" />
+          <Property Name="Fecha_Fin" Type="date" Nullable="false" />
+          <Property Name="codigo_Clase" Type="int" Nullable="false" />
+          <Property Name="codigo_Matricula" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="DIA">
+          <Key>
+            <PropertyRef Name="codigo_Dia" />
+          </Key>
+          <Property Name="codigo_Dia" Type="int" Nullable="false" />
+          <Property Name="Descripcion" Type="varchar" MaxLength="80" Nullable="false" />
+        </EntityType>
+        <EntityType Name="EMPLEADO">
+          <Key>
+            <PropertyRef Name="Codigo_Empleado" />
+          </Key>
+          <Property Name="Codigo_Empleado" Type="int" Nullable="false" />
+          <Property Name="Activo" Type="bit" />
+          <Property Name="Nombre" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="Apellido" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="Telefono" Type="varchar" MaxLength="100" Nullable="false" />
+          <Property Name="nroDoc" Type="varchar" MaxLength="100" Nullable="false" />
+          <Property Name="Salario" Type="money" Nullable="false" />
+          <Property Name="Fecha_Ingreso" Type="date" Nullable="false" />
+          <Property Name="Fecha_Nac" Type="date" Nullable="false" />
+          <Property Name="codigo_TipoDoc" Type="int" Nullable="false" />
+          <Property Name="id_Empleado" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="ESPECI_MONI">
+          <Key>
+            <PropertyRef Name="codigo_Especi_Moni" />
+          </Key>
+          <Property Name="codigo_Especi_Moni" Type="int" Nullable="false" />
+          <Property Name="codigo_Especialidad" Type="int" Nullable="false" />
+          <Property Name="codigo_Monitor" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="ESPECIALIDAD">
+          <Key>
+            <PropertyRef Name="codigo_Especialidad" />
+          </Key>
+          <Property Name="codigo_Especialidad" Type="int" Nullable="false" />
+          <Property Name="Especialidad" Type="varchar" MaxLength="50" Nullable="false" />
+        </EntityType>
+        <EntityType Name="ESTADO">
+          <Key>
+            <PropertyRef Name="codigo_Estado" />
+          </Key>
+          <Property Name="codigo_Estado" Type="int" Nullable="false" />
+          <Property Name="Descripcion" Type="varchar" MaxLength="80" Nullable="false" />
+        </EntityType>
+        <EntityType Name="HORAS">
+          <Key>
+            <PropertyRef Name="codigo_Horas" />
+          </Key>
+          <Property Name="codigo_Horas" Type="int" Nullable="false" />
+          <Property Name="Descripcion" Type="varchar" MaxLength="80" Nullable="false" />
+        </EntityType>
+        <EntityType Name="MATRICULA">
+          <Key>
+            <PropertyRef Name="codigo_Matricula" />
+          </Key>
+          <Property Name="codigo_Matricula" Type="int" Nullable="false" />
+          <Property Name="Precio" Type="money" Nullable="false" />
+          <Property Name="Descripcion" Type="varchar" MaxLength="80" Nullable="false" />
+          <Property Name="codigo_Empleado" Type="int" Nullable="false" />
+          <Property Name="codigo_Socio" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="MONITOR">
+          <Key>
+            <PropertyRef Name="codigo_Monitor" />
+          </Key>
+          <Property Name="codigo_Monitor" Type="int" Nullable="false" />
+          <Property Name="Activo" Type="bit" />
+          <Property Name="nroDoc" Type="varchar" MaxLength="100" Nullable="false" />
+          <Property Name="Nombre" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="Apellido" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="Telefono" Type="varchar" MaxLength="100" Nullable="false" />
+          <Property Name="Experiencia" Type="varchar" MaxLength="80" Nullable="false" />
+          <Property Name="codigo_TipoDoc" Type="int" Nullable="false" />
+          <Property Name="codigo_Empleado" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="PROFESION">
+          <Key>
+            <PropertyRef Name="codigo_Profesion" />
+          </Key>
+          <Property Name="codigo_Profesion" Type="int" Nullable="false" />
+          <Property Name="Descripcion" Type="varchar" MaxLength="80" Nullable="false" />
+        </EntityType>
+        <EntityType Name="SALA">
+          <Key>
+            <PropertyRef Name="codigo_Sala" />
+          </Key>
+          <Property Name="codigo_Sala" Type="int" Nullable="false" />
+          <Property Name="Activo" Type="bit" />
+          <Property Name="Metros_Cuadrados" Type="int" Nullable="false" />
+          <Property Name="Ubicacion" Type="varchar" MaxLength="80" Nullable="false" />
+          <Property Name="codigo_Tipo" Type="int" Nullable="false" />
+          <Property Name="codigo_Empleado" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="SOCIO">
+          <Key>
+            <PropertyRef Name="codigo_Socio" />
+          </Key>
+          <Property Name="codigo_Socio" Type="int" Nullable="false" />
+          <Property Name="Activo" Type="bit" />
+          <Property Name="nroDoc" Type="varchar" MaxLength="100" Nullable="false" />
+          <Property Name="Nombre" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="Apellido" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="Direccion" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="codigo_TipoDoc" Type="int" Nullable="false" />
+          <Property Name="codigo_Ciudad" Type="int" Nullable="false" />
+          <Property Name="codigo_Profesion" Type="int" Nullable="false" />
+          <Property Name="codigo_Empleado" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="TELEFONO">
+          <Key>
+            <PropertyRef Name="codigo_Telefono" />
+          </Key>
+          <Property Name="codigo_Telefono" Type="int" Nullable="false" />
+          <Property Name="Numero" Type="float" Nullable="false" />
+          <Property Name="codigo_Tipo" Type="int" Nullable="false" />
+          <Property Name="codigo_Socio" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="TIPO_DOC">
+          <Key>
+            <PropertyRef Name="Codigo_TipoDoc" />
+          </Key>
+          <Property Name="Codigo_TipoDoc" Type="int" Nullable="false" />
+          <Property Name="TipoDoc" Type="varchar" MaxLength="50" Nullable="false" />
+        </EntityType>
+        <EntityType Name="TIPO_SALA">
+          <Key>
+            <PropertyRef Name="codigo_Tipo" />
+          </Key>
+          <Property Name="codigo_Tipo" Type="int" Nullable="false" />
+          <Property Name="Tipos" Type="varchar" MaxLength="80" Nullable="false" />
+        </EntityType>
+        <EntityType Name="TIPO_TEL">
+          <Key>
+            <PropertyRef Name="codigo_Tipo" />
+          </Key>
+          <Property Name="codigo_Tipo" Type="int" Nullable="false" />
+          <Property Name="Descripcion" Type="varchar" MaxLength="80" Nullable="false" />
+        </EntityType>
+        <EntityType Name="USUARIO">
+          <Key>
+            <PropertyRef Name="codigo_EMPLEADO" />
+          </Key>
+          <Property Name="Clave" Type="int" Nullable="false" />
+          <Property Name="Contrasenia" Type="varchar" MaxLength="255" Nullable="false" />
+          <Property Name="codigo_EMPLEADO" Type="int" Nullable="false" />
+          <Property Name="Activo" Type="bit" />
+        </EntityType>
+        <Association Name="FK__APARATO__codigo___6A30C649">
+          <End Role="ESTADO" Type="Self.ESTADO" Multiplicity="1" />
+          <End Role="APARATO" Type="Self.APARATO" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="ESTADO">
+              <PropertyRef Name="codigo_Estado" />
+            </Principal>
+            <Dependent Role="APARATO">
+              <PropertyRef Name="codigo_Estado" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__APARATO__codigo___6B24EA82">
+          <End Role="SALA" Type="Self.SALA" Multiplicity="1" />
+          <End Role="APARATO" Type="Self.APARATO" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="SALA">
+              <PropertyRef Name="codigo_Sala" />
+            </Principal>
+            <Dependent Role="APARATO">
+              <PropertyRef Name="codigo_Sala" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__APARATO__codigo___6C190EBB">
+          <End Role="EMPLEADO" Type="Self.EMPLEADO" Multiplicity="1" />
+          <End Role="APARATO" Type="Self.APARATO" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="EMPLEADO">
+              <PropertyRef Name="Codigo_Empleado" />
+            </Principal>
+            <Dependent Role="APARATO">
+              <PropertyRef Name="codigo_Empleado" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__CLASE__codigo_Di__6FE99F9F">
+          <End Role="DIA" Type="Self.DIA" Multiplicity="1" />
+          <End Role="CLASE" Type="Self.CLASE" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="DIA">
+              <PropertyRef Name="codigo_Dia" />
+            </Principal>
+            <Dependent Role="CLASE">
+              <PropertyRef Name="codigo_Dia" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__CLASE__codigo_Em__73BA3083">
+          <End Role="EMPLEADO" Type="Self.EMPLEADO" Multiplicity="1" />
+          <End Role="CLASE" Type="Self.CLASE" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="EMPLEADO">
+              <PropertyRef Name="Codigo_Empleado" />
+            </Principal>
+            <Dependent Role="CLASE">
+              <PropertyRef Name="codigo_Empleado" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__CLASE__codigo_ho__70DDC3D8">
+          <End Role="HORAS" Type="Self.HORAS" Multiplicity="1" />
+          <End Role="CLASE" Type="Self.CLASE" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="HORAS">
+              <PropertyRef Name="codigo_Horas" />
+            </Principal>
+            <Dependent Role="CLASE">
+              <PropertyRef Name="codigo_hora" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__CLASE__codigo_Mo__71D1E811">
+          <End Role="MONITOR" Type="Self.MONITOR" Multiplicity="1" />
+          <End Role="CLASE" Type="Self.CLASE" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="MONITOR">
+              <PropertyRef Name="codigo_Monitor" />
+            </Principal>
+            <Dependent Role="CLASE">
+              <PropertyRef Name="codigo_Monitor" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__CLASE__codigo_Sa__72C60C4A">
+          <End Role="SALA" Type="Self.SALA" Multiplicity="1" />
+          <End Role="CLASE" Type="Self.CLASE" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="SALA">
+              <PropertyRef Name="codigo_Sala" />
+            </Principal>
+            <Dependent Role="CLASE">
+              <PropertyRef Name="codigo_Sala" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__DETALLE_M__codig__7A672E12">
+          <End Role="CLASE" Type="Self.CLASE" Multiplicity="1" />
+          <End Role="DETALLE_MATRICULA" Type="Self.DETALLE_MATRICULA" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="CLASE">
+              <PropertyRef Name="codigo_Clase" />
+            </Principal>
+            <Dependent Role="DETALLE_MATRICULA">
+              <PropertyRef Name="codigo_Clase" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__DETALLE_M__codig__7B5B524B">
+          <End Role="MATRICULA" Type="Self.MATRICULA" Multiplicity="1" />
+          <End Role="DETALLE_MATRICULA" Type="Self.DETALLE_MATRICULA" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="MATRICULA">
+              <PropertyRef Name="codigo_Matricula" />
+            </Principal>
+            <Dependent Role="DETALLE_MATRICULA">
+              <PropertyRef Name="codigo_Matricula" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__EMPLEADO__codigo__3A81B327">
+          <End Role="TIPO_DOC" Type="Self.TIPO_DOC" Multiplicity="1" />
+          <End Role="EMPLEADO" Type="Self.EMPLEADO" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="TIPO_DOC">
+              <PropertyRef Name="Codigo_TipoDoc" />
+            </Principal>
+            <Dependent Role="EMPLEADO">
+              <PropertyRef Name="codigo_TipoDoc" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__EMPLEADO__id_Emp__3B75D760">
+          <End Role="EMPLEADO" Type="Self.EMPLEADO" Multiplicity="1" />
+          <End Role="EMPLEADO1" Type="Self.EMPLEADO" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="EMPLEADO">
+              <PropertyRef Name="Codigo_Empleado" />
+            </Principal>
+            <Dependent Role="EMPLEADO1">
+              <PropertyRef Name="id_Empleado" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__ESPECI_MO__codig__59063A47">
+          <End Role="ESPECIALIDAD" Type="Self.ESPECIALIDAD" Multiplicity="1" />
+          <End Role="ESPECI_MONI" Type="Self.ESPECI_MONI" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="ESPECIALIDAD">
+              <PropertyRef Name="codigo_Especialidad" />
+            </Principal>
+            <Dependent Role="ESPECI_MONI">
+              <PropertyRef Name="codigo_Especialidad" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__ESPECI_MO__codig__59FA5E80">
+          <End Role="MONITOR" Type="Self.MONITOR" Multiplicity="1" />
+          <End Role="ESPECI_MONI" Type="Self.ESPECI_MONI" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="MONITOR">
+              <PropertyRef Name="codigo_Monitor" />
+            </Principal>
+            <Dependent Role="ESPECI_MONI">
+              <PropertyRef Name="codigo_Monitor" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__MATRICULA__codig__76969D2E">
+          <End Role="EMPLEADO" Type="Self.EMPLEADO" Multiplicity="1" />
+          <End Role="MATRICULA" Type="Self.MATRICULA" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="EMPLEADO">
+              <PropertyRef Name="Codigo_Empleado" />
+            </Principal>
+            <Dependent Role="MATRICULA">
+              <PropertyRef Name="codigo_Empleado" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__MATRICULA__codig__778AC167">
+          <End Role="SOCIO" Type="Self.SOCIO" Multiplicity="1" />
+          <End Role="MATRICULA" Type="Self.MATRICULA" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="SOCIO">
+              <PropertyRef Name="codigo_Socio" />
+            </Principal>
+            <Dependent Role="MATRICULA">
+              <PropertyRef Name="codigo_Socio" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__MONITOR__codigo___5535A963">
+          <End Role="TIPO_DOC" Type="Self.TIPO_DOC" Multiplicity="1" />
+          <End Role="MONITOR" Type="Self.MONITOR" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="TIPO_DOC">
+              <PropertyRef Name="Codigo_TipoDoc" />
+            </Principal>
+            <Dependent Role="MONITOR">
+              <PropertyRef Name="codigo_TipoDoc" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__MONITOR__codigo___5629CD9C">
+          <End Role="EMPLEADO" Type="Self.EMPLEADO" Multiplicity="1" />
+          <End Role="MONITOR" Type="Self.MONITOR" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="EMPLEADO">
+              <PropertyRef Name="Codigo_Empleado" />
+            </Principal>
+            <Dependent Role="MONITOR">
+              <PropertyRef Name="codigo_Empleado" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__SALA__codigo_Emp__66603565">
+          <End Role="EMPLEADO" Type="Self.EMPLEADO" Multiplicity="1" />
+          <End Role="SALA" Type="Self.SALA" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="EMPLEADO">
+              <PropertyRef Name="Codigo_Empleado" />
+            </Principal>
+            <Dependent Role="SALA">
+              <PropertyRef Name="codigo_Empleado" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__SALA__codigo_Tip__656C112C">
+          <End Role="TIPO_SALA" Type="Self.TIPO_SALA" Multiplicity="1" />
+          <End Role="SALA" Type="Self.SALA" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="TIPO_SALA">
+              <PropertyRef Name="codigo_Tipo" />
+            </Principal>
+            <Dependent Role="SALA">
+              <PropertyRef Name="codigo_Tipo" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__SOCIO__codigo_Ci__49C3F6B7">
+          <End Role="CIUDAD" Type="Self.CIUDAD" Multiplicity="1" />
+          <End Role="SOCIO" Type="Self.SOCIO" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="CIUDAD">
+              <PropertyRef Name="codigo_Ciudad" />
+            </Principal>
+            <Dependent Role="SOCIO">
+              <PropertyRef Name="codigo_Ciudad" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__SOCIO__codigo_Em__4BAC3F29">
+          <End Role="EMPLEADO" Type="Self.EMPLEADO" Multiplicity="1" />
+          <End Role="SOCIO" Type="Self.SOCIO" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="EMPLEADO">
+              <PropertyRef Name="Codigo_Empleado" />
+            </Principal>
+            <Dependent Role="SOCIO">
+              <PropertyRef Name="codigo_Empleado" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__SOCIO__codigo_Pr__4AB81AF0">
+          <End Role="PROFESION" Type="Self.PROFESION" Multiplicity="1" />
+          <End Role="SOCIO" Type="Self.SOCIO" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="PROFESION">
+              <PropertyRef Name="codigo_Profesion" />
+            </Principal>
+            <Dependent Role="SOCIO">
+              <PropertyRef Name="codigo_Profesion" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__SOCIO__codigo_Ti__48CFD27E">
+          <End Role="TIPO_DOC" Type="Self.TIPO_DOC" Multiplicity="1" />
+          <End Role="SOCIO" Type="Self.SOCIO" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="TIPO_DOC">
+              <PropertyRef Name="Codigo_TipoDoc" />
+            </Principal>
+            <Dependent Role="SOCIO">
+              <PropertyRef Name="codigo_TipoDoc" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__TELEFONO__codigo__4E88ABD4">
+          <End Role="TIPO_TEL" Type="Self.TIPO_TEL" Multiplicity="1" />
+          <End Role="TELEFONO" Type="Self.TELEFONO" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="TIPO_TEL">
+              <PropertyRef Name="codigo_Tipo" />
+            </Principal>
+            <Dependent Role="TELEFONO">
+              <PropertyRef Name="codigo_Tipo" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__TELEFONO__codigo__4F7CD00D">
+          <End Role="SOCIO" Type="Self.SOCIO" Multiplicity="1" />
+          <End Role="TELEFONO" Type="Self.TELEFONO" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="SOCIO">
+              <PropertyRef Name="codigo_Socio" />
+            </Principal>
+            <Dependent Role="TELEFONO">
+              <PropertyRef Name="codigo_Socio" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__USUARIO__codigo___3F466844">
+          <End Role="EMPLEADO" Type="Self.EMPLEADO" Multiplicity="1" />
+          <End Role="USUARIO" Type="Self.USUARIO" Multiplicity="0..1" />
+          <ReferentialConstraint>
+            <Principal Role="EMPLEADO">
+              <PropertyRef Name="Codigo_Empleado" />
+            </Principal>
+            <Dependent Role="USUARIO">
+              <PropertyRef Name="codigo_EMPLEADO" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityContainer Name="GIMNASIOModelStoreContainer">
+          <EntitySet Name="APARATO" EntityType="Self.APARATO" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="CIUDAD" EntityType="Self.CIUDAD" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="CLASE" EntityType="Self.CLASE" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="DETALLE_MATRICULA" EntityType="Self.DETALLE_MATRICULA" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="DIA" EntityType="Self.DIA" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="EMPLEADO" EntityType="Self.EMPLEADO" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="ESPECI_MONI" EntityType="Self.ESPECI_MONI" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="ESPECIALIDAD" EntityType="Self.ESPECIALIDAD" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="ESTADO" EntityType="Self.ESTADO" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="HORAS" EntityType="Self.HORAS" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="MATRICULA" EntityType="Self.MATRICULA" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="MONITOR" EntityType="Self.MONITOR" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="PROFESION" EntityType="Self.PROFESION" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="SALA" EntityType="Self.SALA" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="SOCIO" EntityType="Self.SOCIO" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="TELEFONO" EntityType="Self.TELEFONO" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="TIPO_DOC" EntityType="Self.TIPO_DOC" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="TIPO_SALA" EntityType="Self.TIPO_SALA" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="TIPO_TEL" EntityType="Self.TIPO_TEL" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="USUARIO" EntityType="Self.USUARIO" Schema="dbo" store:Type="Tables" />
+          <AssociationSet Name="FK__APARATO__codigo___6A30C649" Association="Self.FK__APARATO__codigo___6A30C649">
+            <End Role="ESTADO" EntitySet="ESTADO" />
+            <End Role="APARATO" EntitySet="APARATO" />
+          </AssociationSet>
+          <AssociationSet Name="FK__APARATO__codigo___6B24EA82" Association="Self.FK__APARATO__codigo___6B24EA82">
+            <End Role="SALA" EntitySet="SALA" />
+            <End Role="APARATO" EntitySet="APARATO" />
+          </AssociationSet>
+          <AssociationSet Name="FK__APARATO__codigo___6C190EBB" Association="Self.FK__APARATO__codigo___6C190EBB">
+            <End Role="EMPLEADO" EntitySet="EMPLEADO" />
+            <End Role="APARATO" EntitySet="APARATO" />
+          </AssociationSet>
+          <AssociationSet Name="FK__CLASE__codigo_Di__6FE99F9F" Association="Self.FK__CLASE__codigo_Di__6FE99F9F">
+            <End Role="DIA" EntitySet="DIA" />
+            <End Role="CLASE" EntitySet="CLASE" />
+          </AssociationSet>
+          <AssociationSet Name="FK__CLASE__codigo_Em__73BA3083" Association="Self.FK__CLASE__codigo_Em__73BA3083">
+            <End Role="EMPLEADO" EntitySet="EMPLEADO" />
+            <End Role="CLASE" EntitySet="CLASE" />
+          </AssociationSet>
+          <AssociationSet Name="FK__CLASE__codigo_ho__70DDC3D8" Association="Self.FK__CLASE__codigo_ho__70DDC3D8">
+            <End Role="HORAS" EntitySet="HORAS" />
+            <End Role="CLASE" EntitySet="CLASE" />
+          </AssociationSet>
+          <AssociationSet Name="FK__CLASE__codigo_Mo__71D1E811" Association="Self.FK__CLASE__codigo_Mo__71D1E811">
+            <End Role="MONITOR" EntitySet="MONITOR" />
+            <End Role="CLASE" EntitySet="CLASE" />
+          </AssociationSet>
+          <AssociationSet Name="FK__CLASE__codigo_Sa__72C60C4A" Association="Self.FK__CLASE__codigo_Sa__72C60C4A">
+            <End Role="SALA" EntitySet="SALA" />
+            <End Role="CLASE" EntitySet="CLASE" />
+          </AssociationSet>
+          <AssociationSet Name="FK__DETALLE_M__codig__7A672E12" Association="Self.FK__DETALLE_M__codig__7A672E12">
+            <End Role="CLASE" EntitySet="CLASE" />
+            <End Role="DETALLE_MATRICULA" EntitySet="DETALLE_MATRICULA" />
+          </AssociationSet>
+          <AssociationSet Name="FK__DETALLE_M__codig__7B5B524B" Association="Self.FK__DETALLE_M__codig__7B5B524B">
+            <End Role="MATRICULA" EntitySet="MATRICULA" />
+            <End Role="DETALLE_MATRICULA" EntitySet="DETALLE_MATRICULA" />
+          </AssociationSet>
+          <AssociationSet Name="FK__EMPLEADO__codigo__3A81B327" Association="Self.FK__EMPLEADO__codigo__3A81B327">
+            <End Role="TIPO_DOC" EntitySet="TIPO_DOC" />
+            <End Role="EMPLEADO" EntitySet="EMPLEADO" />
+          </AssociationSet>
+          <AssociationSet Name="FK__EMPLEADO__id_Emp__3B75D760" Association="Self.FK__EMPLEADO__id_Emp__3B75D760">
+            <End Role="EMPLEADO" EntitySet="EMPLEADO" />
+            <End Role="EMPLEADO1" EntitySet="EMPLEADO" />
+          </AssociationSet>
+          <AssociationSet Name="FK__ESPECI_MO__codig__59063A47" Association="Self.FK__ESPECI_MO__codig__59063A47">
+            <End Role="ESPECIALIDAD" EntitySet="ESPECIALIDAD" />
+            <End Role="ESPECI_MONI" EntitySet="ESPECI_MONI" />
+          </AssociationSet>
+          <AssociationSet Name="FK__ESPECI_MO__codig__59FA5E80" Association="Self.FK__ESPECI_MO__codig__59FA5E80">
+            <End Role="MONITOR" EntitySet="MONITOR" />
+            <End Role="ESPECI_MONI" EntitySet="ESPECI_MONI" />
+          </AssociationSet>
+          <AssociationSet Name="FK__MATRICULA__codig__76969D2E" Association="Self.FK__MATRICULA__codig__76969D2E">
+            <End Role="EMPLEADO" EntitySet="EMPLEADO" />
+            <End Role="MATRICULA" EntitySet="MATRICULA" />
+          </AssociationSet>
+          <AssociationSet Name="FK__MATRICULA__codig__778AC167" Association="Self.FK__MATRICULA__codig__778AC167">
+            <End Role="SOCIO" EntitySet="SOCIO" />
+            <End Role="MATRICULA" EntitySet="MATRICULA" />
+          </AssociationSet>
+          <AssociationSet Name="FK__MONITOR__codigo___5535A963" Association="Self.FK__MONITOR__codigo___5535A963">
+            <End Role="TIPO_DOC" EntitySet="TIPO_DOC" />
+            <End Role="MONITOR" EntitySet="MONITOR" />
+          </AssociationSet>
+          <AssociationSet Name="FK__MONITOR__codigo___5629CD9C" Association="Self.FK__MONITOR__codigo___5629CD9C">
+            <End Role="EMPLEADO" EntitySet="EMPLEADO" />
+            <End Role="MONITOR" EntitySet="MONITOR" />
+          </AssociationSet>
+          <AssociationSet Name="FK__SALA__codigo_Emp__66603565" Association="Self.FK__SALA__codigo_Emp__66603565">
+            <End Role="EMPLEADO" EntitySet="EMPLEADO" />
+            <End Role="SALA" EntitySet="SALA" />
+          </AssociationSet>
+          <AssociationSet Name="FK__SALA__codigo_Tip__656C112C" Association="Self.FK__SALA__codigo_Tip__656C112C">
+            <End Role="TIPO_SALA" EntitySet="TIPO_SALA" />
+            <End Role="SALA" EntitySet="SALA" />
+          </AssociationSet>
+          <AssociationSet Name="FK__SOCIO__codigo_Ci__49C3F6B7" Association="Self.FK__SOCIO__codigo_Ci__49C3F6B7">
+            <End Role="CIUDAD" EntitySet="CIUDAD" />
+            <End Role="SOCIO" EntitySet="SOCIO" />
+          </AssociationSet>
+          <AssociationSet Name="FK__SOCIO__codigo_Em__4BAC3F29" Association="Self.FK__SOCIO__codigo_Em__4BAC3F29">
+            <End Role="EMPLEADO" EntitySet="EMPLEADO" />
+            <End Role="SOCIO" EntitySet="SOCIO" />
+          </AssociationSet>
+          <AssociationSet Name="FK__SOCIO__codigo_Pr__4AB81AF0" Association="Self.FK__SOCIO__codigo_Pr__4AB81AF0">
+            <End Role="PROFESION" EntitySet="PROFESION" />
+            <End Role="SOCIO" EntitySet="SOCIO" />
+          </AssociationSet>
+          <AssociationSet Name="FK__SOCIO__codigo_Ti__48CFD27E" Association="Self.FK__SOCIO__codigo_Ti__48CFD27E">
+            <End Role="TIPO_DOC" EntitySet="TIPO_DOC" />
+            <End Role="SOCIO" EntitySet="SOCIO" />
+          </AssociationSet>
+          <AssociationSet Name="FK__TELEFONO__codigo__4E88ABD4" Association="Self.FK__TELEFONO__codigo__4E88ABD4">
+            <End Role="TIPO_TEL" EntitySet="TIPO_TEL" />
+            <End Role="TELEFONO" EntitySet="TELEFONO" />
+          </AssociationSet>
+          <AssociationSet Name="FK__TELEFONO__codigo__4F7CD00D" Association="Self.FK__TELEFONO__codigo__4F7CD00D">
+            <End Role="SOCIO" EntitySet="SOCIO" />
+            <End Role="TELEFONO" EntitySet="TELEFONO" />
+          </AssociationSet>
+          <AssociationSet Name="FK__USUARIO__codigo___3F466844" Association="Self.FK__USUARIO__codigo___3F466844">
+            <End Role="EMPLEADO" EntitySet="EMPLEADO" />
+            <End Role="USUARIO" EntitySet="USUARIO" />
+          </AssociationSet>
+        </EntityContainer>
+      </Schema>
+    </edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="GIMNASIOModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityType Name="APARATO">
+          <Key>
+            <PropertyRef Name="codigo_Aparato" />
+          </Key>
+          <Property Name="codigo_Aparato" Type="Int32" Nullable="false" />
+          <Property Name="Activo" Type="Boolean" />
+          <Property Name="Descripcion" Type="String" MaxLength="80" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="codigo_Estado" Type="Int32" Nullable="false" />
+          <Property Name="codigo_Sala" Type="Int32" Nullable="false" />
+          <Property Name="codigo_Empleado" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="ESTADO" Relationship="Self.FK__APARATO__codigo___6A30C649" FromRole="APARATO" ToRole="ESTADO" />
+          <NavigationProperty Name="SALA" Relationship="Self.FK__APARATO__codigo___6B24EA82" FromRole="APARATO" ToRole="SALA" />
+          <NavigationProperty Name="EMPLEADO" Relationship="Self.FK__APARATO__codigo___6C190EBB" FromRole="APARATO" ToRole="EMPLEADO" />
+        </EntityType>
+        <EntityType Name="CIUDAD">
+          <Key>
+            <PropertyRef Name="codigo_Ciudad" />
+          </Key>
+          <Property Name="codigo_Ciudad" Type="Int32" Nullable="false" />
+          <Property Name="Descripcion" Type="String" MaxLength="80" FixedLength="false" Unicode="false" Nullable="false" />
+          <NavigationProperty Name="SOCIOs" Relationship="Self.FK__SOCIO__codigo_Ci__49C3F6B7" FromRole="CIUDAD" ToRole="SOCIO" />
+        </EntityType>
+        <EntityType Name="CLASE">
+          <Key>
+            <PropertyRef Name="codigo_Clase" />
+          </Key>
+          <Property Name="codigo_Clase" Type="Int32" Nullable="false" />
+          <Property Name="Activo" Type="Boolean" />
+          <Property Name="Descripcion" Type="String" MaxLength="80" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="codigo_Dia" Type="Int32" Nullable="false" />
+          <Property Name="codigo_hora" Type="Int32" Nullable="false" />
+          <Property Name="codigo_Monitor" Type="Int32" Nullable="false" />
+          <Property Name="codigo_Sala" Type="Int32" Nullable="false" />
+          <Property Name="codigo_Empleado" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="DIA" Relationship="Self.FK__CLASE__codigo_Di__6FE99F9F" FromRole="CLASE" ToRole="DIA" />
+          <NavigationProperty Name="EMPLEADO" Relationship="Self.FK__CLASE__codigo_Em__73BA3083" FromRole="CLASE" ToRole="EMPLEADO" />
+          <NavigationProperty Name="HORA" Relationship="Self.FK__CLASE__codigo_ho__70DDC3D8" FromRole="CLASE" ToRole="HORAS" />
+          <NavigationProperty Name="MONITOR" Relationship="Self.FK__CLASE__codigo_Mo__71D1E811" FromRole="CLASE" ToRole="MONITOR" />
+          <NavigationProperty Name="SALA" Relationship="Self.FK__CLASE__codigo_Sa__72C60C4A" FromRole="CLASE" ToRole="SALA" />
+          <NavigationProperty Name="DETALLE_MATRICULA" Relationship="Self.FK__DETALLE_M__codig__7A672E12" FromRole="CLASE" ToRole="DETALLE_MATRICULA" />
+        </EntityType>
+        <EntityType Name="DETALLE_MATRICULA">
+          <Key>
+            <PropertyRef Name="codigo_DetallesMatr" />
+          </Key>
+          <Property Name="codigo_DetallesMatr" Type="Int32" Nullable="false" />
+          <Property Name="Fecha_Inicio" Type="DateTime" Nullable="false" Precision="0" />
+          <Property Name="Fecha_Fin" Type="DateTime" Nullable="false" Precision="0" />
+          <Property Name="codigo_Clase" Type="Int32" Nullable="false" />
+          <Property Name="codigo_Matricula" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="CLASE" Relationship="Self.FK__DETALLE_M__codig__7A672E12" FromRole="DETALLE_MATRICULA" ToRole="CLASE" />
+          <NavigationProperty Name="MATRICULA" Relationship="Self.FK__DETALLE_M__codig__7B5B524B" FromRole="DETALLE_MATRICULA" ToRole="MATRICULA" />
+        </EntityType>
+        <EntityType Name="DIA">
+          <Key>
+            <PropertyRef Name="codigo_Dia" />
+          </Key>
+          <Property Name="codigo_Dia" Type="Int32" Nullable="false" />
+          <Property Name="Descripcion" Type="String" MaxLength="80" FixedLength="false" Unicode="false" Nullable="false" />
+          <NavigationProperty Name="CLASEs" Relationship="Self.FK__CLASE__codigo_Di__6FE99F9F" FromRole="DIA" ToRole="CLASE" />
+        </EntityType>
+        <EntityType Name="EMPLEADO">
+          <Key>
+            <PropertyRef Name="Codigo_Empleado" />
+          </Key>
+          <Property Name="Codigo_Empleado" Type="Int32" Nullable="false" />
+          <Property Name="Activo" Type="Boolean" />
+          <Property Name="Nombre" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="Apellido" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="Telefono" Type="String" MaxLength="100" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="nroDoc" Type="String" MaxLength="100" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="Salario" Type="Decimal" Precision="19" Scale="4" Nullable="false" />
+          <Property Name="Fecha_Ingreso" Type="DateTime" Nullable="false" Precision="0" />
+          <Property Name="Fecha_Nac" Type="DateTime" Nullable="false" Precision="0" />
+          <Property Name="codigo_TipoDoc" Type="Int32" Nullable="false" />
+          <Property Name="id_Empleado" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="APARATOes" Relationship="Self.FK__APARATO__codigo___6C190EBB" FromRole="EMPLEADO" ToRole="APARATO" />
+          <NavigationProperty Name="CLASEs" Relationship="Self.FK__CLASE__codigo_Em__73BA3083" FromRole="EMPLEADO" ToRole="CLASE" />
+          <NavigationProperty Name="TIPO_DOC" Relationship="Self.FK__EMPLEADO__codigo__3A81B327" FromRole="EMPLEADO" ToRole="TIPO_DOC" />
+          <NavigationProperty Name="EMPLEADO1" Relationship="Self.FK__EMPLEADO__id_Emp__3B75D760" FromRole="EMPLEADO" ToRole="EMPLEADO1" />
+          <NavigationProperty Name="EMPLEADO2" Relationship="Self.FK__EMPLEADO__id_Emp__3B75D760" FromRole="EMPLEADO1" ToRole="EMPLEADO" />
+          <NavigationProperty Name="MATRICULAs" Relationship="Self.FK__MATRICULA__codig__76969D2E" FromRole="EMPLEADO" ToRole="MATRICULA" />
+          <NavigationProperty Name="MONITORs" Relationship="Self.FK__MONITOR__codigo___5629CD9C" FromRole="EMPLEADO" ToRole="MONITOR" />
+          <NavigationProperty Name="SALAs" Relationship="Self.FK__SALA__codigo_Emp__66603565" FromRole="EMPLEADO" ToRole="SALA" />
+          <NavigationProperty Name="SOCIOs" Relationship="Self.FK__SOCIO__codigo_Em__4BAC3F29" FromRole="EMPLEADO" ToRole="SOCIO" />
+          <NavigationProperty Name="USUARIO" Relationship="Self.FK__USUARIO__codigo___3F466844" FromRole="EMPLEADO" ToRole="USUARIO" />
+        </EntityType>
+        <EntityType Name="ESPECI_MONI">
+          <Key>
+            <PropertyRef Name="codigo_Especi_Moni" />
+          </Key>
+          <Property Name="codigo_Especi_Moni" Type="Int32" Nullable="false" />
+          <Property Name="codigo_Especialidad" Type="Int32" Nullable="false" />
+          <Property Name="codigo_Monitor" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="ESPECIALIDAD" Relationship="Self.FK__ESPECI_MO__codig__59063A47" FromRole="ESPECI_MONI" ToRole="ESPECIALIDAD" />
+          <NavigationProperty Name="MONITOR" Relationship="Self.FK__ESPECI_MO__codig__59FA5E80" FromRole="ESPECI_MONI" ToRole="MONITOR" />
+        </EntityType>
+        <EntityType Name="ESPECIALIDAD">
+          <Key>
+            <PropertyRef Name="codigo_Especialidad" />
+          </Key>
+          <Property Name="codigo_Especialidad" Type="Int32" Nullable="false" />
+          <Property Name="Especialidad1" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <NavigationProperty Name="ESPECI_MONI" Relationship="Self.FK__ESPECI_MO__codig__59063A47" FromRole="ESPECIALIDAD" ToRole="ESPECI_MONI" />
+        </EntityType>
+        <EntityType Name="ESTADO">
+          <Key>
+            <PropertyRef Name="codigo_Estado" />
+          </Key>
+          <Property Name="codigo_Estado" Type="Int32" Nullable="false" />
+          <Property Name="Descripcion" Type="String" MaxLength="80" FixedLength="false" Unicode="false" Nullable="false" />
+          <NavigationProperty Name="APARATOes" Relationship="Self.FK__APARATO__codigo___6A30C649" FromRole="ESTADO" ToRole="APARATO" />
+        </EntityType>
+        <EntityType Name="HORA">
+          <Key>
+            <PropertyRef Name="codigo_Horas" />
+          </Key>
+          <Property Name="codigo_Horas" Type="Int32" Nullable="false" />
+          <Property Name="Descripcion" Type="String" MaxLength="80" FixedLength="false" Unicode="false" Nullable="false" />
+          <NavigationProperty Name="CLASEs" Relationship="Self.FK__CLASE__codigo_ho__70DDC3D8" FromRole="HORAS" ToRole="CLASE" />
+        </EntityType>
+        <EntityType Name="MATRICULA">
+          <Key>
+            <PropertyRef Name="codigo_Matricula" />
+          </Key>
+          <Property Name="codigo_Matricula" Type="Int32" Nullable="false" />
+          <Property Name="Precio" Type="Decimal" Precision="19" Scale="4" Nullable="false" />
+          <Property Name="Descripcion" Type="String" MaxLength="80" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="codigo_Empleado" Type="Int32" Nullable="false" />
+          <Property Name="codigo_Socio" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="DETALLE_MATRICULA" Relationship="Self.FK__DETALLE_M__codig__7B5B524B" FromRole="MATRICULA" ToRole="DETALLE_MATRICULA" />
+          <NavigationProperty Name="EMPLEADO" Relationship="Self.FK__MATRICULA__codig__76969D2E" FromRole="MATRICULA" ToRole="EMPLEADO" />
+          <NavigationProperty Name="SOCIO" Relationship="Self.FK__MATRICULA__codig__778AC167" FromRole="MATRICULA" ToRole="SOCIO" />
+        </EntityType>
+        <EntityType Name="MONITOR">
+          <Key>
+            <PropertyRef Name="codigo_Monitor" />
+          </Key>
+          <Property Name="codigo_Monitor" Type="Int32" Nullable="false" />
+          <Property Name="Activo" Type="Boolean" />
+          <Property Name="nroDoc" Type="String" MaxLength="100" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="Nombre" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="Apellido" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="Telefono" Type="String" MaxLength="100" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="Experiencia" Type="String" MaxLength="80" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="codigo_TipoDoc" Type="Int32" Nullable="false" />
+          <Property Name="codigo_Empleado" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="CLASEs" Relationship="Self.FK__CLASE__codigo_Mo__71D1E811" FromRole="MONITOR" ToRole="CLASE" />
+          <NavigationProperty Name="EMPLEADO" Relationship="Self.FK__MONITOR__codigo___5629CD9C" FromRole="MONITOR" ToRole="EMPLEADO" />
+          <NavigationProperty Name="ESPECI_MONI" Relationship="Self.FK__ESPECI_MO__codig__59FA5E80" FromRole="MONITOR" ToRole="ESPECI_MONI" />
+          <NavigationProperty Name="TIPO_DOC" Relationship="Self.FK__MONITOR__codigo___5535A963" FromRole="MONITOR" ToRole="TIPO_DOC" />
+        </EntityType>
+        <EntityType Name="PROFESION">
+          <Key>
+            <PropertyRef Name="codigo_Profesion" />
+          </Key>
+          <Property Name="codigo_Profesion" Type="Int32" Nullable="false" />
+          <Property Name="Descripcion" Type="String" MaxLength="80" FixedLength="false" Unicode="false" Nullable="false" />
+          <NavigationProperty Name="SOCIOs" Relationship="Self.FK__SOCIO__codigo_Pr__4AB81AF0" FromRole="PROFESION" ToRole="SOCIO" />
+        </EntityType>
+        <EntityType Name="SALA">
+          <Key>
+            <PropertyRef Name="codigo_Sala" />
+          </Key>
+          <Property Name="codigo_Sala" Type="Int32" Nullable="false" />
+          <Property Name="Activo" Type="Boolean" />
+          <Property Name="Metros_Cuadrados" Type="Int32" Nullable="false" />
+          <Property Name="Ubicacion" Type="String" MaxLength="80" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="codigo_Tipo" Type="Int32" Nullable="false" />
+          <Property Name="codigo_Empleado" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="APARATOes" Relationship="Self.FK__APARATO__codigo___6B24EA82" FromRole="SALA" ToRole="APARATO" />
+          <NavigationProperty Name="CLASEs" Relationship="Self.FK__CLASE__codigo_Sa__72C60C4A" FromRole="SALA" ToRole="CLASE" />
+          <NavigationProperty Name="EMPLEADO" Relationship="Self.FK__SALA__codigo_Emp__66603565" FromRole="SALA" ToRole="EMPLEADO" />
+          <NavigationProperty Name="TIPO_SALA" Relationship="Self.FK__SALA__codigo_Tip__656C112C" FromRole="SALA" ToRole="TIPO_SALA" />
+        </EntityType>
+        <EntityType Name="SOCIO">
+          <Key>
+            <PropertyRef Name="codigo_Socio" />
+          </Key>
+          <Property Name="codigo_Socio" Type="Int32" Nullable="false" />
+          <Property Name="Activo" Type="Boolean" />
+          <Property Name="nroDoc" Type="String" MaxLength="100" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="Nombre" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="Apellido" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="Direccion" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="codigo_TipoDoc" Type="Int32" Nullable="false" />
+          <Property Name="codigo_Ciudad" Type="Int32" Nullable="false" />
+          <Property Name="codigo_Profesion" Type="Int32" Nullable="false" />
+          <Property Name="codigo_Empleado" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="CIUDAD" Relationship="Self.FK__SOCIO__codigo_Ci__49C3F6B7" FromRole="SOCIO" ToRole="CIUDAD" />
+          <NavigationProperty Name="EMPLEADO" Relationship="Self.FK__SOCIO__codigo_Em__4BAC3F29" FromRole="SOCIO" ToRole="EMPLEADO" />
+          <NavigationProperty Name="MATRICULAs" Relationship="Self.FK__MATRICULA__codig__778AC167" FromRole="SOCIO" ToRole="MATRICULA" />
+          <NavigationProperty Name="PROFESION" Relationship="Self.FK__SOCIO__codigo_Pr__4AB81AF0" FromRole="SOCIO" ToRole="PROFESION" />
+          <NavigationProperty Name="TIPO_DOC" Relationship="Self.FK__SOCIO__codigo_Ti__48CFD27E" FromRole="SOCIO" ToRole="TIPO_DOC" />
+          <NavigationProperty Name="TELEFONOes" Relationship="Self.FK__TELEFONO__codigo__4F7CD00D" FromRole="SOCIO" ToRole="TELEFONO" />
+        </EntityType>
+        <EntityType Name="TELEFONO">
+          <Key>
+            <PropertyRef Name="codigo_Telefono" />
+          </Key>
+          <Property Name="codigo_Telefono" Type="Int32" Nullable="false" />
+          <Property Name="Numero" Type="Double" Nullable="false" />
+          <Property Name="codigo_Tipo" Type="Int32" Nullable="false" />
+          <Property Name="codigo_Socio" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="SOCIO" Relationship="Self.FK__TELEFONO__codigo__4F7CD00D" FromRole="TELEFONO" ToRole="SOCIO" />
+          <NavigationProperty Name="TIPO_TEL" Relationship="Self.FK__TELEFONO__codigo__4E88ABD4" FromRole="TELEFONO" ToRole="TIPO_TEL" />
+        </EntityType>
+        <EntityType Name="TIPO_DOC">
+          <Key>
+            <PropertyRef Name="Codigo_TipoDoc" />
+          </Key>
+          <Property Name="Codigo_TipoDoc" Type="Int32" Nullable="false" />
+          <Property Name="TipoDoc" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <NavigationProperty Name="EMPLEADOes" Relationship="Self.FK__EMPLEADO__codigo__3A81B327" FromRole="TIPO_DOC" ToRole="EMPLEADO" />
+          <NavigationProperty Name="MONITORs" Relationship="Self.FK__MONITOR__codigo___5535A963" FromRole="TIPO_DOC" ToRole="MONITOR" />
+          <NavigationProperty Name="SOCIOs" Relationship="Self.FK__SOCIO__codigo_Ti__48CFD27E" FromRole="TIPO_DOC" ToRole="SOCIO" />
+        </EntityType>
+        <EntityType Name="TIPO_SALA">
+          <Key>
+            <PropertyRef Name="codigo_Tipo" />
+          </Key>
+          <Property Name="codigo_Tipo" Type="Int32" Nullable="false" />
+          <Property Name="Tipos" Type="String" MaxLength="80" FixedLength="false" Unicode="false" Nullable="false" />
+          <NavigationProperty Name="SALAs" Relationship="Self.FK__SALA__codigo_Tip__656C112C" FromRole="TIPO_SALA" ToRole="SALA" />
+        </EntityType>
+        <EntityType Name="TIPO_TEL">
+          <Key>
+            <PropertyRef Name="codigo_Tipo" />
+          </Key>
+          <Property Name="codigo_Tipo" Type="Int32" Nullable="false" />
+          <Property Name="Descripcion" Type="String" MaxLength="80" FixedLength="false" Unicode="false" Nullable="false" />
+          <NavigationProperty Name="TELEFONOes" Relationship="Self.FK__TELEFONO__codigo__4E88ABD4" FromRole="TIPO_TEL" ToRole="TELEFONO" />
+        </EntityType>
+        <EntityType Name="USUARIO">
+          <Key>
+            <PropertyRef Name="codigo_EMPLEADO" />
+          </Key>
+          <Property Name="Clave" Type="Int32" Nullable="false" />
+          <Property Name="Contrasenia" Type="String" MaxLength="255" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="codigo_EMPLEADO" Type="Int32" Nullable="false" />
+          <Property Name="Activo" Type="Boolean" />
+          <NavigationProperty Name="EMPLEADO" Relationship="Self.FK__USUARIO__codigo___3F466844" FromRole="USUARIO" ToRole="EMPLEADO" />
+        </EntityType>
+        <Association Name="FK__APARATO__codigo___6A30C649">
+          <End Role="ESTADO" Type="Self.ESTADO" Multiplicity="1" />
+          <End Role="APARATO" Type="Self.APARATO" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="ESTADO">
+              <PropertyRef Name="codigo_Estado" />
+            </Principal>
+            <Dependent Role="APARATO">
+              <PropertyRef Name="codigo_Estado" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__APARATO__codigo___6B24EA82">
+          <End Role="SALA" Type="Self.SALA" Multiplicity="1" />
+          <End Role="APARATO" Type="Self.APARATO" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="SALA">
+              <PropertyRef Name="codigo_Sala" />
+            </Principal>
+            <Dependent Role="APARATO">
+              <PropertyRef Name="codigo_Sala" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__APARATO__codigo___6C190EBB">
+          <End Role="EMPLEADO" Type="Self.EMPLEADO" Multiplicity="1" />
+          <End Role="APARATO" Type="Self.APARATO" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="EMPLEADO">
+              <PropertyRef Name="Codigo_Empleado" />
+            </Principal>
+            <Dependent Role="APARATO">
+              <PropertyRef Name="codigo_Empleado" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__SOCIO__codigo_Ci__49C3F6B7">
+          <End Role="CIUDAD" Type="Self.CIUDAD" Multiplicity="1" />
+          <End Role="SOCIO" Type="Self.SOCIO" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="CIUDAD">
+              <PropertyRef Name="codigo_Ciudad" />
+            </Principal>
+            <Dependent Role="SOCIO">
+              <PropertyRef Name="codigo_Ciudad" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__CLASE__codigo_Di__6FE99F9F">
+          <End Role="DIA" Type="Self.DIA" Multiplicity="1" />
+          <End Role="CLASE" Type="Self.CLASE" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="DIA">
+              <PropertyRef Name="codigo_Dia" />
+            </Principal>
+            <Dependent Role="CLASE">
+              <PropertyRef Name="codigo_Dia" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__CLASE__codigo_Em__73BA3083">
+          <End Role="EMPLEADO" Type="Self.EMPLEADO" Multiplicity="1" />
+          <End Role="CLASE" Type="Self.CLASE" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="EMPLEADO">
+              <PropertyRef Name="Codigo_Empleado" />
+            </Principal>
+            <Dependent Role="CLASE">
+              <PropertyRef Name="codigo_Empleado" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__CLASE__codigo_ho__70DDC3D8">
+          <End Role="HORAS" Type="Self.HORA" Multiplicity="1" />
+          <End Role="CLASE" Type="Self.CLASE" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="HORAS">
+              <PropertyRef Name="codigo_Horas" />
+            </Principal>
+            <Dependent Role="CLASE">
+              <PropertyRef Name="codigo_hora" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__CLASE__codigo_Mo__71D1E811">
+          <End Role="MONITOR" Type="Self.MONITOR" Multiplicity="1" />
+          <End Role="CLASE" Type="Self.CLASE" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="MONITOR">
+              <PropertyRef Name="codigo_Monitor" />
+            </Principal>
+            <Dependent Role="CLASE">
+              <PropertyRef Name="codigo_Monitor" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__CLASE__codigo_Sa__72C60C4A">
+          <End Role="SALA" Type="Self.SALA" Multiplicity="1" />
+          <End Role="CLASE" Type="Self.CLASE" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="SALA">
+              <PropertyRef Name="codigo_Sala" />
+            </Principal>
+            <Dependent Role="CLASE">
+              <PropertyRef Name="codigo_Sala" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__DETALLE_M__codig__7A672E12">
+          <End Role="CLASE" Type="Self.CLASE" Multiplicity="1" />
+          <End Role="DETALLE_MATRICULA" Type="Self.DETALLE_MATRICULA" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="CLASE">
+              <PropertyRef Name="codigo_Clase" />
+            </Principal>
+            <Dependent Role="DETALLE_MATRICULA">
+              <PropertyRef Name="codigo_Clase" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__DETALLE_M__codig__7B5B524B">
+          <End Role="MATRICULA" Type="Self.MATRICULA" Multiplicity="1" />
+          <End Role="DETALLE_MATRICULA" Type="Self.DETALLE_MATRICULA" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="MATRICULA">
+              <PropertyRef Name="codigo_Matricula" />
+            </Principal>
+            <Dependent Role="DETALLE_MATRICULA">
+              <PropertyRef Name="codigo_Matricula" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__EMPLEADO__codigo__3A81B327">
+          <End Role="TIPO_DOC" Type="Self.TIPO_DOC" Multiplicity="1" />
+          <End Role="EMPLEADO" Type="Self.EMPLEADO" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="TIPO_DOC">
+              <PropertyRef Name="Codigo_TipoDoc" />
+            </Principal>
+            <Dependent Role="EMPLEADO">
+              <PropertyRef Name="codigo_TipoDoc" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__EMPLEADO__id_Emp__3B75D760">
+          <End Role="EMPLEADO" Type="Self.EMPLEADO" Multiplicity="1" />
+          <End Role="EMPLEADO1" Type="Self.EMPLEADO" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="EMPLEADO">
+              <PropertyRef Name="Codigo_Empleado" />
+            </Principal>
+            <Dependent Role="EMPLEADO1">
+              <PropertyRef Name="id_Empleado" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__MATRICULA__codig__76969D2E">
+          <End Role="EMPLEADO" Type="Self.EMPLEADO" Multiplicity="1" />
+          <End Role="MATRICULA" Type="Self.MATRICULA" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="EMPLEADO">
+              <PropertyRef Name="Codigo_Empleado" />
+            </Principal>
+            <Dependent Role="MATRICULA">
+              <PropertyRef Name="codigo_Empleado" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__MONITOR__codigo___5629CD9C">
+          <End Role="EMPLEADO" Type="Self.EMPLEADO" Multiplicity="1" />
+          <End Role="MONITOR" Type="Self.MONITOR" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="EMPLEADO">
+              <PropertyRef Name="Codigo_Empleado" />
+            </Principal>
+            <Dependent Role="MONITOR">
+              <PropertyRef Name="codigo_Empleado" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__SALA__codigo_Emp__66603565">
+          <End Role="EMPLEADO" Type="Self.EMPLEADO" Multiplicity="1" />
+          <End Role="SALA" Type="Self.SALA" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="EMPLEADO">
+              <PropertyRef Name="Codigo_Empleado" />
+            </Principal>
+            <Dependent Role="SALA">
+              <PropertyRef Name="codigo_Empleado" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__SOCIO__codigo_Em__4BAC3F29">
+          <End Role="EMPLEADO" Type="Self.EMPLEADO" Multiplicity="1" />
+          <End Role="SOCIO" Type="Self.SOCIO" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="EMPLEADO">
+              <PropertyRef Name="Codigo_Empleado" />
+            </Principal>
+            <Dependent Role="SOCIO">
+              <PropertyRef Name="codigo_Empleado" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__USUARIO__codigo___3F466844">
+          <End Role="EMPLEADO" Type="Self.EMPLEADO" Multiplicity="1" />
+          <End Role="USUARIO" Type="Self.USUARIO" Multiplicity="0..1" />
+          <ReferentialConstraint>
+            <Principal Role="EMPLEADO">
+              <PropertyRef Name="Codigo_Empleado" />
+            </Principal>
+            <Dependent Role="USUARIO">
+              <PropertyRef Name="codigo_EMPLEADO" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__ESPECI_MO__codig__59063A47">
+          <End Role="ESPECIALIDAD" Type="Self.ESPECIALIDAD" Multiplicity="1" />
+          <End Role="ESPECI_MONI" Type="Self.ESPECI_MONI" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="ESPECIALIDAD">
+              <PropertyRef Name="codigo_Especialidad" />
+            </Principal>
+            <Dependent Role="ESPECI_MONI">
+              <PropertyRef Name="codigo_Especialidad" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__ESPECI_MO__codig__59FA5E80">
+          <End Role="MONITOR" Type="Self.MONITOR" Multiplicity="1" />
+          <End Role="ESPECI_MONI" Type="Self.ESPECI_MONI" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="MONITOR">
+              <PropertyRef Name="codigo_Monitor" />
+            </Principal>
+            <Dependent Role="ESPECI_MONI">
+              <PropertyRef Name="codigo_Monitor" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__MATRICULA__codig__778AC167">
+          <End Role="SOCIO" Type="Self.SOCIO" Multiplicity="1" />
+          <End Role="MATRICULA" Type="Self.MATRICULA" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="SOCIO">
+              <PropertyRef Name="codigo_Socio" />
+            </Principal>
+            <Dependent Role="MATRICULA">
+              <PropertyRef Name="codigo_Socio" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__MONITOR__codigo___5535A963">
+          <End Role="TIPO_DOC" Type="Self.TIPO_DOC" Multiplicity="1" />
+          <End Role="MONITOR" Type="Self.MONITOR" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="TIPO_DOC">
+              <PropertyRef Name="Codigo_TipoDoc" />
+            </Principal>
+            <Dependent Role="MONITOR">
+              <PropertyRef Name="codigo_TipoDoc" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__SOCIO__codigo_Pr__4AB81AF0">
+          <End Role="PROFESION" Type="Self.PROFESION" Multiplicity="1" />
+          <End Role="SOCIO" Type="Self.SOCIO" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="PROFESION">
+              <PropertyRef Name="codigo_Profesion" />
+            </Principal>
+            <Dependent Role="SOCIO">
+              <PropertyRef Name="codigo_Profesion" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__SALA__codigo_Tip__656C112C">
+          <End Role="TIPO_SALA" Type="Self.TIPO_SALA" Multiplicity="1" />
+          <End Role="SALA" Type="Self.SALA" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="TIPO_SALA">
+              <PropertyRef Name="codigo_Tipo" />
+            </Principal>
+            <Dependent Role="SALA">
+              <PropertyRef Name="codigo_Tipo" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__SOCIO__codigo_Ti__48CFD27E">
+          <End Role="TIPO_DOC" Type="Self.TIPO_DOC" Multiplicity="1" />
+          <End Role="SOCIO" Type="Self.SOCIO" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="TIPO_DOC">
+              <PropertyRef Name="Codigo_TipoDoc" />
+            </Principal>
+            <Dependent Role="SOCIO">
+              <PropertyRef Name="codigo_TipoDoc" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__TELEFONO__codigo__4F7CD00D">
+          <End Role="SOCIO" Type="Self.SOCIO" Multiplicity="1" />
+          <End Role="TELEFONO" Type="Self.TELEFONO" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="SOCIO">
+              <PropertyRef Name="codigo_Socio" />
+            </Principal>
+            <Dependent Role="TELEFONO">
+              <PropertyRef Name="codigo_Socio" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__TELEFONO__codigo__4E88ABD4">
+          <End Role="TIPO_TEL" Type="Self.TIPO_TEL" Multiplicity="1" />
+          <End Role="TELEFONO" Type="Self.TELEFONO" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="TIPO_TEL">
+              <PropertyRef Name="codigo_Tipo" />
+            </Principal>
+            <Dependent Role="TELEFONO">
+              <PropertyRef Name="codigo_Tipo" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityContainer Name="GIMNASIOEntities" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="APARATOes" EntityType="Self.APARATO" />
+          <EntitySet Name="CIUDADs" EntityType="Self.CIUDAD" />
+          <EntitySet Name="CLASEs" EntityType="Self.CLASE" />
+          <EntitySet Name="DETALLE_MATRICULA" EntityType="Self.DETALLE_MATRICULA" />
+          <EntitySet Name="DIAs" EntityType="Self.DIA" />
+          <EntitySet Name="EMPLEADOes" EntityType="Self.EMPLEADO" />
+          <EntitySet Name="ESPECI_MONI" EntityType="Self.ESPECI_MONI" />
+          <EntitySet Name="ESPECIALIDADs" EntityType="Self.ESPECIALIDAD" />
+          <EntitySet Name="ESTADOes" EntityType="Self.ESTADO" />
+          <EntitySet Name="HORAS" EntityType="Self.HORA" />
+          <EntitySet Name="MATRICULAs" EntityType="Self.MATRICULA" />
+          <EntitySet Name="MONITORs" EntityType="Self.MONITOR" />
+          <EntitySet Name="PROFESIONs" EntityType="Self.PROFESION" />
+          <EntitySet Name="SALAs" EntityType="Self.SALA" />
+          <EntitySet Name="SOCIOs" EntityType="Self.SOCIO" />
+          <EntitySet Name="TELEFONOes" EntityType="Self.TELEFONO" />
+          <EntitySet Name="TIPO_DOC" EntityType="Self.TIPO_DOC" />
+          <EntitySet Name="TIPO_SALA" EntityType="Self.TIPO_SALA" />
+          <EntitySet Name="TIPO_TEL" EntityType="Self.TIPO_TEL" />
+          <EntitySet Name="USUARIOs" EntityType="Self.USUARIO" />
+          <AssociationSet Name="FK__APARATO__codigo___6A30C649" Association="Self.FK__APARATO__codigo___6A30C649">
+            <End Role="ESTADO" EntitySet="ESTADOes" />
+            <End Role="APARATO" EntitySet="APARATOes" />
+          </AssociationSet>
+          <AssociationSet Name="FK__APARATO__codigo___6B24EA82" Association="Self.FK__APARATO__codigo___6B24EA82">
+            <End Role="SALA" EntitySet="SALAs" />
+            <End Role="APARATO" EntitySet="APARATOes" />
+          </AssociationSet>
+          <AssociationSet Name="FK__APARATO__codigo___6C190EBB" Association="Self.FK__APARATO__codigo___6C190EBB">
+            <End Role="EMPLEADO" EntitySet="EMPLEADOes" />
+            <End Role="APARATO" EntitySet="APARATOes" />
+          </AssociationSet>
+          <AssociationSet Name="FK__SOCIO__codigo_Ci__49C3F6B7" Association="Self.FK__SOCIO__codigo_Ci__49C3F6B7">
+            <End Role="CIUDAD" EntitySet="CIUDADs" />
+            <End Role="SOCIO" EntitySet="SOCIOs" />
+          </AssociationSet>
+          <AssociationSet Name="FK__CLASE__codigo_Di__6FE99F9F" Association="Self.FK__CLASE__codigo_Di__6FE99F9F">
+            <End Role="DIA" EntitySet="DIAs" />
+            <End Role="CLASE" EntitySet="CLASEs" />
+          </AssociationSet>
+          <AssociationSet Name="FK__CLASE__codigo_Em__73BA3083" Association="Self.FK__CLASE__codigo_Em__73BA3083">
+            <End Role="EMPLEADO" EntitySet="EMPLEADOes" />
+            <End Role="CLASE" EntitySet="CLASEs" />
+          </AssociationSet>
+          <AssociationSet Name="FK__CLASE__codigo_ho__70DDC3D8" Association="Self.FK__CLASE__codigo_ho__70DDC3D8">
+            <End Role="HORAS" EntitySet="HORAS" />
+            <End Role="CLASE" EntitySet="CLASEs" />
+          </AssociationSet>
+          <AssociationSet Name="FK__CLASE__codigo_Mo__71D1E811" Association="Self.FK__CLASE__codigo_Mo__71D1E811">
+            <End Role="MONITOR" EntitySet="MONITORs" />
+            <End Role="CLASE" EntitySet="CLASEs" />
+          </AssociationSet>
+          <AssociationSet Name="FK__CLASE__codigo_Sa__72C60C4A" Association="Self.FK__CLASE__codigo_Sa__72C60C4A">
+            <End Role="SALA" EntitySet="SALAs" />
+            <End Role="CLASE" EntitySet="CLASEs" />
+          </AssociationSet>
+          <AssociationSet Name="FK__DETALLE_M__codig__7A672E12" Association="Self.FK__DETALLE_M__codig__7A672E12">
+            <End Role="CLASE" EntitySet="CLASEs" />
+            <End Role="DETALLE_MATRICULA" EntitySet="DETALLE_MATRICULA" />
+          </AssociationSet>
+          <AssociationSet Name="FK__DETALLE_M__codig__7B5B524B" Association="Self.FK__DETALLE_M__codig__7B5B524B">
+            <End Role="MATRICULA" EntitySet="MATRICULAs" />
+            <End Role="DETALLE_MATRICULA" EntitySet="DETALLE_MATRICULA" />
+          </AssociationSet>
+          <AssociationSet Name="FK__EMPLEADO__codigo__3A81B327" Association="Self.FK__EMPLEADO__codigo__3A81B327">
+            <End Role="TIPO_DOC" EntitySet="TIPO_DOC" />
+            <End Role="EMPLEADO" EntitySet="EMPLEADOes" />
+          </AssociationSet>
+          <AssociationSet Name="FK__EMPLEADO__id_Emp__3B75D760" Association="Self.FK__EMPLEADO__id_Emp__3B75D760">
+            <End Role="EMPLEADO" EntitySet="EMPLEADOes" />
+            <End Role="EMPLEADO1" EntitySet="EMPLEADOes" />
+          </AssociationSet>
+          <AssociationSet Name="FK__MATRICULA__codig__76969D2E" Association="Self.FK__MATRICULA__codig__76969D2E">
+            <End Role="EMPLEADO" EntitySet="EMPLEADOes" />
+            <End Role="MATRICULA" EntitySet="MATRICULAs" />
+          </AssociationSet>
+          <AssociationSet Name="FK__MONITOR__codigo___5629CD9C" Association="Self.FK__MONITOR__codigo___5629CD9C">
+            <End Role="EMPLEADO" EntitySet="EMPLEADOes" />
+            <End Role="MONITOR" EntitySet="MONITORs" />
+          </AssociationSet>
+          <AssociationSet Name="FK__SALA__codigo_Emp__66603565" Association="Self.FK__SALA__codigo_Emp__66603565">
+            <End Role="EMPLEADO" EntitySet="EMPLEADOes" />
+            <End Role="SALA" EntitySet="SALAs" />
+          </AssociationSet>
+          <AssociationSet Name="FK__SOCIO__codigo_Em__4BAC3F29" Association="Self.FK__SOCIO__codigo_Em__4BAC3F29">
+            <End Role="EMPLEADO" EntitySet="EMPLEADOes" />
+            <End Role="SOCIO" EntitySet="SOCIOs" />
+          </AssociationSet>
+          <AssociationSet Name="FK__USUARIO__codigo___3F466844" Association="Self.FK__USUARIO__codigo___3F466844">
+            <End Role="EMPLEADO" EntitySet="EMPLEADOes" />
+            <End Role="USUARIO" EntitySet="USUARIOs" />
+          </AssociationSet>
+          <AssociationSet Name="FK__ESPECI_MO__codig__59063A47" Association="Self.FK__ESPECI_MO__codig__59063A47">
+            <End Role="ESPECIALIDAD" EntitySet="ESPECIALIDADs" />
+            <End Role="ESPECI_MONI" EntitySet="ESPECI_MONI" />
+          </AssociationSet>
+          <AssociationSet Name="FK__ESPECI_MO__codig__59FA5E80" Association="Self.FK__ESPECI_MO__codig__59FA5E80">
+            <End Role="MONITOR" EntitySet="MONITORs" />
+            <End Role="ESPECI_MONI" EntitySet="ESPECI_MONI" />
+          </AssociationSet>
+          <AssociationSet Name="FK__MATRICULA__codig__778AC167" Association="Self.FK__MATRICULA__codig__778AC167">
+            <End Role="SOCIO" EntitySet="SOCIOs" />
+            <End Role="MATRICULA" EntitySet="MATRICULAs" />
+          </AssociationSet>
+          <AssociationSet Name="FK__MONITOR__codigo___5535A963" Association="Self.FK__MONITOR__codigo___5535A963">
+            <End Role="TIPO_DOC" EntitySet="TIPO_DOC" />
+            <End Role="MONITOR" EntitySet="MONITORs" />
+          </AssociationSet>
+          <AssociationSet Name="FK__SOCIO__codigo_Pr__4AB81AF0" Association="Self.FK__SOCIO__codigo_Pr__4AB81AF0">
+            <End Role="PROFESION" EntitySet="PROFESIONs" />
+            <End Role="SOCIO" EntitySet="SOCIOs" />
+          </AssociationSet>
+          <AssociationSet Name="FK__SALA__codigo_Tip__656C112C" Association="Self.FK__SALA__codigo_Tip__656C112C">
+            <End Role="TIPO_SALA" EntitySet="TIPO_SALA" />
+            <End Role="SALA" EntitySet="SALAs" />
+          </AssociationSet>
+          <AssociationSet Name="FK__SOCIO__codigo_Ti__48CFD27E" Association="Self.FK__SOCIO__codigo_Ti__48CFD27E">
+            <End Role="TIPO_DOC" EntitySet="TIPO_DOC" />
+            <End Role="SOCIO" EntitySet="SOCIOs" />
+          </AssociationSet>
+          <AssociationSet Name="FK__TELEFONO__codigo__4F7CD00D" Association="Self.FK__TELEFONO__codigo__4F7CD00D">
+            <End Role="SOCIO" EntitySet="SOCIOs" />
+            <End Role="TELEFONO" EntitySet="TELEFONOes" />
+          </AssociationSet>
+          <AssociationSet Name="FK__TELEFONO__codigo__4E88ABD4" Association="Self.FK__TELEFONO__codigo__4E88ABD4">
+            <End Role="TIPO_TEL" EntitySet="TIPO_TEL" />
+            <End Role="TELEFONO" EntitySet="TELEFONOes" />
+          </AssociationSet>
+        </EntityContainer>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="GIMNASIOModelStoreContainer" CdmEntityContainer="GIMNASIOEntities">
+          <EntitySetMapping Name="APARATOes">
+            <EntityTypeMapping TypeName="GIMNASIOModel.APARATO">
+              <MappingFragment StoreEntitySet="APARATO">
+                <ScalarProperty Name="codigo_Aparato" ColumnName="codigo_Aparato" />
+                <ScalarProperty Name="Activo" ColumnName="Activo" />
+                <ScalarProperty Name="Descripcion" ColumnName="Descripcion" />
+                <ScalarProperty Name="codigo_Estado" ColumnName="codigo_Estado" />
+                <ScalarProperty Name="codigo_Sala" ColumnName="codigo_Sala" />
+                <ScalarProperty Name="codigo_Empleado" ColumnName="codigo_Empleado" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="CIUDADs">
+            <EntityTypeMapping TypeName="GIMNASIOModel.CIUDAD">
+              <MappingFragment StoreEntitySet="CIUDAD">
+                <ScalarProperty Name="codigo_Ciudad" ColumnName="codigo_Ciudad" />
+                <ScalarProperty Name="Descripcion" ColumnName="Descripcion" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="CLASEs">
+            <EntityTypeMapping TypeName="GIMNASIOModel.CLASE">
+              <MappingFragment StoreEntitySet="CLASE">
+                <ScalarProperty Name="codigo_Clase" ColumnName="codigo_Clase" />
+                <ScalarProperty Name="Activo" ColumnName="Activo" />
+                <ScalarProperty Name="Descripcion" ColumnName="Descripcion" />
+                <ScalarProperty Name="codigo_Dia" ColumnName="codigo_Dia" />
+                <ScalarProperty Name="codigo_hora" ColumnName="codigo_hora" />
+                <ScalarProperty Name="codigo_Monitor" ColumnName="codigo_Monitor" />
+                <ScalarProperty Name="codigo_Sala" ColumnName="codigo_Sala" />
+                <ScalarProperty Name="codigo_Empleado" ColumnName="codigo_Empleado" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="DETALLE_MATRICULA">
+            <EntityTypeMapping TypeName="GIMNASIOModel.DETALLE_MATRICULA">
+              <MappingFragment StoreEntitySet="DETALLE_MATRICULA">
+                <ScalarProperty Name="codigo_DetallesMatr" ColumnName="codigo_DetallesMatr" />
+                <ScalarProperty Name="Fecha_Inicio" ColumnName="Fecha_Inicio" />
+                <ScalarProperty Name="Fecha_Fin" ColumnName="Fecha_Fin" />
+                <ScalarProperty Name="codigo_Clase" ColumnName="codigo_Clase" />
+                <ScalarProperty Name="codigo_Matricula" ColumnName="codigo_Matricula" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="DIAs">
+            <EntityTypeMapping TypeName="GIMNASIOModel.DIA">
+              <MappingFragment StoreEntitySet="DIA">
+                <ScalarProperty Name="codigo_Dia" ColumnName="codigo_Dia" />
+                <ScalarProperty Name="Descripcion" ColumnName="Descripcion" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="EMPLEADOes">
+            <EntityTypeMapping TypeName="GIMNASIOModel.EMPLEADO">
+              <MappingFragment StoreEntitySet="EMPLEADO">
+                <ScalarProperty Name="Codigo_Empleado" ColumnName="Codigo_Empleado" />
+                <ScalarProperty Name="Activo" ColumnName="Activo" />
+                <ScalarProperty Name="Nombre" ColumnName="Nombre" />
+                <ScalarProperty Name="Apellido" ColumnName="Apellido" />
+                <ScalarProperty Name="Telefono" ColumnName="Telefono" />
+                <ScalarProperty Name="nroDoc" ColumnName="nroDoc" />
+                <ScalarProperty Name="Salario" ColumnName="Salario" />
+                <ScalarProperty Name="Fecha_Ingreso" ColumnName="Fecha_Ingreso" />
+                <ScalarProperty Name="Fecha_Nac" ColumnName="Fecha_Nac" />
+                <ScalarProperty Name="codigo_TipoDoc" ColumnName="codigo_TipoDoc" />
+                <ScalarProperty Name="id_Empleado" ColumnName="id_Empleado" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="ESPECI_MONI">
+            <EntityTypeMapping TypeName="GIMNASIOModel.ESPECI_MONI">
+              <MappingFragment StoreEntitySet="ESPECI_MONI">
+                <ScalarProperty Name="codigo_Especi_Moni" ColumnName="codigo_Especi_Moni" />
+                <ScalarProperty Name="codigo_Especialidad" ColumnName="codigo_Especialidad" />
+                <ScalarProperty Name="codigo_Monitor" ColumnName="codigo_Monitor" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="ESPECIALIDADs">
+            <EntityTypeMapping TypeName="GIMNASIOModel.ESPECIALIDAD">
+              <MappingFragment StoreEntitySet="ESPECIALIDAD">
+                <ScalarProperty Name="codigo_Especialidad" ColumnName="codigo_Especialidad" />
+                <ScalarProperty Name="Especialidad1" ColumnName="Especialidad" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="ESTADOes">
+            <EntityTypeMapping TypeName="GIMNASIOModel.ESTADO">
+              <MappingFragment StoreEntitySet="ESTADO">
+                <ScalarProperty Name="codigo_Estado" ColumnName="codigo_Estado" />
+                <ScalarProperty Name="Descripcion" ColumnName="Descripcion" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="HORAS">
+            <EntityTypeMapping TypeName="GIMNASIOModel.HORA">
+              <MappingFragment StoreEntitySet="HORAS">
+                <ScalarProperty Name="codigo_Horas" ColumnName="codigo_Horas" />
+                <ScalarProperty Name="Descripcion" ColumnName="Descripcion" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="MATRICULAs">
+            <EntityTypeMapping TypeName="GIMNASIOModel.MATRICULA">
+              <MappingFragment StoreEntitySet="MATRICULA">
+                <ScalarProperty Name="codigo_Matricula" ColumnName="codigo_Matricula" />
+                <ScalarProperty Name="Precio" ColumnName="Precio" />
+                <ScalarProperty Name="Descripcion" ColumnName="Descripcion" />
+                <ScalarProperty Name="codigo_Empleado" ColumnName="codigo_Empleado" />
+                <ScalarProperty Name="codigo_Socio" ColumnName="codigo_Socio" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="MONITORs">
+            <EntityTypeMapping TypeName="GIMNASIOModel.MONITOR">
+              <MappingFragment StoreEntitySet="MONITOR">
+                <ScalarProperty Name="codigo_Monitor" ColumnName="codigo_Monitor" />
+                <ScalarProperty Name="Activo" ColumnName="Activo" />
+                <ScalarProperty Name="nroDoc" ColumnName="nroDoc" />
+                <ScalarProperty Name="Nombre" ColumnName="Nombre" />
+                <ScalarProperty Name="Apellido" ColumnName="Apellido" />
+                <ScalarProperty Name="Telefono" ColumnName="Telefono" />
+                <ScalarProperty Name="Experiencia" ColumnName="Experiencia" />
+                <ScalarProperty Name="codigo_TipoDoc" ColumnName="codigo_TipoDoc" />
+                <ScalarProperty Name="codigo_Empleado" ColumnName="codigo_Empleado" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="PROFESIONs">
+            <EntityTypeMapping TypeName="GIMNASIOModel.PROFESION">
+              <MappingFragment StoreEntitySet="PROFESION">
+                <ScalarProperty Name="codigo_Profesion" ColumnName="codigo_Profesion" />
+                <ScalarProperty Name="Descripcion" ColumnName="Descripcion" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="SALAs">
+            <EntityTypeMapping TypeName="GIMNASIOModel.SALA">
+              <MappingFragment StoreEntitySet="SALA">
+                <ScalarProperty Name="codigo_Sala" ColumnName="codigo_Sala" />
+                <ScalarProperty Name="Activo" ColumnName="Activo" />
+                <ScalarProperty Name="Metros_Cuadrados" ColumnName="Metros_Cuadrados" />
+                <ScalarProperty Name="Ubicacion" ColumnName="Ubicacion" />
+                <ScalarProperty Name="codigo_Tipo" ColumnName="codigo_Tipo" />
+                <ScalarProperty Name="codigo_Empleado" ColumnName="codigo_Empleado" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="SOCIOs">
+            <EntityTypeMapping TypeName="GIMNASIOModel.SOCIO">
+              <MappingFragment StoreEntitySet="SOCIO">
+                <ScalarProperty Name="codigo_Socio" ColumnName="codigo_Socio" />
+                <ScalarProperty Name="Activo" ColumnName="Activo" />
+                <ScalarProperty Name="nroDoc" ColumnName="nroDoc" />
+                <ScalarProperty Name="Nombre" ColumnName="Nombre" />
+                <ScalarProperty Name="Apellido" ColumnName="Apellido" />
+                <ScalarProperty Name="Direccion" ColumnName="Direccion" />
+                <ScalarProperty Name="codigo_TipoDoc" ColumnName="codigo_TipoDoc" />
+                <ScalarProperty Name="codigo_Ciudad" ColumnName="codigo_Ciudad" />
+                <ScalarProperty Name="codigo_Profesion" ColumnName="codigo_Profesion" />
+                <ScalarProperty Name="codigo_Empleado" ColumnName="codigo_Empleado" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="TELEFONOes">
+            <EntityTypeMapping TypeName="GIMNASIOModel.TELEFONO">
+              <MappingFragment StoreEntitySet="TELEFONO">
+                <ScalarProperty Name="codigo_Telefono" ColumnName="codigo_Telefono" />
+                <ScalarProperty Name="Numero" ColumnName="Numero" />
+                <ScalarProperty Name="codigo_Tipo" ColumnName="codigo_Tipo" />
+                <ScalarProperty Name="codigo_Socio" ColumnName="codigo_Socio" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="TIPO_DOC">
+            <EntityTypeMapping TypeName="GIMNASIOModel.TIPO_DOC">
+              <MappingFragment StoreEntitySet="TIPO_DOC">
+                <ScalarProperty Name="Codigo_TipoDoc" ColumnName="Codigo_TipoDoc" />
+                <ScalarProperty Name="TipoDoc" ColumnName="TipoDoc" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="TIPO_SALA">
+            <EntityTypeMapping TypeName="GIMNASIOModel.TIPO_SALA">
+              <MappingFragment StoreEntitySet="TIPO_SALA">
+                <ScalarProperty Name="codigo_Tipo" ColumnName="codigo_Tipo" />
+                <ScalarProperty Name="Tipos" ColumnName="Tipos" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="TIPO_TEL">
+            <EntityTypeMapping TypeName="GIMNASIOModel.TIPO_TEL">
+              <MappingFragment StoreEntitySet="TIPO_TEL">
+                <ScalarProperty Name="codigo_Tipo" ColumnName="codigo_Tipo" />
+                <ScalarProperty Name="Descripcion" ColumnName="Descripcion" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="USUARIOs">
+            <EntityTypeMapping TypeName="GIMNASIOModel.USUARIO">
+              <MappingFragment StoreEntitySet="USUARIO">
+                <ScalarProperty Name="Clave" ColumnName="Clave" />
+                <ScalarProperty Name="Contrasenia" ColumnName="Contrasenia" />
+                <ScalarProperty Name="codigo_EMPLEADO" ColumnName="codigo_EMPLEADO" />
+                <ScalarProperty Name="Activo" ColumnName="Activo" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="true" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
+        <DesignerProperty Name="UseLegacyProvider" Value="false" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="Ninguno" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>

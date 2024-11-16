@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="3c603b8e0eef4deba9bc119b40b8c328" Name="Diagram1">
+        <EntityTypeShape EntityType="GIMNASIOModel.APARATO" Width="1.5" PointX="5.25" PointY="13.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="GIMNASIOModel.CIUDAD" Width="1.5" PointX="6" PointY="22.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="GIMNASIOModel.CLASE" Width="1.5" PointX="8.25" PointY="13.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="GIMNASIOModel.DETALLE_MATRICULA" Width="1.5" PointX="10.5" PointY="12.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="GIMNASIOModel.DIA" Width="1.5" PointX="6" PointY="4.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="GIMNASIOModel.EMPLEADO" Width="1.5" PointX="3" PointY="12.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="GIMNASIOModel.ESPECI_MONI" Width="1.5" PointX="10.5" PointY="18.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="GIMNASIOModel.ESPECIALIDAD" Width="1.5" PointX="8.25" PointY="23.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="GIMNASIOModel.ESTADO" Width="1.5" PointX="3" PointY="9.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="GIMNASIOModel.HORA" Width="1.5" PointX="6" PointY="27.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="GIMNASIOModel.MATRICULA" Width="1.5" PointX="5.25" PointY="9.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="GIMNASIOModel.MONITOR" Width="1.5" PointX="5.25" PointY="17.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="GIMNASIOModel.PROFESION" Width="1.5" PointX="6" PointY="24.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="GIMNASIOModel.SALA" Width="1.5" PointX="8.25" PointY="8.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="GIMNASIOModel.SOCIO" Width="1.5" PointX="8.25" PointY="18.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="GIMNASIOModel.TELEFONO" Width="1.5" PointX="10.5" PointY="21.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="GIMNASIOModel.TIPO_DOC" Width="1.5" PointX="0.75" PointY="14.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="GIMNASIOModel.TIPO_SALA" Width="1.5" PointX="6" PointY="7.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="GIMNASIOModel.TIPO_TEL" Width="1.5" PointX="8.25" PointY="26.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="GIMNASIOModel.USUARIO" Width="1.5" PointX="5.25" PointY="38.25" IsExpanded="true" />
+        <AssociationConnector Association="GIMNASIOModel.FK__APARATO__codigo___6A30C649" ManuallyRouted="false" />
+        <AssociationConnector Association="GIMNASIOModel.FK__APARATO__codigo___6B24EA82" ManuallyRouted="false" />
+        <AssociationConnector Association="GIMNASIOModel.FK__APARATO__codigo___6C190EBB" ManuallyRouted="false" />
+        <AssociationConnector Association="GIMNASIOModel.FK__SOCIO__codigo_Ci__49C3F6B7" ManuallyRouted="false" />
+        <AssociationConnector Association="GIMNASIOModel.FK__CLASE__codigo_Di__6FE99F9F" ManuallyRouted="false" />
+        <AssociationConnector Association="GIMNASIOModel.FK__CLASE__codigo_Em__73BA3083" ManuallyRouted="false" />
+        <AssociationConnector Association="GIMNASIOModel.FK__CLASE__codigo_ho__70DDC3D8" ManuallyRouted="false" />
+        <AssociationConnector Association="GIMNASIOModel.FK__CLASE__codigo_Mo__71D1E811" ManuallyRouted="false" />
+        <AssociationConnector Association="GIMNASIOModel.FK__CLASE__codigo_Sa__72C60C4A" ManuallyRouted="false" />
+        <AssociationConnector Association="GIMNASIOModel.FK__DETALLE_M__codig__7A672E12" ManuallyRouted="false" />
+        <AssociationConnector Association="GIMNASIOModel.FK__DETALLE_M__codig__7B5B524B" ManuallyRouted="false" />
+        <AssociationConnector Association="GIMNASIOModel.FK__EMPLEADO__codigo__3A81B327" ManuallyRouted="false" />
+        <AssociationConnector Association="GIMNASIOModel.FK__EMPLEADO__id_Emp__3B75D760" ManuallyRouted="false" />
+        <AssociationConnector Association="GIMNASIOModel.FK__MATRICULA__codig__76969D2E" ManuallyRouted="false" />
+        <AssociationConnector Association="GIMNASIOModel.FK__MONITOR__codigo___5629CD9C" ManuallyRouted="false" />
+        <AssociationConnector Association="GIMNASIOModel.FK__SALA__codigo_Emp__66603565" ManuallyRouted="false" />
+        <AssociationConnector Association="GIMNASIOModel.FK__SOCIO__codigo_Em__4BAC3F29" ManuallyRouted="false" />
+        <AssociationConnector Association="GIMNASIOModel.FK__USUARIO__codigo___3F466844" ManuallyRouted="false" />
+        <AssociationConnector Association="GIMNASIOModel.FK__ESPECI_MO__codig__59063A47" ManuallyRouted="false" />
+        <AssociationConnector Association="GIMNASIOModel.FK__ESPECI_MO__codig__59FA5E80" ManuallyRouted="false" />
+        <AssociationConnector Association="GIMNASIOModel.FK__MATRICULA__codig__778AC167" ManuallyRouted="false" />
+        <AssociationConnector Association="GIMNASIOModel.FK__MONITOR__codigo___5535A963" ManuallyRouted="false" />
+        <AssociationConnector Association="GIMNASIOModel.FK__SOCIO__codigo_Pr__4AB81AF0" ManuallyRouted="false" />
+        <AssociationConnector Association="GIMNASIOModel.FK__SALA__codigo_Tip__656C112C" ManuallyRouted="false" />
+        <AssociationConnector Association="GIMNASIOModel.FK__SOCIO__codigo_Ti__48CFD27E" ManuallyRouted="false" />
+        <AssociationConnector Association="GIMNASIOModel.FK__TELEFONO__codigo__4F7CD00D" ManuallyRouted="false" />
+        <AssociationConnector Association="GIMNASIOModel.FK__TELEFONO__codigo__4E88ABD4" ManuallyRouted="false" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>
