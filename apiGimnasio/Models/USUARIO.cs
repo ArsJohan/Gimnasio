@@ -9,6 +9,7 @@
 
 namespace apiGimnasio.Models
 {
+    using Newtonsoft.Json;
     using System;
     using System.Collections.Generic;
     
@@ -18,7 +19,8 @@ namespace apiGimnasio.Models
         public string Contrasenia { get; set; }
         public int codigo_EMPLEADO { get; set; }
         public Nullable<bool> Activo { get; set; }
-    
+
+        [JsonIgnore]
         public virtual EMPLEADO EMPLEADO { get; set; }
     }
 }
