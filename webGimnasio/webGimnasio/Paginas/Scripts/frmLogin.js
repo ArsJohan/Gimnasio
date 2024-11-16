@@ -1,4 +1,4 @@
-﻿var dir = "http://localhost:65376/api/";
+﻿var dir = "http://localhost:52063/api/";
 jQuery(function () {
 
     $("#btnIngresar").on("click", function () {
@@ -17,7 +17,8 @@ jQuery(function () {
             $("#user_password").focus();
             return;
         }
-        logearse(clave,pass);
+        logearse(clave, pass);
+        
     });
     
 });
@@ -53,24 +54,18 @@ async function logearse(clave, contra) {
             }
         );
         const datosIn = await datosOut.json();
+        console.log(datosIn[0] == "");
         if (datosIn == "") {
             mensajeError("Clave o Contraseña erroneos");
             return;
         }
 
-        let api_pass = datosIn.Contrasena;
-        if (pass == api_pass) {
-            window.location.href = "frmInicio.html?" + datosIn.Codigo;
-            return;
-
-        }
-        else {
-            mensajeError("Clave o Contraseña erroneos");
-            return;
-        }
-
+        sessionStorage.setItem('nombreUsuario', datosIn[0].Nombre + " " + datosIn[0].Apellido);
+        window.location.href = "frmInicio.html";
+        return;
     } catch (error) {
         mensajeError("Error: " + error);
+        return;
     }
 }
 //async function ingresar() {

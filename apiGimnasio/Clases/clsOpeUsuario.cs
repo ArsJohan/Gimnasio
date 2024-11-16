@@ -25,10 +25,9 @@ namespace apiGimnasio.Clases
                    select new
                    {
                       
-                        Clave = ts.Clave,
-                        Contrasena = ts.Contrasenia,
                         Codigo = tE.Codigo_Empleado,
-                        Nombre = tE.Nombre
+                        Nombre = tE.Nombre,
+                        Apellido = tE.Apellido
 
                    };
 
