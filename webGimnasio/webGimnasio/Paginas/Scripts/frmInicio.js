@@ -6,7 +6,6 @@ jQuery(function () {
         // Selecciona el div
         $("#Name").empty();
         $("#Name").append('<h4>' + nombreUsuario + '</h4>');
-
         $("#cierreSesion").on("click", function () {
             // Limpia el sessionStorage
             sessionStorage.clear();
