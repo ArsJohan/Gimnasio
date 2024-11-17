@@ -182,7 +182,7 @@
     <Compile Include="Areas\HelpPage\SampleGeneration\TextSample.cs" />
     <Compile Include="Areas\HelpPage\XmlDocumentationProvider.cs" />
     <Compile Include="Clases\clsOpeEmpleado.cs" />
-    <Compile Include="Clases\clsOpeTipDoc.cs" />
+    <Compile Include="Clases\clsOpeTipoDoc.cs" />
     <Compile Include="Clases\clsOpeUsuario.cs" />
     <Compile Include="Controllers\empleadoController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
