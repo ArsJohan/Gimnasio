@@ -10,6 +10,7 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Ubuntu:ital,wght@0,300;0,400;0,500;0,700;1,300;1,400;1,500;1,700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700&display=fallback">
+    
 
     <!-- Select2 -->
     <link href="Estilos/select2.min.css" rel="stylesheet" />
@@ -19,6 +20,10 @@
     <link href="Estilos/dataTables.bootstrap4.min.css" rel="stylesheet" />
     <link href="Estilos/adminlte.min.css" rel="stylesheet" />
     <link href="Estilos/frmGym.css" rel="stylesheet" />
+    <link href="Estilos/css/all.min.css" rel="stylesheet" />
+    
+
+
 </head>
 <body class="hold-transition sidebar-mini">
     <section class="content">
@@ -61,18 +66,26 @@
                                                     <input type="text" class="form-control" id="txtApellido" placeholder="Ingrese Apellido...">
                                                 </div>
                                             </div>
-                                             <div class="col-md-3">
+                                            <div class="col-md-2">
                                                 <div class="form-group">
-                                                    <label for="lbFechaIng">Fecha Ingreso</label>
-                                                    <!--<input id="lbFechaIng" class="label_2" disabled />-->
-                                                    <input type="text" class="form-control" id="lbFechaIng" disabled >
+                                                    <label for="dtmFechaNac">Fecha de Nacimiento</label>
+                                                    <div class="input-group date" id="dtmFechaNac" data-target-input="nearest">
+                                                        <input type="text" class="form-control datetimepicker-input" data-target="#dtmFechaNac" />
+                                                        <div class="input-group-append" data-target="#dtmFechaNac" data-toggle="datetimepicker">
+                                                            <div class="input-group-text"><i class="fa fa-calendar"></i></div>
+                                                        </div>
+                                                    </div>
                                                 </div>
                                             </div>
-                                            <div class="col-md-3">
+                                            <div class="col-md-2">
                                                 <div class="form-group">
-                                                    <label for="txtFechaNac">Fecha Nacimiento</label>
-                                                    <!--<input id="lbFechaNac" class="label_2" disabled />-->
-                                                     <input type="text" class="form-control" id="txtFechaNac">
+                                                    <label for="dtmFechaIng">Fecha de Ingreso</label>
+                                                    <div class="input-group date" id="dtmFechaIng" data-target-input="nearest">
+                                                        <input type="text" class="form-control datetimepicker-input" data-target="#dtmFechaIng" />
+                                                        <div class="input-group-append" data-target="#dtmFechaIng" data-toggle="datetimepicker">
+                                                            <div class="input-group-text"><i class="fa fa-calendar"></i></div>
+                                                        </div>
+                                                    </div>
                                                 </div>
                                             </div>
                                             <div class="col-md-4">
@@ -83,37 +96,37 @@
                                             </div>
                                         </div>
                                         <div class="row">
-                                             <div class="col-md-3">
-                                                 <div class="form-group">
-                                                     <label for="cboTipDoc">Tipo Documento</label>
-                                                     <select id="cboTipDoc" class="form-control">
-                                                     </select>
-                                                 </div>
-                                             </div>
-                                             <div class="col-md-3">
-                                                 <div class="form-group">
-                                                     <label for="txtNroDoc">Nro. Documento</label>
-                                                     <input type="text" class="form-control" id="txtNroDoc"  placeholder="Ingrese Nro Documento...">
-                                                 </div>
-                                             </div>
+                                            <div class="col-md-3">
+                                                <div class="form-group">
+                                                    <label for="cboTipDoc">Tipo Documento</label>
+                                                    <select id="cboTipDoc" class="form-control">
+                                                    </select>
+                                                </div>
+                                            </div>
+                                            <div class="col-md-3">
+                                                <div class="form-group">
+                                                    <label for="txtNroDoc">Nro. Documento</label>
+                                                    <input type="text" class="form-control" id="txtNroDoc" placeholder="Ingrese Nro Documento...">
+                                                </div>
+                                            </div>
                                             <div class="col-md-3">
                                                 <div class="form-group">
                                                     <label for="txtSalario">Salario</label>
                                                     <input type="text" class="form-control" id="txtSalario" placeholder="Ingrese Telefono...">
                                                 </div>
                                             </div>
-                                             <div class="col-md-2">
-                                                 <div class="form-group">
-                                                     <label for="txtIdEmpleado">id_Empleado:</label>
-                                                     <input type="text" class="form-control" id="txtIdEmpleado" width="15" placeholder="Ingrese id_Empleado..."  value="0" style="text-align:center" disabled>
-                                                 </div>
-                                             </div>
-                                             <div class="row-col-md-2">
-                                                 <div class="form-group">
-                                                     <label for="chkActivo">Activo:</label>
-                                                     <input type="checkbox" id="chkActivo" class="form-control custom-checkbox" />
-                                                 </div>
-                                             </div>
+                                            <div class="col-md-2">
+                                                <div class="form-group">
+                                                    <label for="txtIdEmpleado">id_Empleado:</label>
+                                                    <input type="text" class="form-control" id="txtIdEmpleado" width="15" placeholder="Ingrese id_Empleado..." value="0" style="text-align:center" disabled>
+                                                </div>
+                                            </div>
+                                            <div class="row-col-md-2">
+                                                <div class="form-group">
+                                                    <label for="chkActivo">Activo:</label>
+                                                    <input type="checkbox" id="chkActivo" class="form-control custom-checkbox" />
+                                                </div>
+                                            </div>
 
                                         </div>
                                         <!-- Acá para más rows para datos -->
@@ -193,17 +206,23 @@
     </section>
     <!-- Para los script de uso -->
     <script src="../Scripts/jquery-3.7.0.js"></script>
+    <script src="../Scripts/moment.min.js"></script>
     <script src="../Scripts/bootstrap.bundle.min.js"></script>
+   
     <!-- Select2 -->
     <script src="../Scripts/select2.min.js"></script>
     <script src="Scripts/Comunes/Combos.js"></script>
 
     <!-- Tabla -->
-    
+    <script src="../Scripts/jquery.dataTables.min.js"></script>
+    <script src="../Scripts/dataTables.bootstrap4.min.js"></script>
     <!--Librerías comunes de JavaScript para las Tablas -->
-    
+    <script src="Scripts/Comunes/Tablas.js"></script>
     <!-- Impresión -->
     <!-- Para el script de control del form -->
     <script src="Scripts/frmEmpleado.js"></script>
+    <!--  scripts:-->
+    <script src="../Scripts/daterangepicker.js"></script>
+    <script src="../Scripts/tempusdominus-bootstrap-4.min.js"></script>
 </body>
-</html>
+    </html>

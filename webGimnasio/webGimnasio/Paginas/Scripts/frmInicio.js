@@ -1,8 +1,4 @@
-﻿var dir = "http://localhost:52063/api/";
-
-
-;
-
+﻿
 jQuery(function () {
     //Carga el menú
     $("#dvMenu").load("../Paginas/Menu.html", function () {

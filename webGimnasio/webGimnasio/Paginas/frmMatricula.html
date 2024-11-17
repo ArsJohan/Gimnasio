@@ -42,202 +42,205 @@
 
 </head>
 <body class="hold-transition sidebar-mini">
-    <section class="content"/>
-        <div class="container-fluid">
-            <div class="row">
-                <!-- left column -->
-                <div class="col-md-12" id="dvMenu">
-                    <!-- Para incrustar la página que contiene el ménu de navegación-->
-                </div>
-                <div class="col-md-12">
-                    <div class="card">
-                        <div class="card-header">
-                            <h3 class="card-title">Maestro de Inscripción</h3>
-                        </div>
-                        <form id="frmDatosIn">
-                            <div class="card-body"/>
-                                <div class="card">
-                                    <div class="card-header">
-                                        <h3 class="card-title">Datos de Entrada</h3>
-                                    </div>
-
-                                    <div class="card-body">
-
-                                        <div class="row">
-                                            <div class="col-md-2">
-                                                <div class="form-group">
-                                                    <label for="txtCodigo">Código:</label>
-                                                    <input type="text" class="label_1" id="txtCodigo" width="15" placeholder="Ingrese Código..." disabled style="text-align:center" value="0">
-                                                </div>
-                                            </div>
-                                            <div class="col-md-3">
-                                                <div class="form-group">
-                                                    <label for="cboClase">Clase</label>
-                                                    <select id="cboClase" class="form-control">
-                                                    </select>
-                                                </div>
-                                            </div>
-                                            <div class="col-md-2">
-                                                <div class="form-group">
-                                                    <label for="lbFechaIn">Fecha Inicio</label>
-                                                    <input id="lbFechaIn" class="label_2" />
-                                                </div>
-                                            </div>
-                                            <div class="col-md-2">
-                                                <div class="form-group">
-                                                    <label for="lbFechaFn">Fecha Fin</label>
-                                                    <input id="lbFechaFn" class="label_2" />
-                                                </div>
-                                            </div>
-                                            <div class="col-md-2">
-                                                <div class="form-group">
-                                                    <label for="txtIdEmpleado">id_Empleado:</label>
-                                                    <input type="text" class="form-control" id="txtIdEmpleado" width="15" placeholder="Ingrese id_Empleado..." disabled style="text-align:center" value="0">
-                                                </div>
-                                            </div>
-                                        </div>
-
-                                        <div class="row">
-                                            <div class="col-md-3">
-                                                <div class="form-group">
-                                                    <label for="cboSala">Sala</label>
-                                                    <select id="cboSala" class="form-control">
-                                                    </select>
-                                                </div>
-                                            </div>
-                                            <div class="col-md-3">
-                                                <div class="form-group">
-                                                    <label for="txtMonitor">Monitor</label>
-                                                    <input id="txtMonitor" class="label_2" placeholder="Nombre del Monitor" disabled />
-                                                </div>
-                                            </div>
-                                            <div class="col-md-3">
-                                                <div class="form-group">
-                                                    <label for="cboEsp">Especialidad</label>
-                                                    <select id="cboEsp" class="form-control">
-                                                    </select>
-                                                </div>
-                                            </div>
-                                            <div class="col-md-4">
-                                                <div class="form-group">
-                                                    <label for="cboDia">Día</label>
-                                                    <select id="cboDia" class="form-control">
-                                                    </select>
-                                                </div>
-                                            </div>
-                                            <div class="col-md-4">
-                                                <div class="form-group">
-                                                    <label for="cboHora">Horas</label>
-                                                    <select id="cboHora" class="form-control">
-                                                    </select>
-                                                </div>
-                                            </div>
-                                            <div class="col-md-3">
-                                                <div class="form-group">
-                                                    <label for="cboTipDoc">Tipo Documento</label>
-                                                    <select id="cboTipDoc" class="form-control">
-                                                    </select>
-                                                </div>
-                                            </div>
-                                            <div class="col-md-3">
-                                                <div class="form-group">
-                                                    <label for="txtNroDoc">Nro.DocumentoSocio</label>
-                                                    <input type="text" class="form-control" id="txtNroDoc" placeholder="Ingrese Nro Documento...">
-                                                </div>
-                                            </div>
-                                            <div class="col-md-3">
-                                                <div class="form-group">
-                                                    <label for="txtSocio">Socio</label>
-                                                    <input type="text" class="form-control" id="txtSocio" placeholder="Ingrese Nro Documento...">
-                                                </div>
-                                            </div>
-                                            <div class="col-md-3">
-                                                <div class="form-group">
-                                                    <label for="txtValor">Valor</label>
-                                                    <input id="txtValor" class="form-control" placeholder="Valor Matricula" disabled />
-                                                </div>
-                                            </div>
-
-                                            <!-- Acá para más rows para datos -->
-                                        </div>
-
-                                        <!-- Menú de Opciones -->
-                                        <div class="card-body">
-                                            <div class="row">
-                                                <div class="col-md-3">
-                                                    <div class="form-group">
-                                                        <button type="button" id="btnAgre" class="btn-block btn-lg btn-primary">Agregar</button>
-                                                    </div>
-                                                </div>
-                                                <div class="col-md-3">
-                                                    <div class="form-group">
-                                                        <button type="button" id="btnModi" class="btn-block btn-lg btn-primary">Modificar</button>
-                                                    </div>
-                                                </div>
-                                                <div class="col-md-2">
-                                                    <div class="form-group">
-                                                        <button type="button" id="btnBusc" class="btn-block btn-lg btn-primary">Buscar</button>
-                                                    </div>
-                                                </div>
-
-                                                <div class="col-md-2">
-                                                    <div class="form-group">
-                                                        <button type="button" id="btnCanc" class="btn-block btn-lg btn-primary">Cancelar</button>
-                                                    </div>
-                                                </div>
-                                                <div class="col-md-2">
-                                                    <div class="form-group">
-                                                        <button type="button" id="btnImpr" class="btn-block btn-lg btn-primary">Impresión</button>
-                                                    </div>
-                                                </div>
-                                            </div>
-
-                                            <!-- Zona de Mensajes -->
-                                            <div class="card-footer">
-                                                <div id="dvMensaje" class=""></div>
-                                            </div>
-
-                                            <!-- Fin Menú de Opciones-->
-                                        </div>
-                                    </div><!-- card card-gray-dark -->
-                                    <!-- Acá row para la tabla -->
-                                    <div class="row">
-                                        <div class="col-md-12">
-                                            <table id="tablaDatos" class="table table-bordered table-striped">
-                                                <thead>
-                                                    <tr>
-                                                        <th></th>
-                                                        <th></th>
-                                                        <th></th>
-                                                        <th></th>
-                                                        <th></th>
-                                                        <th></th>
-                                                        <th></th>
-                                                    </tr>
-                                                </thead>
-                                            </table>
-                                        </div>
-                                    </div>
-                                    <!-- Fin row para la tabla -->
-
-                                </div>  <!-- /.card-body -->
-
-                        </form>
+    <section class="content" />
+    <div class="container-fluid">
+        <div class="row">
+            <!-- left column -->
+            <div class="col-md-12" id="dvMenu">
+                <!-- Para incrustar la página que contiene el ménu de navegación-->
+            </div>
+            <div class="col-md-12">
+                <div class="card">
+                    <div class="card-header">
+                        <h3 class="card-title">Maestro de Inscripción</h3>
                     </div>
+                    <form id="frmDatosIn">
+                        <div class="card-body" />
+                        <div class="card">
+                            <div class="card-header">
+                                <h3 class="card-title">Datos de Entrada</h3>
+                            </div>
+
+                            <div class="card-body">
+
+                                <div class="row">
+                                    <div class="col-md-2">
+                                        <div class="form-group">
+                                            <label for="txtCodigo">Código:</label>
+                                            <input type="text" class="label_1" id="txtCodigo" width="15" placeholder="Ingrese Código..." disabled style="text-align:center" value="0">
+                                        </div>
+                                    </div>
+                                    <div class="col-md-3">
+                                        <div class="form-group">
+                                            <label for="cboClase">Clase</label>
+                                            <select id="cboClase" class="form-control">
+                                            </select>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-2">
+                                        <div class="form-group">
+                                            <label for="lbFechaIn">Fecha Inicio</label>
+                                            <input id="lbFechaIn" class="label_2" />
+                                        </div>
+                                    </div>
+                                    <div class="col-md-2">
+                                        <div class="form-group">
+                                            <label for="lbFechaFn">Fecha Fin</label>
+                                            <input id="lbFechaFn" class="label_2" />
+                                        </div>
+                                    </div>
+                                    <div class="col-md-2">
+                                        <div class="form-group">
+                                            <label for="txtIdEmpleado">id_Empleado:</label>
+                                            <input type="text" class="form-control" id="txtIdEmpleado" width="15" placeholder="Ingrese id_Empleado..." disabled style="text-align:center" value="0">
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="row">
+                                    <div class="col-md-3">
+                                        <div class="form-group">
+                                            <label for="cboSala">Sala</label>
+                                            <select id="cboSala" class="form-control">
+                                            </select>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-3">
+                                        <div class="form-group">
+                                            <label for="txtMonitor">Monitor</label>
+                                            <input id="txtMonitor" class="label_2" placeholder="Nombre del Monitor" disabled />
+                                        </div>
+                                    </div>
+                                    <div class="col-md-3">
+                                        <div class="form-group">
+                                            <label for="cboEsp">Especialidad</label>
+                                            <select id="cboEsp" class="form-control">
+                                            </select>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-4">
+                                        <div class="form-group">
+                                            <label for="cboDia">Día</label>
+                                            <select id="cboDia" class="form-control">
+                                            </select>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-4">
+                                        <div class="form-group">
+                                            <label for="cboHora">Horas</label>
+                                            <select id="cboHora" class="form-control">
+                                            </select>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-3">
+                                        <div class="form-group">
+                                            <label for="cboTipDoc">Tipo Documento</label>
+                                            <select id="cboTipDoc" class="form-control">
+                                            </select>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-3">
+                                        <div class="form-group">
+                                            <label for="txtNroDoc">Nro.DocumentoSocio</label>
+                                            <input type="text" class="form-control" id="txtNroDoc" placeholder="Ingrese Nro Documento...">
+                                        </div>
+                                    </div>
+                                    <div class="col-md-3">
+                                        <div class="form-group">
+                                            <label for="txtSocio">Socio</label>
+                                            <input type="text" class="form-control" id="txtSocio" placeholder="Ingrese Nro Documento...">
+                                        </div>
+                                    </div>
+                                    <div class="col-md-3">
+                                        <div class="form-group">
+                                            <label for="txtValor">Valor</label>
+                                            <input id="txtValor" class="form-control" placeholder="Valor Matricula" disabled />
+                                        </div>
+                                    </div>
+
+                                    <!-- Acá para más rows para datos -->
+                                </div>
+
+                                <!-- Menú de Opciones -->
+                                <div class="card-body">
+                                    <div class="row">
+                                        <div class="col-md-3">
+                                            <div class="form-group">
+                                                <button type="button" id="btnAgre" class="btn-block btn-lg btn-primary">Agregar</button>
+                                            </div>
+                                        </div>
+                                        <div class="col-md-3">
+                                            <div class="form-group">
+                                                <button type="button" id="btnModi" class="btn-block btn-lg btn-primary">Modificar</button>
+                                            </div>
+                                        </div>
+                                        <div class="col-md-2">
+                                            <div class="form-group">
+                                                <button type="button" id="btnBusc" class="btn-block btn-lg btn-primary">Buscar</button>
+                                            </div>
+                                        </div>
+
+                                        <div class="col-md-2">
+                                            <div class="form-group">
+                                                <button type="button" id="btnCanc" class="btn-block btn-lg btn-primary">Cancelar</button>
+                                            </div>
+                                        </div>
+                                        <div class="col-md-2">
+                                            <div class="form-group">
+                                                <button type="button" id="btnImpr" class="btn-block btn-lg btn-primary">Impresión</button>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <!-- Zona de Mensajes -->
+                                    <div class="card-footer">
+                                        <div id="dvMensaje" class=""></div>
+                                    </div>
+
+                                    <!-- Fin Menú de Opciones-->
+                                </div>
+                            </div><!-- card card-gray-dark -->
+                            <!-- Acá row para la tabla -->
+                            <div class="row">
+                                <div class="col-md-12">
+                                    <table id="tablaDatos" class="table table-bordered table-striped">
+                                        <thead>
+                                            <tr>
+                                                <th></th>
+                                                <th></th>
+                                                <th></th>
+                                                <th></th>
+                                                <th></th>
+                                                <th></th>
+                                                <th></th>
+                                            </tr>
+                                        </thead>
+                                    </table>
+                                </div>
+                            </div>
+                            <!-- Fin row para la tabla -->
+
+                        </div>  <!-- /.card-body -->
+
+                    </form>
                 </div>
             </div>
         </div>
-        <!-- Para los script de uso -->
-        <script src="../Scripts/jquery-3.7.0.js"></script>
-        <script src="../Scripts/bootstrap.bundle.min.js"></script>
-        <!-- Select2 -->
-        <script src="../Scripts/select2.min.js"></script>
-        <script src="Scripts/Comunes/Combos.js"></script>
+    </div>
+    <!-- Para los script de uso -->
+    <script src="../Scripts/jquery-3.7.0.js"></script>
+    <script src="../Scripts/bootstrap.bundle.min.js"></script>
+    <!-- Select2 -->
+    <script src="../Scripts/select2.min.js"></script>
+    <script src="Scripts/Comunes/Combos.js"></script>
 
-        <!-- Tabla -->
-        <!--Librerías comunes de JavaScript para las Tablas -->
-        <!-- Impresión -->
-        <!-- Para el script de control del form -->
-        <script src="Scripts/frmMatricula.js"></script>
+    <!-- Tabla -->
+    <script src="../Scripts/jquery.dataTables.min.js"></script>
+    <script src="../Scripts/dataTables.bootstrap4.min.js"></script>
+    <!--Librerías comunes de JavaScript para las Tablas -->
+    <script src="Scripts/Comunes/Tablas.js"></script>
+    <!-- Impresión -->
+    <!-- Para el script de control del form -->
+    <script src="Scripts/frmMatricula.js"></script>
 </body>
 </html>
