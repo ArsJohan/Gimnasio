@@ -24,6 +24,7 @@ namespace apiGimnasio.Clases
                    orderby tE.nroDoc
                    select new
                    {
+                       Editar = "<a class='btn btn-info btn-sm' href=''><i class='fas fa-pencil-alt'></i>Editar</a>",
                        Codigo = tE.Codigo_Empleado,
                        Nombre = tE.Nombre,
                        Apellido = tE.Apellido,
