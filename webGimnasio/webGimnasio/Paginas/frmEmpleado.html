@@ -23,6 +23,45 @@
     <link href="Estilos/css/all.min.css" rel="stylesheet" />
     
 
+    <style>
+/* Cambiar el fondo del calendario */
+.bootstrap-datetimepicker-widget {
+    background-color: #f4f4f9; /* Fondo del calendario */
+    border: 1px solid #ddd;  /* Bordes */
+    border-radius: 5px;
+}
+
+/* Cambiar el color del encabezado (mes y año) */
+.bootstrap-datetimepicker-widget .datepicker-days th {
+    background-color: #007bff; /* Fondo del encabezado */
+    color: #fff; /* Color del texto */
+}
+
+/* Cambiar el color de los días seleccionados */
+.bootstrap-datetimepicker-widget .day.active {
+    background-color: #28a745; /* Fondo del día seleccionado */
+    color: #fff; /* Texto del día seleccionado */
+}
+
+/* Cambiar el color al pasar el ratón */
+.bootstrap-datetimepicker-widget .day:hover {
+    background-color: #d4edda; /* Fondo al pasar el ratón */
+    color: #212529; /* Texto al pasar el ratón */
+}
+
+/* Cambiar el color de los días deshabilitados */
+.bootstrap-datetimepicker-widget .disabled {
+    color: #ccc; /* Texto de días deshabilitados */
+    cursor: not-allowed;
+}
+
+/* Cambiar el color de los botones (hoy, limpiar) */
+.bootstrap-datetimepicker-widget .btn {
+    background-color: #17a2b8; /* Fondo de los botones */
+    color: #fff; /* Texto de los botones */
+    border: none;
+}
+</style>
 
 </head>
 <body class="hold-transition sidebar-mini">
@@ -118,7 +157,7 @@
                                             <div class="col-md-2">
                                                 <div class="form-group">
                                                     <label for="txtIdEmpleado">id_Empleado:</label>
-                                                    <input type="text" class="form-control" id="txtIdEmpleado" width="15" placeholder="Ingrese id_Empleado..." value="0" style="text-align:center" disabled>
+                                                    <input type="text" class="form-control" id="txtIdEmpleado" width="15" placeholder="Ingrese id_Empleado..." value="0" style="text-align:center" >
                                                 </div>
                                             </div>
                                             <div class="row-col-md-2">

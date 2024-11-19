@@ -1,5 +1,6 @@
 ﻿var dir = "http://localhost:52063/api/";
 var oTabla = $("#tablaDatos").DataTable();
+
 jQuery(function () {
     //Carga el menú
     $("#dvMenu").load("../Paginas/Menu.html");
@@ -93,6 +94,7 @@ jQuery(function () {
         format: 'DD/MM/YYYY',
 
     });
+ 
 
     llenarComboTipDoc();
     llenarTabla();
@@ -220,6 +222,8 @@ async function ejecutarComando(accion) {
     let codigo = $("#txtCodigo").val();
     let nombre = $("#txtNombre").val();
     let apellido = $("#txtApellido").val();
+    let fechaN = $("#dtmFechaNac").text();
+    let fechaIn = $("#dtmFechaIng").text();
     let telefono = $("#txtTelefono").val();
     let tipDoc = $("#cboTipDoc").val();
     let nroD = $("#txtNroDoc").val();
@@ -236,6 +240,8 @@ async function ejecutarComando(accion) {
         Codigo: codigo,
         Nombre: nombre,
         Apellido: apellido,
+        Fecha_Nac: fechaN,
+        Fecha_Ingreso: fechaIn,
         Telefono: telefono,
         codigo_TipoDoc:tipDoc,
         nroDoc: nroD,
