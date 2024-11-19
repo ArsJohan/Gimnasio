@@ -133,19 +133,19 @@ function mensajeOk(texto) {
 
 function editarFila(datosFila) {
 
-    let idTD = datosFila.find('td:eq(4)').text();
+    let idTD = datosFila.find('td:eq(5)').text();
     $("#cboTipDoc").val(idTD);
    
-    $("#txtCodigo").val(datosFila.find('td:eq(0)').text());
-    $("#txtNombre").val(datosFila.find('td:eq(1)').text());
-    $("#txtApellido").val(datosFila.find('td:eq(2)').text());
-    $("#dtmFechaNac").text(datosFila.find('td:eq(9)').text());
-    $("#dtmFechaIng").text(datosFila.find('td:eq(8)').text());
-    $("#txtTelefono").val(datosFila.find('td:eq(3)').text());
-    $("#txtNroDoc").val(datosFila.find('td:eq(6)').text());
-    $("#txtSalario").val(datosFila.find('td:eq(7)').text());
-    $("#txtIdEmpleado").val(datosFila.find('td:eq(10)').text());
-    $("#chkActivo").prop("checked", datosFila.find('td:eq(11)').text() == 'true');
+    $("#txtCodigo").val(datosFila.find('td:eq(1)').text());
+    $("#txtNombre").val(datosFila.find('td:eq(2)').text());
+    $("#txtApellido").val(datosFila.find('td:eq(3)').text());
+    $("#dtmFechaNac").text(datosFila.find('td:eq(10)').text());
+    $("#dtmFechaIng").text(datosFila.find('td:eq(9)').text());
+    $("#txtTelefono").val(datosFila.find('td:eq(4)').text());
+    $("#txtNroDoc").val(datosFila.find('td:eq(7)').text());
+    $("#txtSalario").val(datosFila.find('td:eq(8)').text());
+    $("#txtIdEmpleado").val(datosFila.find('td:eq(11)').text());
+    $("#chkActivo").prop("checked", datosFila.find('td:eq(12)').text() == 'true');
     mensajeOk("OK");
  
 }
