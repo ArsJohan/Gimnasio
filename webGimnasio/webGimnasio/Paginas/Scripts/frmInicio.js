@@ -3,6 +3,10 @@ jQuery(function () {
     //Carga el menú
     $("#dvMenu").load("../Paginas/Menu.html", function () {
         const nombreUsuario = sessionStorage.getItem('nombreUsuario');
+        if (nombreUsuario == null) {
+            sessionStorage.clear();
+            window.location.href("../Paginas/frmSplash.html")
+        }
         // Selecciona el div
         $("#Name").empty();
         $("#Name").append('<h4>' + nombreUsuario + '</h4>');

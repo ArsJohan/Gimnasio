@@ -3,6 +3,10 @@
         background-color: #7a6d5d;
         border-color: #7a6d5d;
     }
+    .btn-info:hover {
+        background-color: #7a6d5d;
+        border-color: #7a6d5d;
+    }
     
 }
 
@@ -18,8 +22,11 @@
     background: radial-gradient(circle at 10% 20%, rgb(0, 0, 0) 0%, rgb(64, 64, 64) 90.2%);
 }
 
+.btn-info {
+    font-family: 'Ubuntu',sans-serif;
+    background: radial-gradient(circle at 10% 20%, rgb(0, 0, 0) 0%, rgb(64, 64, 64) 90.2%);
 
-
+}
 .btn-block {
     font-family: 'Ubuntu',sans-serif;
     background-color: #D2B48C;
@@ -29,4 +36,45 @@
     accent-color: black;
 }
 
+table.dataTable tbody tr.selected > * {
+    box-shadow: inset 0 0 0 9999px #D2B48C;
+    color: white;
+}
+/* Cambiar el fondo del calendario */
+.bootstrap-datetimepicker-widget {
+    background-color: #f4f4f9; /* Fondo del calendario */
+    border: 1px solid #ddd; /* Bordes */
+    border-radius: 5px;
+    color: white;
+}
 
+    /* Cambiar el color del encabezado (mes y año) */
+    .bootstrap-datetimepicker-widget .datepicker-days th {
+        background-color: #D2B48C; /* Fondo del encabezado */
+        color: black; /* Color del texto */
+    }
+
+    /* Cambiar el color de los días seleccionados */
+    .bootstrap-datetimepicker-widget .day.active {
+        background-color: #28a745; /* Fondo del día seleccionado */
+        color: #fff; /* Texto del día seleccionado */
+    }
+
+    /* Cambiar el color al pasar el ratón */
+    .bootstrap-datetimepicker-widget .day:hover {
+        background-color: #d4edda; /* Fondo al pasar el ratón */
+        color: black; /* Texto al pasar el ratón */
+    }
+
+    /* Cambiar el color de los días deshabilitados */
+    .bootstrap-datetimepicker-widget .disabled {
+        color: #ccc; /* Texto de días deshabilitados */
+        cursor: not-allowed;
+    }
+
+    /* Cambiar el color de los botones (hoy, limpiar) */
+    .bootstrap-datetimepicker-widget .btn {
+        background-color: #17a2b8; /* Fondo de los botones */
+        color: #fff; /* Texto de los botones */
+        border: none;
+    }

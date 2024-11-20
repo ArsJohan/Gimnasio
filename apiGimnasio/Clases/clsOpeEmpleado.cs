@@ -33,8 +33,8 @@ namespace apiGimnasio.Clases
                        Tipo_Doc = tDoc.TipoDoc,
                        Nro_doc = tE.nroDoc,
                        Salario = tE.Salario,
-                       FechaIng = tE.Fecha_Ingreso,
-                       FechaN = tE.Fecha_Nac,
+                       FechaIng = tE.Fecha_Ingreso.ToString(),
+                       FechaN = tE.Fecha_Nac.ToString(),
                        Empleado = tE.id_Empleado,
                        Activo = tE.Activo
 

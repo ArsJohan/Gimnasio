@@ -5,6 +5,11 @@ jQuery(function () {
     //Carga el menú
     $("#dvMenu").load("../Paginas/Menu.html", function () {
         const nombreUsuario = sessionStorage.getItem('nombreUsuario');
+
+        if (nombreUsuario == null) {
+            sessionStorage.clear();
+            window.location.href("../Paginas/frmSplash.html")
+        }
         // Selecciona el div
         $("#Name").empty();
         $("#Name").append('<h4>' + nombreUsuario + '</h4>');
@@ -98,17 +103,16 @@ jQuery(function () {
 
 
     });
-    //Calendario
+
     $('#dtmFechaNac').datetimepicker({
-        format: 'DD/MM/YYYY',
+        format: 'YYYY-MM-DD',
 
 
     });
     $('#dtmFechaIng').datetimepicker({
-        format: 'DD/MM/YYYY',
+        format: 'YYYY-MM-DD',
 
     });
- 
 
     llenarComboTipDoc();
     llenarTabla();
@@ -139,8 +143,8 @@ function editarFila(datosFila) {
     $("#txtCodigo").val(datosFila.find('td:eq(1)').text());
     $("#txtNombre").val(datosFila.find('td:eq(2)').text());
     $("#txtApellido").val(datosFila.find('td:eq(3)').text());
-    $("#dtmFechaNac").text(datosFila.find('td:eq(10)').text());
-    $("#dtmFechaIng").text(datosFila.find('td:eq(9)').text());
+    $("#dtmFechaNac").val(datosFila.find('td:eq(10)').text());
+    $("#dtmFechaIng").val(datosFila.find('td:eq(9)').text());
     $("#txtTelefono").val(datosFila.find('td:eq(4)').text());
     $("#txtNroDoc").val(datosFila.find('td:eq(7)').text());
     $("#txtSalario").val(datosFila.find('td:eq(8)').text());

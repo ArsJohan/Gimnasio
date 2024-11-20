@@ -54,7 +54,6 @@ async function logearse(clave, contra) {
             }
         );
         const datosIn = await datosOut.json();
-        console.log(datosIn[0] == "");
         if (datosIn == "") {
             mensajeError("Clave o Contraseña erroneos");
             return;
