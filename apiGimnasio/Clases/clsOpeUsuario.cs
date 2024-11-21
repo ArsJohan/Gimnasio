@@ -27,7 +27,8 @@ namespace apiGimnasio.Clases
                       
                         Codigo = tE.Codigo_Empleado,
                         Nombre = tE.Nombre,
-                        Apellido = tE.Apellido
+                        Apellido = tE.Apellido,
+                        Activo = tE.Activo
 
                    };
 

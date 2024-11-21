@@ -4,11 +4,11 @@ var oTabla = $("#tablaDatos").DataTable();
 jQuery(function () {
     //Carga el menú
     $("#dvMenu").load("../Paginas/Menu.html", function () {
-        const nombreUsuario = sessionStorage.getItem('nombreUsuario');
-
+        const nombreUsuario = sessionStorage.getItem('nombreUsu');
         if (nombreUsuario == null) {
             sessionStorage.clear();
-            window.location.href("../Paginas/frmSplash.html")
+            window.location.href = "frmSplash.html";
+            return;
         }
         // Selecciona el div
         $("#Name").empty();
@@ -19,7 +19,7 @@ jQuery(function () {
             let rpta = window.confirm(nombreUsuario + " ¿Estas seguro de cerrar sesión?");
             if (rpta == true) {
                 // Redirige a la página anterior y reemplaza la actual en el historial
-                window.location.replace(document.referrer);
+                window.location.href = "frmLogin.html";
             }
 
         });
@@ -31,12 +31,36 @@ jQuery(function () {
         alert("Agregar");
         mensajeInfo("");
         $("#txtCodigo").val(0);
+        
         let nroD = $("#txtNroDoc").val();
         let name = $("#txtNombre").val();
-        alert("nroDoc " + nroD + "nombre" + name);
-        if (name.trim() == "" || nroD.trim() == "" || parseInt(nroD, 10) <= 0) {
-            mensajeError("Debe Buscar 1ro. un Empleado");
+        let apellido = $("#txtApellido").val();
+        let tele = $("#txtTelefono").val();
+        let sal = $("#txtSalario").val();
+
+        if (name.trim() == "" || name.length<3) {
+            mensajeError("Longitud del nombre no valido");
+            $("#txtNombre").focus();
+            return;
+        }
+        if (apellido.trim() == "" || apellido.length <3) {
+            mensajeError("Longitud del apellido no valido");
+            $("#txtApellido").focus();
+            return;
+        }
+        if (nroD.trim() == "") {
+            mensajeError("Debes agregar un numero de identificación");
             $("#txtNroDoc").focus();
+            return;
+        }
+        if (tele.trim() == "") {
+            mensajeError("Debe agregar un Teléfono");
+            $("#txtTelefono").focus();
+            return;
+        }
+        if (sal.trim() == "") {
+            mensajeError("Debe agregar un Salario");
+            $("#txtSalario").focus();
             return;
         }
         else {
@@ -55,19 +79,42 @@ jQuery(function () {
         let codigo = $("#txtCodigo").val();
         let nroD = $("#txtNroDoc").val();
         let name = $("#txtNombre").val();
+        let apellido = $("#txtApellido").val();
         let tele = $("#txtTelefono").val();
-        alert("nroDoc " + nroD + "nombre" + name);
-        if (name.trim() == "" || nroD.trim() == "" || parseInt(nroD, 10) <= 0 || codigo.trim() == "" || parseInt(codigo, 10) <= 0) {
+        let sal = $("#txtSalario").val();
+
+        if (codigo.trim() == "" || nroD.trim() == "") {
             mensajeError("Debe Buscar 1ro. un empleado");
             $("#txtNroDoc").focus();
             return;
         }
-        if (tele.trim() == "" || parseInt(tele) <= 0)
-        {
-            mensajeError("Debe agrgar un telefono");
-            $("#txtTelefono").focus(); 
+
+        if (name.trim() == "" || name.length <3) {
+            mensajeError("Longitud del nombre no valido");
+            $("#txtNombre").focus();
             return;
         }
+        if (apellido.trim() == "" || apellido.length <3) {
+            mensajeError("longitud del apellido no valido");
+            $("#txtApellido").focus();
+            return;
+        }
+        if (nroD.trim() == "") {
+            mensajeError("Debes agregar un numero de identificación");
+            $("#txtNroDoc").focus();
+            return;
+        }
+        if (tele.trim() == "") {
+            mensajeError("Debe agregar un Teléfono");
+            $("#txtTelefono").focus();
+            return;
+        }
+        if (sal.trim() == "") {
+            mensajeError("Debe agregar un Salario");
+            $("#txtSalario").focus();
+            return;
+        }
+      
         else {
 
             let rpta = window.confirm("Estas seguro de modificar datos de: " + name + ", con nro. Doc. " + nroD);
@@ -246,7 +293,7 @@ async function ejecutarComando(accion) {
     let tipDoc = $("#cboTipDoc").val();
     let nroD = $("#txtNroDoc").val();
     let salario = $("#txtSalario").val();
-    let idEmple = $("#txtIdEmpleado").val();
+    let idEmple = sessionStorage.getItem('codUsu');
     let activo = $("#chkActivo").prop("checked");
 
 

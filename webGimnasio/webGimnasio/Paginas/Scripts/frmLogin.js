@@ -48,18 +48,19 @@ async function logearse(clave, contra) {
                 mode: "cors",
                 headers: {
                     "content-type": "application/json",
-
+                        
                 }    
 
             }
         );
         const datosIn = await datosOut.json();
-        if (datosIn == "") {
+        if (datosIn == "" || datosIn[0].Activo == false) {
             mensajeError("Clave o Contraseña erroneos");
             return;
         }
 
-        sessionStorage.setItem('nombreUsuario', datosIn[0].Nombre + " " + datosIn[0].Apellido);
+        sessionStorage.setItem('codUsu', datosIn[0].Codigo);
+        sessionStorage.setItem('nombreUsu', datosIn[0].Nombre + " " + datosIn[0].Apellido);
         window.location.href = "frmInicio.html";
         return;
     } catch (error) {
@@ -67,51 +68,3 @@ async function logearse(clave, contra) {
         return;
     }
 }
-//async function ingresar() {
-//    //consultar a la Api
-//    try {
-//        let con = $("#user_password").val();
-//        let pas = $("#user_clave").val();
-//        let ok = false;
-//        if (con.trim() == "" || pas.trim() == "") {
-//            mensajeError("Error,contraseña o codigo están vacíos");
-//            $("#user_password").focus();
-//            return;
-//        }
-
-//        const datosOut = await fetch(dir + "artista?dato=" + nroDoc + "&comando=2",
-
-//            {
-//                method: "GET",
-//                mode: "cors",
-//                headers: {
-//                    "content-type": "application/json",
-//                }
-//            }
-//        );
-//        const datosIn = await datosOut.json();
-//        if (datosIn == "") {
-//            mensajeInfo("Usuario o Contraseña Incorrecta");
-//            $("#user_password").val();
-//            $("#user_clave").val();
-//            $("#user_password").focus();
-//            return;
-//        }
-//        if (usu == datosIn[0].nUsuario && pas == datosIn[0].nClave) {
-//            ok = true;
-//            nUsu = datosIn[0].Emp
-//            iUsu = datosIn[0].idEmp
-//        }
-
-//        if (ok) {
-//            if (window.sessionStorage) {
-//                sessionStorage.setItem("xxnUsu", nUsu);
-//                sessionStorage.setItem("xxiUsu", iUsu);
-//                location.href = "frmInicio.html";
-//            }
-//        }
-
-//    } catch (error) {
-//        mensajeError("Error: " + error);
-//    }
-//}

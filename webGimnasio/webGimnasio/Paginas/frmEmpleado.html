@@ -50,25 +50,27 @@
                                             <div class="col-md-2">
                                                 <div class="form-group">
                                                     <label for="txtCodigo">Código:</label>
-                                                    <input type="text" class="form-control" id="txtCodigo" width="15" placeholder="Ingrese Código..." disabled style="text-align:center" value="0">
+                                                    <input type="text" pattern="^[0-9]+" class="form-control" id="txtCodigo" width="15" placeholder="Ingrese Código..." disabled style="text-align:center" value="0">
                                                 </div>
                                             </div>
                                             <div class="col-md-5">
                                                 <div class="form-group">
                                                     <label for="txtNombre">Nombre</label>
-                                                    <input type="text" class="form-control" id="txtNombre" placeholder="Ingrese Nombre...">
+                                                    <input type="text" class="form-control" id="txtNombre" placeholder="Ingrese Nombre..." pattern="[A-Za-z]{3,30}">
+                                                    <span></span>
                                                 </div>
                                             </div>
                                             <div class="col-md-5">
                                                 <div class="form-group">
                                                     <label for="txtApellido">Apellido</label>
-                                                    <input type="text" class="form-control" id="txtApellido" placeholder="Ingrese Apellido...">
+                                                    <input type="text" class="form-control" id="txtApellido" placeholder="Ingrese Apellido..." pattern="[A-Za-z]{3,30}">
+                                                    <span></span>
                                                 </div>
                                             </div>
                                             <div class="col-md-2">
                                                 <div class="form-group">
                                                     <label for="dtmFechaNac">Fecha de Nacimiento</label>
-                                                    <div class="input-group date"  data-target-input="nearest">
+                                                    <div class="input-group date" data-target-input="nearest">
                                                         <input type="text" id="dtmFechaNac" class="form-control datetimepicker-input" data-target="#dtmFechaNac" />
                                                         <div class="input-group-append" data-target="#dtmFechaNac" data-toggle="datetimepicker">
                                                             <div class="input-group-text"><i class="fa fa-calendar"></i></div>
@@ -79,7 +81,7 @@
                                             <div class="col-md-2">
                                                 <div class="form-group">
                                                     <label for="dtmFechaIng">Fecha de Ingreso</label>
-                                                    <div class="input-group date"  data-target-input="nearest">
+                                                    <div class="input-group date" data-target-input="nearest">
                                                         <input type="text" id="dtmFechaIng" class="form-control datetimepicker-input" data-target="#dtmFechaIng" />
                                                         <div class="input-group-append" data-target="#dtmFechaIng" data-toggle="datetimepicker">
                                                             <div class="input-group-text"><i class="fa fa-calendar"></i></div>
@@ -90,7 +92,8 @@
                                             <div class="col-md-4">
                                                 <div class="form-group">
                                                     <label for="txtTelefono">Telefono</label>
-                                                    <input type="text" class="form-control" id="txtTelefono" placeholder="Ingrese Telefono...">
+                                                    <input type="tel" class="form-control" id="txtTelefono" placeholder="Ingrese Telefono..." pattern="^[0-9]+">
+                                                    <span></span>
                                                 </div>
                                             </div>
                                         </div>
@@ -105,25 +108,28 @@
                                             <div class="col-md-3">
                                                 <div class="form-group">
                                                     <label for="txtNroDoc">Nro. Documento</label>
-                                                    <input type="text" class="form-control" id="txtNroDoc" placeholder="Ingrese Nro Documento...">
+                                                    <input type="text" pattern="^[0-9]+" class="form-control" id="txtNroDoc" placeholder="Ingrese Nro Documento...">
+                                                    <span></span>
                                                 </div>
                                             </div>
                                             <div class="col-md-3">
                                                 <div class="form-group">
                                                     <label for="txtSalario">Salario</label>
-                                                    <input type="text" class="form-control" id="txtSalario" placeholder="Ingrese Telefono...">
+                                                    <input type="text" pattern="^[0-9]+" class="form-control" id="txtSalario" placeholder="Ingrese Salario...">
+                                                    <span></span>
                                                 </div>
                                             </div>
                                             <div class="col-md-2">
                                                 <div class="form-group">
                                                     <label for="txtIdEmpleado">id_Empleado:</label>
-                                                    <input type="text" class="form-control" id="txtIdEmpleado" width="15" placeholder="Ingrese id_Empleado..." value="0" style="text-align:center" >
+                                                    <input type="text"  class="form-control" id="txtIdEmpleado" width="15" placeholder="Ingrese id_Empleado..." value="0" style="text-align:center" disabled>
+                                                    
                                                 </div>
                                             </div>
                                             <div class="row-col-md-2">
                                                 <div class="form-group">
                                                     <label for="chkActivo">Activo:</label>
-                                                    <input type="checkbox" id="chkActivo" class="form-control custom-checkbox" />
+                                                    <input type="checkbox" id="chkActivo" class="form-control custom-checkbox"  />
                                                 </div>
                                             </div>
 
@@ -208,7 +214,7 @@
     <script src="../Scripts/jquery-3.7.0.js"></script>
     <script src="../Scripts/moment.min.js"></script>
     <script src="../Scripts/bootstrap.bundle.min.js"></script>
-   
+
     <!-- Select2 -->
     <script src="../Scripts/select2.min.js"></script>
     <script src="Scripts/Comunes/Combos.js"></script>
@@ -224,5 +230,6 @@
     <!--  scripts:-->
     <script src="../Scripts/daterangepicker.js"></script>
     <script src="../Scripts/tempusdominus-bootstrap-4.min.js"></script>
+
 </body>
     </html>
