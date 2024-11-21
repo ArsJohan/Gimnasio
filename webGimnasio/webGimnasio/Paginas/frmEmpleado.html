@@ -56,14 +56,14 @@
                                             <div class="col-md-5">
                                                 <div class="form-group">
                                                     <label for="txtNombre">Nombre</label>
-                                                    <input type="text" class="form-control" id="txtNombre" placeholder="Ingrese Nombre..." pattern="[A-Za-z]{3,30}">
+                                                    <input type="text" class="form-control" id="txtNombre" placeholder="Ingrese Nombre..." pattern="[A-Za-z\s]{3,30}">
                                                     <span></span>
                                                 </div>
                                             </div>
                                             <div class="col-md-5">
                                                 <div class="form-group">
                                                     <label for="txtApellido">Apellido</label>
-                                                    <input type="text" class="form-control" id="txtApellido" placeholder="Ingrese Apellido..." pattern="[A-Za-z]{3,30}">
+                                                    <input type="text" class="form-control" id="txtApellido" placeholder="Ingrese Apellido..." pattern="[A-Za-z\s]{3,30}">
                                                     <span></span>
                                                 </div>
                                             </div>
@@ -108,7 +108,7 @@
                                             <div class="col-md-3">
                                                 <div class="form-group">
                                                     <label for="txtNroDoc">Nro. Documento</label>
-                                                    <input type="text" pattern="^[0-9]+" class="form-control" id="txtNroDoc" placeholder="Ingrese Nro Documento...">
+                                                    <input type="text" pattern="^[0-9]+" class="form-control" id="txtNroDoc" placeholder="Ingrese Nro Documento..." required>
                                                     <span></span>
                                                 </div>
                                             </div>

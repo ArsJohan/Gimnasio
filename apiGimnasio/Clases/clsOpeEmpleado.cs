@@ -61,8 +61,8 @@ namespace apiGimnasio.Clases
                        idTd = tE.codigo_TipoDoc,
                        Nro_doc = tE.nroDoc,
                        Salario = tE.Salario,
-                       FechaIng = tE.Fecha_Ingreso,
-                       FechaN = tE.Fecha_Nac,
+                       FechaIng = tE.Fecha_Ingreso.ToString(),
+                       FechaN = tE.Fecha_Nac.ToString(),
                        Empleado = tE.id_Empleado,
                        Activo = tE.Activo
 
@@ -109,6 +109,7 @@ namespace apiGimnasio.Clases
                 EMPLEADO tbEmp = oEFR.EMPLEADOes.FirstOrDefault(s => s.nroDoc == tblEmpleado.nroDoc);
                 tbEmp.Codigo_Empleado = tblEmpleado.Codigo_Empleado;
                 tbEmp.Nombre = tblEmpleado.Nombre;
+                tbEmp.Apellido = tblEmpleado.Apellido;
                 tbEmp.codigo_TipoDoc = tblEmpleado.codigo_TipoDoc;
                 tbEmp.nroDoc = tblEmpleado.nroDoc;
                 tbEmp.Telefono = tblEmpleado.Telefono;

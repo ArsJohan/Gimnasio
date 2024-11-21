@@ -1,7 +1,7 @@
 ﻿jQuery(function () {
     //Carga el menú
     $("#dvMenu").load("../Paginas/Menu.html", function () {
-        const nombreUsuario = sessionStorage.getItem('nombreUsuario');
+        const nombreUsuario = sessionStorage.getItem('nombreUsu');
         if (nombreUsuario == null) {
             sessionStorage.clear();
             window.location.href = "frmSplash.html";

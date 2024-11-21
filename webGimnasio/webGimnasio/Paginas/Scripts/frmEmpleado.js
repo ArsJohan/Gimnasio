@@ -213,8 +213,8 @@ function Limpiar() {
     $("#txtCodigo").val("");
     $("#txtNombre").val("");
     $("#txtApellido").val("");
-    $("#dtmFechaNac").text("");
-    $("#dtmFechaIng").text("");
+    $("#dtmFechaNac").val("");
+    $("#dtmFechaIng").val("");
     $("#txtTelefono").val("");
     $("#cboTipDoc").val("");
     $("#txtNroDoc").val("");
@@ -265,8 +265,8 @@ async function Consultar() {
         $("#txtCodigo").val(datosIn[0].Codigo);
         $("#txtNombre").val(datosIn[0].Nombre);
         $("#txtApellido").val(datosIn[0].Apellido);
-        $("#dtmFechaNac").text(datosIn[0].FechaN);
-        $("#dtmFechaIng").text(datosIn[0].FechaIng);
+        $("#dtmFechaNac").val(datosIn[0].FechaN);
+        $("#dtmFechaIng").val(datosIn[0].FechaIng);
         $("#txtTelefono").val(datosIn[0].Telefono);
         $("#cboTipDoc").val(datosIn[0].idTD);
         $("#txtNroDoc").val(datosIn[0].Nro_doc);
@@ -287,8 +287,8 @@ async function ejecutarComando(accion) {
     let codigo = $("#txtCodigo").val();
     let nombre = $("#txtNombre").val();
     let apellido = $("#txtApellido").val();
-    let fechaN = $("#dtmFechaNac").text();
-    let fechaIn = $("#dtmFechaIng").text();
+    let fechaN = $("#dtmFechaNac").val();
+    let fechaIn = $("#dtmFechaIng").val();
     let telefono = $("#txtTelefono").val();
     let tipDoc = $("#cboTipDoc").val();
     let nroD = $("#txtNroDoc").val();
@@ -302,7 +302,7 @@ async function ejecutarComando(accion) {
     //estructuras complejas dentro de sus valores
     //Nombre: Valor
     let datosOut = {
-        Codigo: codigo,
+        Codigo_Empleado: codigo,
         Nombre: nombre,
         Apellido: apellido,
         Fecha_Nac: fechaN,
@@ -314,6 +314,8 @@ async function ejecutarComando(accion) {
         id_Empleado: idEmple,
         Activo: activo
     }
+
+    console.log(datosOut);
     //Invocar el servicio con fetch
     try {
         const response = await fetch(dir + "empleado", {
