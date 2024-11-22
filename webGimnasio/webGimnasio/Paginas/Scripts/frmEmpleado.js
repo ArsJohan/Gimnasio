@@ -1,5 +1,6 @@
 ﻿var dir = "http://localhost:52063/api/";
 var oTabla = $("#tablaDatos").DataTable();
+var rpta;
 
 jQuery(function () {
     //Carga el menú
@@ -16,7 +17,7 @@ jQuery(function () {
         $("#cierreSesion").on("click", function () {
             // Limpia el sessionStorage
             sessionStorage.clear();
-            let rpta = window.confirm(nombreUsuario + " ¿Estas seguro de cerrar sesión?");
+            rpta = window.confirm(nombreUsuario + " ¿Estas seguro de cerrar sesión?");
             if (rpta == true) {
                 // Redirige a la página anterior y reemplaza la actual en el historial
                 window.location.href = "frmLogin.html";
@@ -31,43 +32,12 @@ jQuery(function () {
         alert("Agregar");
         mensajeInfo("");
         $("#txtCodigo").val(0);
-        
-        let nroD = $("#txtNroDoc").val();
-        let name = $("#txtNombre").val();
-        let apellido = $("#txtApellido").val();
-        let tele = $("#txtTelefono").val();
-        let sal = $("#txtSalario").val();
+        let accion = "POST";
+        if(validacion(accion)){
 
-        if (name.trim() == "" || name.length<3) {
-            mensajeError("Longitud del nombre no valido");
-            $("#txtNombre").focus();
-            return;
-        }
-        if (apellido.trim() == "" || apellido.length <3) {
-            mensajeError("Longitud del apellido no valido");
-            $("#txtApellido").focus();
-            return;
-        }
-        if (nroD.trim() == "") {
-            mensajeError("Debes agregar un numero de identificación");
-            $("#txtNroDoc").focus();
-            return;
-        }
-        if (tele.trim() == "") {
-            mensajeError("Debe agregar un Teléfono");
-            $("#txtTelefono").focus();
-            return;
-        }
-        if (sal.trim() == "") {
-            mensajeError("Debe agregar un Salario");
-            $("#txtSalario").focus();
-            return;
-        }
-        else {
-
-            let rpta = window.confirm("Estas seguro de agregar datos de: " + name + ", con nro. Doc. " + nroD);
+            
             if (rpta == true) {
-                ejecutarComando("POST");
+                ejecutarComando(accion);
             } else {
                 mensajeInfo("Cancelada acción de Agregar");
             }
@@ -76,50 +46,12 @@ jQuery(function () {
     $("#btnModi").on("click", function () {
         alert("Modificar");
         mensajeInfo("");
-        let codigo = $("#txtCodigo").val();
-        let nroD = $("#txtNroDoc").val();
-        let name = $("#txtNombre").val();
-        let apellido = $("#txtApellido").val();
-        let tele = $("#txtTelefono").val();
-        let sal = $("#txtSalario").val();
+        let accion = "PUT"
+        if(validacion(accion)){
 
-        if (codigo.trim() == "" || nroD.trim() == "") {
-            mensajeError("Debe Buscar 1ro. un empleado");
-            $("#txtNroDoc").focus();
-            return;
-        }
-
-        if (name.trim() == "" || name.length <3) {
-            mensajeError("Longitud del nombre no valido");
-            $("#txtNombre").focus();
-            return;
-        }
-        if (apellido.trim() == "" || apellido.length <3) {
-            mensajeError("longitud del apellido no valido");
-            $("#txtApellido").focus();
-            return;
-        }
-        if (nroD.trim() == "") {
-            mensajeError("Debes agregar un numero de identificación");
-            $("#txtNroDoc").focus();
-            return;
-        }
-        if (tele.trim() == "") {
-            mensajeError("Debe agregar un Teléfono");
-            $("#txtTelefono").focus();
-            return;
-        }
-        if (sal.trim() == "") {
-            mensajeError("Debe agregar un Salario");
-            $("#txtSalario").focus();
-            return;
-        }
-      
-        else {
-
-            let rpta = window.confirm("Estas seguro de modificar datos de: " + name + ", con nro. Doc. " + nroD);
+            
             if (rpta == true) {
-                ejecutarComando("PUT");
+                ejecutarComando(accion);
             } else {
                 mensajeInfo("Cancelada acción de Modificar");
             }
@@ -182,6 +114,82 @@ function mensajeOk(texto) {
     $("#dvMensaje").html(texto);
 }
 
+function validacion(accion) { 
+
+    
+    let nroD = document.getElementById("txtNroDoc");
+    let name = document.getElementById("txtNombre");
+    let apellido = document.getElementById("txtApellido");
+    let tele = document.getElementById("txtTelefono");
+    let sal = document.getElementById("txtSalario");
+
+    // Verificamos si cada valor cumple con el patrón y la longitud
+
+    let formato = new RegExp(name.pattern);
+    let tam = new RegExp('^.{3,35}$');
+    if (!formato.test(name.value.trim())) {
+        mensajeError("Nombre invalido contiene caracteres especiales /o números");
+        $("#txtNombre").focus();
+        return false;
+    }
+    if (!tam.test(name.value.trim())) {
+        mensajeError("Digite un nombre minimo de 3 caracteres");
+        $("#txtNombre").focus();
+        return false;
+    }
+    formato = new RegExp(apellido.pattern);
+    if (!formato.test(apellido.value.trim())) {
+        mensajeError("Apellido invalido contiene caracteres especiales /o números");
+        $("#txtApellido").focus();
+        return false;
+    }
+    if (!tam.test(apellido.value.trim())) {
+        mensajeError("Digite un apellido minimo de 3 caracteres");
+        $("#txtApellido").focus();
+        return false;
+    }
+    formato = new RegExp(nroD.pattern);
+    tam = new RegExp('^.{4,18}$');
+    if (!formato.test(nroD.value.trim())) {
+        mensajeError("Numero de documento invalido contiene caracteres especiales /o letras");
+        $("#txtNroDoc").focus();
+        return false;
+    }
+    if (!tam.test(nroD.value.trim())) {
+        mensajeError("Numero de documento invalido, digite nuevamente  entre 6 y 20 caracteres");
+        $("#txtNroDoc").focus();
+        return false;
+    }
+    formato = new RegExp(tele.pattern);
+    tam = new RegExp('^.{7,30}$');
+    if (!formato.test(tele.value.trim())) {
+        mensajeError("Telefono invalido contiene caracteres especiales /o letras");
+        $("#txtTelefono").focus();
+        return false;
+    }
+    if (!tam.test(tele.value.trim())) {
+        mensajeError("Telefono invalido, digite nuevamente entre 7 y  30 caracteres ");
+        $("#txtTelefono").focus();
+        return false;
+    }
+    formato = new RegExp(sal.pattern);
+    
+    if (!formato.test(sal.value.trim())) {
+        mensajeError("Salario invalido contiene caracteres especiales /o letras");
+        $("#txtSalario").focus();
+        return false;
+    }
+    formato = null;
+    tam = null;
+    if (accion == 'POST') {
+        rpta = window.confirm("Estas seguro de agregar datos de: " + name.value + ", con nro. Doc. " + nroD.value);
+    }
+    else {
+        rpta = window.confirm("Estas seguro de modificar datos de: " + name.value + ", con nro. Doc. " + nroD.value);
+    }
+    
+    return true;
+}
 function editarFila(datosFila) {
 
     let idTD = datosFila.find('td:eq(5)').text();
@@ -315,7 +323,6 @@ async function ejecutarComando(accion) {
         Activo: activo
     }
 
-    console.log(datosOut);
     //Invocar el servicio con fetch
     try {
         const response = await fetch(dir + "empleado", {
