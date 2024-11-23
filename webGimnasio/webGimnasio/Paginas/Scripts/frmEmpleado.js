@@ -58,7 +58,6 @@ jQuery(function () {
         }
     });
     $("#btnBusc").on("click", function () {
-        alert("Buscar");
         Consultar();
     });
     $("#btnCanc").on("click", function () {
@@ -248,13 +247,30 @@ async function llenarComboTipDoc() {
 async function Consultar() {
     mensajeInfo("");
     try {
-        let nroDoc = $("#txtNroDoc").val();
-        if (nroDoc == undefined || nroDoc.trim() == "" || parseInt(nroDoc, 10) <= 0) {
+
+        let txtNroDoc = document.getElementById("txtNroDoc");
+        let span = document.getElementById("anuncio");
+        if (txtNroDoc.value.trim() == "") {
+            txtNroDoc.focus();
+            span.style.color = "#007bff";
+            span.textContent = "Requerido";
+            return;
+        }
+        let formato = new RegExp(txtNroDoc.pattern);
+        let tam = new RegExp('^.{4,18}$');
+        if (!formato.test(txtNroDoc.value.trim())) {
+            mensajeError("Numero de documento invalido contiene caracteres especiales /o letras");
+            $("#txtNroDoc").focus();
+            return;
+        }
+        if (!tam.test(txtNroDoc.value.trim())) {
             mensajeError("Error, el nro. del documento no es valido");
             $("#txtNroDoc").focus();
             return;
         }
-        const datosOut = await fetch(dir + "empleado?codEmp=" + nroDoc,
+            
+        
+        const datosOut = await fetch(dir + "empleado?codEmp=" + txtNroDoc.value,
             {
                 method: "GET",
                 mode: "cors",
@@ -267,7 +283,7 @@ async function Consultar() {
         );
         const datosIn = await datosOut.json();
         if (datosIn == "") {
-            mensajeInfo("No se encontró el empleado con nro. doc. : " + nroDoc);
+            mensajeInfo("No se encontró el empleado con nro. doc. : " + txtNroDoc.value);
             return;
         }
         $("#txtCodigo").val(datosIn[0].Codigo);
@@ -282,8 +298,8 @@ async function Consultar() {
         $("#txtIdEmpleado").val(datosIn[0].Empleado);
         $("#chkActivo").prop("checked", datosIn[0].Activo);
         llenarComboTipDoc(datosIn[0].idTD);
-
-
+        span.textContent = null;
+        mensajeOk("");
     } catch (error) {
         mensajeError("Error: " + error);
     }
