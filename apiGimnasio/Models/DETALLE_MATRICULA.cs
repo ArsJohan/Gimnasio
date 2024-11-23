@@ -9,6 +9,7 @@
 
 namespace apiGimnasio.Models
 {
+    using Newtonsoft.Json;
     using System;
     using System.Collections.Generic;
     
@@ -19,8 +20,10 @@ namespace apiGimnasio.Models
         public System.DateTime Fecha_Fin { get; set; }
         public int codigo_Clase { get; set; }
         public int codigo_Matricula { get; set; }
-    
+
+        [JsonIgnore]
         public virtual CLASE CLASE { get; set; }
+        [JsonIgnore]
         public virtual MATRICULA MATRICULA { get; set; }
     }
 }

@@ -9,6 +9,7 @@
 
 namespace apiGimnasio.Models
 {
+    using Newtonsoft.Json;
     using System;
     using System.Collections.Generic;
     
@@ -22,6 +23,8 @@ namespace apiGimnasio.Models
     
         public int codigo_Dia { get; set; }
         public string Descripcion { get; set; }
+
+        [JsonIgnore]
     
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<CLASE> CLASEs { get; set; }

@@ -308,8 +308,13 @@ GO
 
 --CLASE
 INSERT INTO CLASE(codigo_Clase,Activo,Descripcion,codigo_Dia,codigo_hora,codigo_Monitor,codigo_Sala,codigo_Empleado) VALUES
-(1,1,'Unete a la Zumba con Tayler',1,2,4,1,4),(2,1,'Relajate en clase de Yoga con Bryan',5,6,2,2,3),(3,1,'Muevete en clase con Scott',3,4,1,4,6),(4,1,'Saca esos Pasos en Aerobic con Alicia',4,3,3,1,1),(5,1,'Estira tu cuerpo con Alicia',4,4,3,1,1),
-(6,1,'Da unos buenos golpes con Scott',2,7,1,3,5),(7,1,'Saca esos Pasos en Aerobic con Tayler',7,4,4,1,5);
+(1, 1, 'Zumba Power: Muévete con Tayler', 1, 2, 4, 1, 4),
+(2, 1, 'Yoga Zen con Bryan', 5, 6, 2, 2, 3),
+(3, 1, 'Dance Energy con Scott', 3, 4, 1, 4, 6),
+(4, 1, 'Aerobic Flow: Vibra con Alicia', 4, 3, 3, 1, 1),
+(5, 1, 'Stretch & Relax con Alicia', 4, 4, 3, 1, 1),
+(6, 1, 'AeroBox Challenge con Scott', 2, 7, 1, 3, 5),
+(7, 1, 'Aerobic Beats con Tayler', 7, 4, 4, 1, 5);
 
 --MATRICULA
 

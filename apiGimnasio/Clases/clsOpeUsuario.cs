@@ -12,9 +12,6 @@ namespace apiGimnasio.Clases
     {
         //Atributo 
         private readonly GIMNASIOEntities oEFR = new GIMNASIOEntities();
-
-        
-
         public IQueryable buscarUsuario(int clave,string contra)
         {
             return from ts in oEFR.Set<USUARIO>()
