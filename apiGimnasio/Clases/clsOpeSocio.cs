@@ -18,7 +18,8 @@ namespace apiGimnasio.Clases
                    orderby tS.codigo_Socio
                    select new
                    {
-                       Socio = tS.Nombre + " " + tS.Apellido
+                       Codigo = tS.codigo_Socio,
+                       Nombre = tS.Nombre + " " + tS.Apellido
 
                    };
         }

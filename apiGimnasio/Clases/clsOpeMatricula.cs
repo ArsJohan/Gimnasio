@@ -32,9 +32,7 @@ namespace apiGimnasio.Clases
                             tM.codigo_Empleado,
                             tM.Descripcion,
                             tM.Precio,
-                            FechaIn = tD.Fecha_Inicio.ToString(),
-                            FechaFin = tD.Fecha_Fin.ToString()
-
+                            
                         };
 
             
