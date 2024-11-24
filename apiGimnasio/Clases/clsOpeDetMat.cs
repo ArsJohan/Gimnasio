@@ -28,8 +28,7 @@ namespace apiGimnasio.Clases
                     on tD.codigo_Matricula equals tMa.codigo_Matricula
                    join tS in oEFR.Set<SOCIO>()
                     on tMa.codigo_Socio equals tS.codigo_Socio
-                   join tTDc in oEFR.Set<TIPO_DOC>()
-                    on tS.codigo_TipoDoc equals tTDc.Codigo_TipoDoc
+                   
 
                    where tD.codigo_Matricula == cod
                    orderby tD.codigo_DetallesMatr
@@ -41,15 +40,12 @@ namespace apiGimnasio.Clases
                        FechaFin = tD.Fecha_Fin,
                        idClase = tC.codigo_Clase,
                        Clase = tC.Descripcion,
+                       Salon = tSal.Ubicacion,
                        idHora = tC.codigo_hora,
                        idDia = tC.codigo_Dia,
-                       idMatricula = tMa.codigo_Matricula,
-                       Descripcion = tMa.Descripcion,
-                       Precio = tMa.Precio,
-                       dTipDoc = tTDc.TipoDoc,
                        NroDoc = tS.nroDoc,
-                       Socio = tS.Nombre + " " + tS.Apellido,
-                       i
+                       Socio = tS.Nombre + " " + tS.Apellido
+                       
                        
 
 
