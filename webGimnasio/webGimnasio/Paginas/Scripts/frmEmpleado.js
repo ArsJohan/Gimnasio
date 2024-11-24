@@ -1,7 +1,7 @@
 ﻿var dir = "http://localhost:52063/api/";
 var oTabla = $("#tablaDatos").DataTable();
 var rpta;
-
+var f = new Date();
 jQuery(function () {
     //Carga el menú
     $("#dvMenu").load("../Paginas/Menu.html", function () {
@@ -30,7 +30,7 @@ jQuery(function () {
     //Registrar los botones para responder al evento click
     $("#btnAgre").on("click", function () {
         alert("Agregar");
-        mensajeInfo("");
+        /*mensajeInfo("");*/
         $("#txtCodigo").val(0);
         let accion = "POST";
         if(validacion(accion)){
@@ -45,7 +45,7 @@ jQuery(function () {
     });
     $("#btnModi").on("click", function () {
         alert("Modificar");
-        mensajeInfo("");
+       /* mensajeInfo("");*/
         let accion = "PUT"
         if(validacion(accion)){
 
@@ -82,7 +82,7 @@ jQuery(function () {
 
     });
 
-    $('#dtmFechaNac').datetimepicker({
+    $('#dtmFechaFin').datetimepicker({
         format: 'YYYY-MM-DD',
 
 
@@ -98,17 +98,17 @@ jQuery(function () {
 
 });//Del: jQuery
 function mensajeError(texto) {
-    $("#dvMensaje").removeClass("alert alert-success");
+    $("#dvMensaje").removeClass();
     $("#dvMensaje").addClass("alert alert-danger");
     $("#dvMensaje").html(texto);
 }
 function mensajeInfo(texto) {
-    $("#dvMensaje").removeClass("alert alert-success");
+    $("#dvMensaje").removeClass();
     $("#dvMensaje").addClass("alert alert-info");
     $("#dvMensaje").html(texto);
 }
 function mensajeOk(texto) {
-    $("#dvMensaje").removeClass("alert alert-success");
+    $("#dvMensaje").removeClass();
     $("#dvMensaje").addClass("alert alert-success");
     $("#dvMensaje").html(texto);
 }
@@ -182,10 +182,12 @@ function validacion(accion) {
     tam = null;
     if (accion == 'POST') {
         rpta = window.confirm("Estas seguro de agregar datos de: " + name.value + ", con nro. Doc. " + nroD.value);
+        
     }
     else {
         rpta = window.confirm("Estas seguro de modificar datos de: " + name.value + ", con nro. Doc. " + nroD.value);
     }
+
     
     return true;
 }
@@ -212,7 +214,7 @@ function Cancelar() {
     mensajeInfo("");
     Limpiar();
     $("#txtCodigo").val("0");
-    $("#cboBanda").focus();
+    $("#txtNroDoc").focus();
 }
 function Limpiar() {
     mensajeInfo("");
@@ -233,7 +235,60 @@ function Limpiar() {
     $("#tablaDatos tr").empty();
     $("#txtNroDoc").focus();
 }
+//function Imprimir() {
+//    let nomFile = "MaeArt1_" + f.getDate() + "_" + (f.getMonth() + 1) + "_" + f.getFullYear() + "_" + f.getHours() + "_" + f.getMinutes() + ".pdf";
+//    alert("nomFile: " + nomFile);
+//    let Codi = $("#txtCodigo").val();
+//    let nomb = $("#txtNombre").val();
+//    let apell = $("#txtApellido").val();
+//    let Gene = $("#cboGenero").find('option:selected').text();;
+//    let TiDo = $("#cboTipDoc").find('option:selected').text();
+//    let nroD = $("#txtNroDoc").val();
+//    let ciud = $("#cboCiudad").find('option:selected').text();
+//    let Dpto = $("#cboDpto").find('option:selected').text();
 
+//    var doc = new jsPDF('p', 'mm', 'letter');
+
+//    var ancho = doc.internal.pageSize.width;
+//    var alto = doc.internal.pageSize.height;
+//    alert("ancho: " + ancho + ",alto: " + alto);
+
+//    doc.setFontStyle('bold');
+//    doc.setFontSize('14');
+//    doc.text("Festibal de Bandas de Rock", 65, 25);
+//    doc.setFontSize('12');
+//    doc.text("Datos de Artista", 80, 35);
+
+//    doc.setFontStyle('bold');
+//    doc.text("Codigo: ", 20, 50);
+//    doc.setFontStyle('normal');
+//    doc.text(Codi, 45, 50);
+
+//    doc.setFontStyle('bold');
+//    doc.text("Nombre: ", 30, 50);
+//    doc.setFontStyle('normal');
+//    doc.text(nomb, 50, 50);
+
+//    doc.setFontStyle('bold');
+//    doc.text("Nro. Dcc: ", 20, 57);
+//    doc.setFontStyle('normal');
+//    doc.text(nroD, 70, 57);
+
+//    doc.setFontStyle('bold');
+//    doc.text("TipoDoc: ", 55, 57);
+//    doc.setFontStyle('normal');
+//    doc.text(TiDo, 85, 57);
+
+//    doc.setFontStyle('bold');
+//    doc.text("Genero: ", 95, 57);
+//    doc.setFontStyle('normal');
+//    doc.text(Gene, 110, 57);
+
+
+//    doc.save(nomFile);
+//    alert("Se genero el archivo" + nomFile);
+
+//}
 async function llenarTabla() {
     let rpta = await llenarTablaGral(dir + "empleado", "#tablaDatos");
 }
@@ -299,7 +354,6 @@ async function Consultar() {
         $("#chkActivo").prop("checked", datosIn[0].Activo);
         llenarComboTipDoc(datosIn[0].idTD);
         span.textContent = null;
-        mensajeOk("");
     } catch (error) {
         mensajeError("Error: " + error);
     }

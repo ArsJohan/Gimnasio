@@ -19,6 +19,7 @@
     <link href="Estilos/dataTables.bootstrap4.min.css" rel="stylesheet" />
     <link href="Estilos/adminlte.min.css" rel="stylesheet" />
     <link href="Estilos/frmGym.css" rel="stylesheet" />
+    <link href="Estilos/css/all.min.css" rel="stylesheet" />
     <style>
         .label_1 {
             width: 100%;
@@ -67,28 +68,39 @@
                                     <div class="col-md-2">
                                         <div class="form-group">
                                             <label for="txtCodigo">Código:</label>
-                                            <input type="text" class="label_1" id="txtCodigo" width="15" placeholder="Ingrese Código..." disabled style="text-align:center" value="0">
+                                            <input type="text" class="label_1" id="txtCodigo" width="15" placeholder="Ingrese Código..." disabled style="text-align:center">
                                         </div>
                                     </div>
                                     <div class="col-md-3">
                                         <div class="form-group">
                                             <label for="cboClase">Clase</label>
-                                            <select id="cboClase" class="form-control">
+                                            <select id="cboClase" class="form-control" onchange="ConsultarClase();">
                                             </select>
                                         </div>
                                     </div>
                                     <div class="col-md-2">
                                         <div class="form-group">
-                                            <label for="lbFechaIn">Fecha Inicio</label>
-                                            <input id="lbFechaIn" class="label_2" />
+                                            <label for="dtmFechaIni">Fecha de Inicio</label>
+                                            <div class="input-group date" data-target-input="nearest">
+                                                <input type="text" id="dtmFechaIni" class="form-control datetimepicker-input" data-target="#dtmFechaIni" />
+                                                <div class="input-group-append" data-target="#dtmFechaIni" data-toggle="datetimepicker">
+                                                    <div class="input-group-text"><i class="fa fa-calendar"></i></div>
+                                                </div>
+                                            </div>
                                         </div>
                                     </div>
                                     <div class="col-md-2">
                                         <div class="form-group">
-                                            <label for="lbFechaFn">Fecha Fin</label>
-                                            <input id="lbFechaFn" class="label_2" />
+                                            <label for="dtmFechaFin">Fecha final</label>
+                                            <div class="input-group date" data-target-input="nearest">
+                                                <input type="text" id="dtmFechaFin" class="form-control datetimepicker-input" data-target="#dtmFechaFin" />
+                                                <div class="input-group-append" data-target="#dtmFechaFin" data-toggle="datetimepicker">
+                                                    <div class="input-group-text"><i class="fa fa-calendar"></i></div>
+                                                </div>
+                                            </div>
                                         </div>
                                     </div>
+
                                     <div class="col-md-2">
                                         <div class="form-group">
                                             <label for="txtIdEmpleado">id_Empleado:</label>
@@ -101,7 +113,7 @@
                                     <div class="col-md-2">
                                         <div class="form-group">
                                             <label for="txtSala">Sala:</label>
-                                            <input type="text" class="label_1" id="txtSala" width="15" placeholder="Ingrese Código..." disabled style="text-align:center" value="0">
+                                            <input type="text" class="label_1" id="txtSala" width="15" placeholder="Salas..." disabled>
                                         </div>
                                     </div>
                                     <div class="col-md-3">
@@ -119,7 +131,7 @@
                                     <div class="col-md-4">
                                         <div class="form-group">
                                             <label for="cboDia">Día</label>
-                                            <select id="cboDia" class="form-control">
+                                            <select id="cboDia" class="form-control"  >
                                             </select>
                                         </div>
                                     </div>
@@ -140,19 +152,20 @@
                                     <div class="col-md-3">
                                         <div class="form-group">
                                             <label for="txtNroDoc">Nro.DocumentoSocio</label>
-                                            <input type="text" class="form-control" id="txtNroDoc" placeholder="Ingrese Nro Documento..." onchange="llenarComboTipDoc();">
+                                            <input type="text" class="form-control" id="txtNroDoc" placeholder="Ingrese Nro Documento..." >
                                         </div>
                                     </div>
-                                    <div class="col-md-3">
+                                    <div class="col-md-4">
                                         <div class="form-group">
-                                            <label for="txtSocio">Socio</label>
-                                            <input type="text" class="form-control" id="txtSocio" placeholder="Ingrese Nro Documento...">
+                                            <label for="cboSocio">Socio</label>
+                                            <select id="cboSocio" class="form-control" disabled>
+                                            </select>
                                         </div>
                                     </div>
                                     <div class="col-md-3">
                                         <div class="form-group">
                                             <label for="txtValor">Valor</label>
-                                            <input id="txtValor" class="form-control" placeholder="Valor Matricula" disabled />
+                                            <input id="txtValor" class="form-control" placeholder="Valor Matricula"  />
                                         </div>
                                     </div>
 
@@ -211,6 +224,11 @@
                                                 <th></th>
                                                 <th></th>
                                                 <th></th>
+                                                <th></th>
+                                                <th></th>
+                                                <th></th>
+                                                <th></th>
+                                                <th></th>
                                             </tr>
                                         </thead>
                                     </table>
@@ -227,7 +245,9 @@
     </div>
     <!-- Para los script de uso -->
     <script src="../Scripts/jquery-3.7.0.js"></script>
+    <script src="../Scripts/moment.min.js"></script>
     <script src="../Scripts/bootstrap.bundle.min.js"></script>
+
     <!-- Select2 -->
     <script src="../Scripts/select2.min.js"></script>
     <script src="Scripts/Comunes/Combos.js"></script>
@@ -240,5 +260,8 @@
     <!-- Impresión -->
     <!-- Para el script de control del form -->
     <script src="Scripts/frmMatricula.js"></script>
+    <!--  scripts:-->
+    <script src="../Scripts/daterangepicker.js"></script>
+    <script src="../Scripts/tempusdominus-bootstrap-4.min.js"></script>
 </body>
 </html>
