@@ -6,9 +6,11 @@ using System.Net;
 using System.Net.Http;
 using System.Web.Http;
 using apiGimnasio.Clases;
+using System.Web.Http.Cors;
 
 namespace apiGimnasio.Controllers
 {
+    [EnableCors(origins: "http://localhost:60877", headers: "*", methods: "*")]
     public class socioController : ApiController
     {
         
