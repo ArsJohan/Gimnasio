@@ -14,26 +14,29 @@ namespace apiGimnasio.Clases
         //Tabla
         public MATRICULA tblMat { get; set; }
 
-        public MATRICULA consultarMatricula()
+        public IQueryable consultarMatricula(int cod)
         {
-            try
-            {
-                var rpta = oEFR.MATRICULAs
-                    .Where(x => x.codigo_Matricula == tblMat.codigo_Matricula)
-                    .ToList();
-                tblMat.codigo_Matricula = Convert.ToInt32(rpta[0].codigo_Matricula);
-                tblMat.codigo_Socio = Convert.ToInt32(rpta[0].codigo_Socio);
-                tblMat.codigo_Empleado = Convert.ToInt32(rpta[0].codigo_Empleado);
-                tblMat.Descripcion = rpta[0].Descripcion;
-                tblMat.Precio = Convert.ToDecimal(rpta[0].Precio);
-                tblMat.codigo_Empleado = Convert.ToInt32(rpta[0].codigo_Empleado);
-                return tblMat;
-            }
-            catch
-            {
-                tblMat.codigo_Matricula = 0;
-                return tblMat;
-            }
+          
+            return from tM in oEFR.MATRICULAs
+                        join tS in oEFR.SOCIOs 
+                        on tM.codigo_Socio equals tS.codigo_Socio
+                        where tM.codigo_Matricula == cod
+                        select new
+                        {
+                            tM.codigo_Matricula,
+                            tS.codigo_TipoDoc,
+                            tS.nroDoc,
+                            Socio = tS.Nombre + " " + tS.Apellido,
+                            tM.codigo_Empleado,
+                            tM.Descripcion,
+                            tM.Precio,
+
+                        };
+                           
+
+                
+            
+            
         }
 
         public MATRICULA agregarMatricula()
