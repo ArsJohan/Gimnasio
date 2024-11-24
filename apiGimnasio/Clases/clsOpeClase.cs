@@ -32,13 +32,19 @@ namespace apiGimnasio.Clases
                      on tC.codigo_Sala equals tS.codigo_Sala
                    join tM in oEFR.Set<MONITOR>()
                      on tC.codigo_Monitor equals tM.codigo_Monitor
+                   join tD in oEFR.Set<DIA>()
+                     on tC.codigo_Dia equals tD.codigo_Dia
+                   join tH in oEFR.Set<HORA>()
+                     on tC.codigo_hora equals tH.codigo_Horas
                    where tC.codigo_Clase == cod
                    select new
                    {
                        Codigo = tC.codigo_Clase,
                        Descripcion = tC.Descripcion,
                        Sala = tS.Ubicacion,
-                       Monitor = tM.Nombre + " " + tM.Apellido
+                       Monitor = tM.Nombre + " " + tM.Apellido,
+                       idDia = tD.codigo_Dia,
+                       idHoras = tH.codigo_Horas,
                    };
 
         }

@@ -20,6 +20,8 @@ namespace apiGimnasio.Clases
             return from tM in oEFR.MATRICULAs
                         join tS in oEFR.SOCIOs 
                         on tM.codigo_Socio equals tS.codigo_Socio
+                        join tD in oEFR.DETALLE_MATRICULA
+                        on tM.codigo_Matricula equals tD.codigo_Matricula
                         where tM.codigo_Matricula == cod
                         select new
                         {
@@ -30,12 +32,11 @@ namespace apiGimnasio.Clases
                             tM.codigo_Empleado,
                             tM.Descripcion,
                             tM.Precio,
+                            FechaIn = tD.Fecha_Inicio.ToString(),
+                            FechaFin = tD.Fecha_Fin.ToString()
 
                         };
-                           
 
-                
-            
             
         }
 

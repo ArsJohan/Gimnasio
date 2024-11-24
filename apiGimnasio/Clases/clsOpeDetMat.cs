@@ -36,8 +36,8 @@ namespace apiGimnasio.Clases
                    {
                        Quitar = "<a class='btn btn-info btn-sm' href=''><i class='fas fa-trash-alt'></i>Quitar</a>",
                        Codigo = tD.codigo_DetallesMatr,
-                       FechaIn = tD.Fecha_Inicio,
-                       FechaFin = tD.Fecha_Fin,
+                       FechaIn = tD.Fecha_Inicio.ToString(),
+                       FechaFin = tD.Fecha_Fin.ToString(),
                        idClase = tC.codigo_Clase,
                        Clase = tC.Descripcion,
                        Salon = tSal.Ubicacion,
