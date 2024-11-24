@@ -1,6 +1,6 @@
 ﻿var dir = "http://localhost:52063/api/";
 var oTabla = $("#tablaDatos").DataTable();
-
+var f = new Date();
 jQuery(function () {
     //Carga el menú
     $("#dvMenu").load("../Paginas/Menu.html", function () {
@@ -52,8 +52,8 @@ jQuery(function () {
         Cancelar();
     });
     $("#btnImpr").on("click", function () {
-        alert("Impresión");
-        //Imprimir();
+        /*alert("Impresión");*/
+        Imprimir();
     });
     $('#dtmFechaFin').datetimepicker({
         format: 'YYYY-MM-DD',
@@ -91,6 +91,181 @@ jQuery(function () {
     
     
 });
+//function Imprimir() {
+//    // === Generar el nombre del archivo con la fecha y hora actual ===
+//    let f = new Date();
+//    let nomFile = `Empleado_${f.getDate()}_${f.getMonth() + 1}_${f.getFullYear()}_${f.getHours()}_${f.getMinutes()}.pdf`;
+//    alert("Nombre del archivo generado: " + nomFile);
+
+//    // === Obtener los valores del formulario ===
+//    let Codi = $("#txtCodigo").val();
+//    let nomb = $("#txtSala").val();
+//    let apell = $("#txtMonitor").val();
+//    let tel = $("#txtDescripcion").val();
+//    let TiDo = $("#cboTipDoc").find('option:selected').text();
+//    let TiDo = $("#cboClase").find('option:selected').text();
+//    let TiDo = $("#cboDia").find('option:selected').text();
+//    let TiDo = $("#cboHora").find('option:selected').text();
+//    let nroD = $("#txtNroDoc").val();
+//    let nroD = $("#txtValor").val();
+//    let idEmple = $("#txtIdEmpleado").val();
+//    let fechaNac = $("#dtmFechaFin").val();
+//    let fechaIng = $("#dtmFechaIni").val();
+
+//    // === Crear un nuevo documento PDF ===
+//    var doc = new jsPDF('p', 'mm', 'letter'); // Orientación, Unidad, Tamaño de página
+
+//    // Obtener las dimensiones del documento
+//    var ancho = doc.internal.pageSize.width;
+//    var alto = doc.internal.pageSize.height;
+
+//    // === Estilos del documento ===
+//    doc.setFont('helvetica', 'bold');
+//    doc.setTextColor(122, 109, 93); // Color #7a6d5d para texto
+
+//    // === Título principal estilizado ===
+//    doc.setFontSize(18);
+//    const tituloPrincipal = "GIMNASIO SIEMPRE ENFORMA";
+//    const anchoTituloPrincipal = doc.getTextWidth(tituloPrincipal);
+//    doc.text(tituloPrincipal, (ancho - anchoTituloPrincipal) / 2, 20); // Centrado horizontalmente
+
+//    // Subtítulo estilizado
+//    doc.setFontSize(14);
+//    const subTitulo = "Datos del Empleado";
+//    const anchoSubTitulo = doc.getTextWidth(subTitulo);
+//    doc.text(subTitulo, (ancho - anchoSubTitulo) / 2, 35); // Centrado horizontalmente
+
+//    // Línea divisoria estilizada
+//    doc.setLineWidth(1);
+//    doc.setDrawColor(122, 109, 93); // Color #7a6d5d
+//    doc.line(20, 40, ancho - 20, 40);
+
+//    // === Agregar información del empleado ===
+//    let y = 50; // Posición inicial en el eje Y
+//    doc.setFontSize(12);
+
+//    // Función para agregar campos con un diseño bonito
+//    const addField = (label, value) => {
+//        doc.setFont('helvetica', 'bold');
+//        doc.setTextColor(122, 109, 93); // Color #7a6d5d para las etiquetas
+//        doc.text(label, 20, y);
+//        doc.setFont('helvetica', 'normal');
+//        doc.setTextColor(0, 0, 0); // Negro para los valores
+//        doc.text(value, 70, y);
+//        y += 12; // Espaciado mayor entre las líneas
+//    };
+
+//    // Agregar todos los campos del formulario
+//    addField("Código:", Codi);
+//    addField("Nombre:", nomb);
+//    addField("Apellido:", apell);
+//    addField("Teléfono:", tel);
+//    addField("Nro. Documento:", nroD);
+//    addField("Tipo de Documento:", TiDo);
+//    addField("Salario:", `$${parseFloat(salari).toFixed(2)}`); // Formato de salario
+//    addField("ID Empleado:", idEmple);
+//    addField("Fecha de Nacimiento:", fechaNac);
+//    addField("Fecha de Ingreso:", fechaIng);
+//    addField("Activo:", activo);
+
+//    // === Pie de página con fecha y hora ===
+//    doc.setFontSize(10);
+//    doc.setTextColor(100); // Gris oscuro para el pie de página
+//    doc.text("Documento generado automáticamente", 20, alto - 20);
+//    doc.text(`Fecha: ${f.toLocaleDateString()} Hora: ${f.toLocaleTimeString()}`, ancho - 20, alto - 20, { align: "right" });
+
+//    // === Guardar el archivo PDF ===
+//    doc.save(nomFile);
+//    alert("Se generó el archivo PDF: " + nomFile);
+//}
+function Imprimir() {
+    // === Generar el nombre del archivo con la fecha y hora actual ===
+    let nomFile = `Empleado_${f.getDate()}_${f.getMonth() + 1}_${f.getFullYear()}_${f.getHours()}_${f.getMinutes()}.pdf`;
+    alert("Nombre del archivo generado: " + nomFile);
+
+    // === Obtener los valores del formulario ===
+    let Codi = $("#txtCodigo").val();
+    let nomb = $("#txtSala").val();
+    let apell = $("#txtMonitor").val();
+    let tel = $("#txtDescripcion").val();
+
+    let clase = $("#cboClase").find('option:selected').text();  // Cambié TiDo a clase
+    let dia = $("#cboDia").find('option:selected').text();      // Cambié TiDo a dia
+    let hora = $("#cboHora").find('option:selected').text();    // Cambié TiDo a hora
+
+    let nroD = $("#txtNroDoc").val();
+    let valor = $("#txtValor").val();                             // Cambié TiDo a valor
+
+    let idEmple = $("#txtIdEmpleado").val();
+    let fechaNac = $("#dtmFechaFin").val();
+    let fechaIng = $("#dtmFechaIni").val();
+
+    // === Crear un nuevo documento PDF ===
+    var doc = new jsPDF('p', 'mm', 'letter'); // Orientación, Unidad, Tamaño de página
+
+    // Obtener las dimensiones del documento
+    var ancho = doc.internal.pageSize.width;
+    var alto = doc.internal.pageSize.height;
+
+    // === Estilos del documento ===
+    doc.setFont('helvetica', 'bold');
+    doc.setTextColor(122, 109, 93); // Color #7a6d5d para texto
+
+    // === Título principal estilizado ===
+    doc.setFontSize(18);
+    const tituloPrincipal = "GIMNASIO SIEMPRE ENFORMA";
+    const anchoTituloPrincipal = doc.getTextWidth(tituloPrincipal);
+    doc.text(tituloPrincipal, (ancho - anchoTituloPrincipal) / 2, 20); // Centrado horizontalmente
+
+    // Subtítulo estilizado
+    doc.setFontSize(14);
+    const subTitulo = "Datos de Matricula";
+    const anchoSubTitulo = doc.getTextWidth(subTitulo);
+    doc.text(subTitulo, (ancho - anchoSubTitulo) / 2, 35); // Centrado horizontalmente
+
+    // Línea divisoria estilizada
+    doc.setLineWidth(1);
+    doc.setDrawColor(122, 109, 93); // Color #7a6d5d
+    doc.line(20, 40, ancho - 20, 40);
+
+    // === Agregar información del empleado ===
+    let y = 50; // Posición inicial en el eje Y
+    doc.setFontSize(12);
+
+    // Función para agregar campos con un diseño bonito
+    const addField = (label, value) => {
+        doc.setFont('helvetica', 'bold');
+        doc.setTextColor(122, 109, 93); // Color #7a6d5d para las etiquetas
+        doc.text(label, 20, y);
+        doc.setFont('helvetica', 'normal');
+        doc.setTextColor(0, 0, 0); // Negro para los valores
+        doc.text(value, 70, y);
+        y += 12; // Espaciado mayor entre las líneas
+    };
+
+    // Agregar todos los campos del formulario
+    addField("Código:", Codi);
+    addField("Sala:", nomb);
+    addField("Monitor:", apell);
+    addField("Descripción:", tel);
+    addField("Clase:", clase);
+    addField("Día:", dia);
+    addField("Hora:", hora);
+    addField("Valor:", `$${parseFloat(valor).toFixed(2)}`); // Formato de valor
+    addField("ID Empleado:", idEmple);
+    addField("Fecha de Fin:", fechaNac);
+    addField("Fecha de Inicio:", fechaIng);
+
+    // === Pie de página con fecha y hora ===
+    doc.setFontSize(10);
+    doc.setTextColor(100); // Gris oscuro para el pie de página
+    doc.text("Documento generado automáticamente", 20, alto - 20);
+    doc.text(`Fecha: ${f.toLocaleDateString()} Hora: ${f.toLocaleTimeString()}`, ancho - 20, alto - 20, { align: "right" });
+
+    // === Guardar el archivo PDF ===
+    doc.save(nomFile);
+    alert("Se generó el archivo PDF: " + nomFile);
+}
 
 function mensajeError(texto) {
     $("#dvMensaje").removeClass();
@@ -378,49 +553,50 @@ async function grabarDetalleMat() {
         }
     }
 }
-//async function Modificar() {
-//    let idCod = $("#txtCodigo").val();
-//    let repre = $("#txtRepres").val();
-//    let tel = $("#txtTel").val();
+async function Modificar() {
+    let idCod = $("#txtCodigo").val();
+    let descrip = $("#txtDescripcion").val();
+    let vlor = $("#txtValor").val();
 
-//    if (idCod == undefined || idCod.trim() == "" || parseInt(idCod, 10) < 0) {
-//        $("#dvMensaje").html("No ha definido la acción de grabar, cancele o limpie antes").$("#cboEvento")
-//        $("#Evento").focus();
-//        return;
+    if (idCod == undefined || idCod.trim() == "" || parseInt(idCod, 10) < 0) {
+        $("#dvMensaje").html("No ha definido la acción de grabar, cancele o limpie antes");
+        $("#cboEvento").focus();
+        return;
+    }
+    if (descrip == undefined || descrip.trim() == "") {
+        $("#dvMensaje").html("No ha definido la Descripcio");
+        $("#txtDescripcion").focus();
+        return;
+    }
+    if (vlor == undefined || vlor.trim() == "" || parseInt(vlor) < 0) {
+        $("#dvMensaje").html("No ha definido el valor");
+        $("#txtValor").focus();
+        return;
 
-//        if (repre == undefined || repre.trim() == "") {
-//            $("#dvMensaje").html("No ha definido el representante"); $("#txtRepres").focus();
+    }     
+    let datosOut = {
+        Codigo: idCod,
+        Descripcion: descrip,
+        Presio: vlor
 
-//            return;
+    };
+    try {
 
-//            if (tel == undefined || tel.trim() == "") {
-//                $("#dvMensaje").html("No ha definido el teléfono"); $("#txtTel").focus();
+        const datosIn = await fetch(dir + "matricula?cmdo=2", {
 
-//                return;
+            method: "Put", headers: {
+                "Content-Type": "application/json",
+            },
+            body: JSON.stringify(datosOut),
+        });
+                const rpta = await datosIn.json();
+                mensajeOk(rpta);
+               
 
-//            }
+    } catch (error) {
+        mensajeError("Error: ", error);
+    }
 
-//            let datosOut = {
+}       
 
-//                Codigo: idCod,
-
-//                Representante: repre,
-
-//                Telefono: tel
-
-//            };
-
-//            try {
-
-//                const datosin = await fetch(dir + "inscripc?comando=2", {
-
-//                    method: "Put", headers: {
-//                        "Content-Type": "application/json", body: JSON.stringify(datosOut), const rpta = await datosIn.json(); mensajeOk(rpta); mensajeError("Error: ", error);
-
-//                    });
-
-//            } catch (error) {
-
-//            }
-
-//        }
+           

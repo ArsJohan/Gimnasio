@@ -65,8 +65,8 @@ jQuery(function () {
         Cancelar();
     });
     $("#btnImpr").on("click", function () {
-        alert("Impresión");
-        //Imprimir();
+        /*alert("Impresión");*/
+        Imprimir();
     });
     
     $("#tablaDatos tbody").on("click", 'tr', function (evento) {
@@ -231,64 +231,94 @@ function Limpiar() {
     $("#txtIdEmpleado").val("");
     $("#chkActivo").prop("checked");
     
-    //limpiar data table
-    $("#tablaDatos tr").empty();
-    $("#txtNroDoc").focus();
 }
-//function Imprimir() {
-//    let nomFile = "MaeArt1_" + f.getDate() + "_" + (f.getMonth() + 1) + "_" + f.getFullYear() + "_" + f.getHours() + "_" + f.getMinutes() + ".pdf";
-//    alert("nomFile: " + nomFile);
-//    let Codi = $("#txtCodigo").val();
-//    let nomb = $("#txtNombre").val();
-//    let apell = $("#txtApellido").val();
-//    let Gene = $("#cboGenero").find('option:selected').text();;
-//    let TiDo = $("#cboTipDoc").find('option:selected').text();
-//    let nroD = $("#txtNroDoc").val();
-//    let ciud = $("#cboCiudad").find('option:selected').text();
-//    let Dpto = $("#cboDpto").find('option:selected').text();
+function Imprimir() {
+    // === Generar el nombre del archivo con la fecha y hora actual ===
+    let f = new Date();
+    let nomFile = `Empleado_${f.getDate()}_${f.getMonth() + 1}_${f.getFullYear()}_${f.getHours()}_${f.getMinutes()}.pdf`;
+    alert("Nombre del archivo generado: " + nomFile);
 
-//    var doc = new jsPDF('p', 'mm', 'letter');
+    // === Obtener los valores del formulario ===
+    let Codi = $("#txtCodigo").val();
+    let nomb = $("#txtNombre").val();
+    let apell = $("#txtApellido").val();
+    let tel = $("#txtTelefono").val();
+    let TiDo = $("#cboTipDoc").find('option:selected').text();
+    let nroD = $("#txtNroDoc").val();
+    let salari = $("#txtSalario").val();
+    let idEmple = $("#txtIdEmpleado").val();
+    let fechaNac = $("#dtmFechaNac").val();
+    let fechaIng = $("#dtmFechaIng").val();
+    let activo = $("#chkActivo").prop("checked") ? "Sí" : "No";
 
-//    var ancho = doc.internal.pageSize.width;
-//    var alto = doc.internal.pageSize.height;
-//    alert("ancho: " + ancho + ",alto: " + alto);
+    // === Crear un nuevo documento PDF ===
+    var doc = new jsPDF('p', 'mm', 'letter'); // Orientación, Unidad, Tamaño de página
 
-//    doc.setFontStyle('bold');
-//    doc.setFontSize('14');
-//    doc.text("Festibal de Bandas de Rock", 65, 25);
-//    doc.setFontSize('12');
-//    doc.text("Datos de Artista", 80, 35);
+    // Obtener las dimensiones del documento
+    var ancho = doc.internal.pageSize.width;
+    var alto = doc.internal.pageSize.height;
 
-//    doc.setFontStyle('bold');
-//    doc.text("Codigo: ", 20, 50);
-//    doc.setFontStyle('normal');
-//    doc.text(Codi, 45, 50);
+    // === Estilos del documento ===
+    doc.setFont('helvetica', 'bold');
+    doc.setTextColor(122, 109, 93); // Color #7a6d5d para texto
 
-//    doc.setFontStyle('bold');
-//    doc.text("Nombre: ", 30, 50);
-//    doc.setFontStyle('normal');
-//    doc.text(nomb, 50, 50);
+    // === Título principal estilizado ===
+    doc.setFontSize(18);
+    const tituloPrincipal = "GIMNASIO SIEMPRE ENFORMA";
+    const anchoTituloPrincipal = doc.getTextWidth(tituloPrincipal);
+    doc.text(tituloPrincipal, (ancho - anchoTituloPrincipal) / 2, 20); // Centrado horizontalmente
 
-//    doc.setFontStyle('bold');
-//    doc.text("Nro. Dcc: ", 20, 57);
-//    doc.setFontStyle('normal');
-//    doc.text(nroD, 70, 57);
+    // Subtítulo estilizado
+    doc.setFontSize(14);
+    const subTitulo = "Datos del Empleado";
+    const anchoSubTitulo = doc.getTextWidth(subTitulo);
+    doc.text(subTitulo, (ancho - anchoSubTitulo) / 2, 35); // Centrado horizontalmente
 
-//    doc.setFontStyle('bold');
-//    doc.text("TipoDoc: ", 55, 57);
-//    doc.setFontStyle('normal');
-//    doc.text(TiDo, 85, 57);
+    // Línea divisoria estilizada
+    doc.setLineWidth(1);
+    doc.setDrawColor(122, 109, 93); // Color #7a6d5d
+    doc.line(20, 40, ancho - 20, 40);
 
-//    doc.setFontStyle('bold');
-//    doc.text("Genero: ", 95, 57);
-//    doc.setFontStyle('normal');
-//    doc.text(Gene, 110, 57);
+    // === Agregar información del empleado ===
+    let y = 50; // Posición inicial en el eje Y
+    doc.setFontSize(12);
+
+    // Función para agregar campos con un diseño bonito
+    const addField = (label, value) => {
+        doc.setFont('helvetica', 'bold');
+        doc.setTextColor(122, 109, 93); // Color #7a6d5d para las etiquetas
+        doc.text(label, 20, y);
+        doc.setFont('helvetica', 'normal');
+        doc.setTextColor(0, 0, 0); // Negro para los valores
+        doc.text(value, 70, y);
+        y += 12; // Espaciado mayor entre las líneas
+    };
+
+    // Agregar todos los campos del formulario
+    addField("Código:", Codi);
+    addField("Nombre:", nomb);
+    addField("Apellido:", apell);
+    addField("Teléfono:", tel);
+    addField("Nro. Documento:", nroD);
+    addField("Tipo de Documento:", TiDo);
+    addField("Salario:", `$${parseFloat(salari).toFixed(2)}`); // Formato de salario
+    addField("ID Empleado:", idEmple);
+    addField("Fecha de Nacimiento:", fechaNac);
+    addField("Fecha de Ingreso:", fechaIng);
+    addField("Activo:", activo);
+
+    // === Pie de página con fecha y hora ===
+    doc.setFontSize(10);
+    doc.setTextColor(100); // Gris oscuro para el pie de página
+    doc.text("Documento generado automáticamente", 20, alto - 20);
+    doc.text(`Fecha: ${f.toLocaleDateString()} Hora: ${f.toLocaleTimeString()}`, ancho - 20, alto - 20, { align: "right" });
+
+    // === Guardar el archivo PDF ===
+    doc.save(nomFile);
+    alert("Se generó el archivo PDF: " + nomFile);
+}
 
 
-//    doc.save(nomFile);
-//    alert("Se genero el archivo" + nomFile);
-
-//}
 async function llenarTabla() {
     let rpta = await llenarTablaGral(dir + "empleado", "#tablaDatos");
 }

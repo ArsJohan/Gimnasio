@@ -203,6 +203,7 @@
     <Content Include="Content\bootstrap-grid.css.map" />
     <Content Include="Paginas\PaginaBase.html" />
     <Content Include="Paginas\Scripts\Comunes\Combos.js" />
+    <Content Include="Paginas\Scripts\Comunes\jspdf.min.js" />
     <Content Include="Paginas\Scripts\Comunes\Tablas.js" />
     <Content Include="Paginas\Scripts\frmEmpleado.js" />
     <Content Include="Paginas\Scripts\frmInicio.js" />
