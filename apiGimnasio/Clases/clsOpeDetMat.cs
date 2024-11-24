@@ -43,10 +43,14 @@ namespace apiGimnasio.Clases
                        Clase = tC.Descripcion,
                        idHora = tC.codigo_hora,
                        idDia = tC.codigo_Dia,
-                       idMatricula = tD.codigo_Matricula,
+                       idMatricula = tMa.codigo_Matricula,
+                       Descripcion = tMa.Descripcion,
+                       Precio = tMa.Precio,
+                       dTipDoc = tTDc.TipoDoc,
+                       NroDoc = tS.nroDoc,
                        Socio = tS.Nombre + " " + tS.Apellido,
-                       idTipDoc = tTDc.TipoDoc,
-                       idEmp = tM.codigo_Empleado,
+                       i
+                       
 
 
                    };

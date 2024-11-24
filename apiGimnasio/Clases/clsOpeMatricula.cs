@@ -26,6 +26,7 @@ namespace apiGimnasio.Clases
                 tblMat.codigo_Empleado = Convert.ToInt32(rpta[0].codigo_Empleado);
                 tblMat.Descripcion = rpta[0].Descripcion;
                 tblMat.Precio = Convert.ToDecimal(rpta[0].Precio);
+                tblMat.codigo_Empleado = Convert.ToInt32(rpta[0].codigo_Empleado);
                 return tblMat;
             }
             catch
