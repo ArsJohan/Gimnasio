@@ -28,6 +28,7 @@ namespace apiGimnasio.Clases
                             tM.codigo_Matricula,
                             tS.codigo_TipoDoc,
                             tS.nroDoc,
+                            tS.codigo_Socio,
                             Socio = tS.Nombre + " " + tS.Apellido,
                             tM.codigo_Empleado,
                             tM.Descripcion,
@@ -64,6 +65,8 @@ namespace apiGimnasio.Clases
                 MATRICULA tInsc = oEFR.MATRICULAs.FirstOrDefault(s => s.codigo_Matricula == tblMat.codigo_Matricula);
                 tInsc.Descripcion = tblMat.Descripcion;
                 tInsc.codigo_Empleado = tblMat.codigo_Empleado;
+                tInsc.codigo_Socio = tblMat.codigo_Socio;
+                tInsc.Precio = tblMat.Precio;
                 oEFR.SaveChanges();
                 return "Se actualizo el registro de: " + tInsc.codigo_Matricula;
             }

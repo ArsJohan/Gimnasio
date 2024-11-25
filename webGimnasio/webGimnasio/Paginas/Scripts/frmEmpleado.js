@@ -264,7 +264,7 @@ function Imprimir() {
 
     // === Título principal estilizado ===
     doc.setFontSize(18);
-    const tituloPrincipal = "GIMNASIO SIEMPRE ENFORMA";
+    const tituloPrincipal = "GIMNASIO SIEMPRE EN FORMA";
     const anchoTituloPrincipal = doc.getTextWidth(tituloPrincipal);
     doc.text(tituloPrincipal, (ancho - anchoTituloPrincipal) / 2, 20); // Centrado horizontalmente
 
