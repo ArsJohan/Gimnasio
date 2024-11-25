@@ -1,6 +1,7 @@
 ﻿var dir = "http://localhost:52063/api/";
 var oTabla = $("#tablaDatos").DataTable();
 var rpta;
+var f = new Date();
 jQuery(function () {
     //Carga el menú
     $("#dvMenu").load("../Paginas/Menu.html", function () {
