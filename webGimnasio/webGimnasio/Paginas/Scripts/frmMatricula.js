@@ -1,6 +1,6 @@
 ﻿var dir = "http://localhost:52063/api/";
 var oTabla = $("#tablaDatos").DataTable();
-var f = new Date();
+var rpta;
 
 jQuery(function () {
     //Carga el menú
@@ -30,18 +30,37 @@ jQuery(function () {
     $("#btnAgre").on("click", function () {
         alert("Agregar");
         let cod = $("#txtCodigo").val();
-        if (cod == undefined || cod.trim() == "" || parseInt(cod, 10) <= 0) {
-            grabarEncabezadoMat();
+        if ((cod == undefined || cod.trim() == "" || parseInt(cod, 10) <= 0) && validacion("POST")) {
+            if (rpta == true) {
+                grabarEncabezadoMat();
+            } else {
+                mensajeInfo("Cancelada acción de Agregar");
+            }
+          
         }
         else {
-            grabarDetalleMat();
+            if (validacion("POST")){
+                let clase = $("#cboClase").val();
+                if (clase == undefined || clase.trim() == "") {
+                    mensajeInfo("Seleccione una Clase");
+                    $("#cboClase").focus();
+                    return;
+                }
+                grabarDetalleMat();
+            }
         }
 
     });
     $("#btnModi").on("click", function () {
         alert("Modificar");
-        Modificar();
-        //ejecutarComando("PUT");
+        if (validacion("PUT")) {
+            if (rpta == true) {
+                Modificar();
+            } else {
+                mensajeInfo("Cancelada acción de Modificar");
+            }
+        }
+        
     });
     $("#btnBusc").on("click", function () {
         alert("Buscar");
@@ -270,6 +289,75 @@ function Limpiar() {
     $("#cboClase").focus();
 }
 
+function validacion(accion) {
+
+
+    let nroD = document.getElementById("txtNroDoc");
+    let name = document.getElementById("txtSocio");
+    let desc = document.getElementById("txtDescripcion");
+    let val = document.getElementById("txtValor");
+
+    // Verificamos si cada valor cumple con el patrón y la longitud
+
+    let formato = new RegExp(name.pattern);
+    let tam = new RegExp('^.{3,35}$');
+    if (!formato.test(name.value.trim())) {
+        mensajeError("Nombre invalido contiene caracteres especiales /o números");
+        $("#txtNombre").focus();
+        return false;
+    }
+    if (!tam.test(name.value.trim())) {
+        mensajeError("Digite un nombre minimo de 3 caracteres");
+        $("#txtNombre").focus();
+        return false;
+    }
+
+    formato = new RegExp(desc.pattern);
+    
+    if (!formato.test(desc.value.trim())) {
+        mensajeError("Descripcion invalida contiene caracteres especiales /o números");
+        $("#txtDescripciom").focus();
+        return false;
+    }
+    
+    
+    formato = new RegExp(nroD.pattern);
+    tam = new RegExp('^.{4,18}$');
+    if (!formato.test(nroD.value.trim())) {
+        mensajeError("Numero de documento invalido contiene caracteres especiales /o letras");
+        $("#txtNroDoc").focus();
+        return false;
+    }
+    if (!tam.test(nroD.value.trim())) {
+        mensajeError("Numero de documento invalido, digite nuevamente  entre 6 y 20 caracteres");
+        $("#txtNroDoc").focus();
+        return false;
+    }
+    
+    formato = new RegExp(val.pattern);
+
+    if (!formato.test(val.value.trim())) {
+        mensajeError("Valor Matricula invalido contiene caracteres especiales /o letras");
+        $("#txtValor").focus();
+        return false;
+    }
+    formato = null;
+    tam = null;
+    if (accion == 'POST') {
+        rpta = window.confirm("Estas seguro de agregar matricula de: " + name.value + ", con nro. Doc. " + nroD.value);
+
+    }
+    else {
+        rpta = window.confirm("Estas seguro de modificar matricula de: " + name.value + ", con nro. Doc. " + nroD.value);
+    }
+
+
+    return true;
+}
+
+
+
+
 
 async function ConsultarClase() {
     let cod = $("#cboClase").val();
@@ -297,17 +385,27 @@ async function Consultar() {
     try {
         Limpiar();
         mensajeInfo("");
+        let cod = document.getElementById("txtCodigo");
+        let span = document.getElementById("Anuncio");
         $("#txtCodigo").prop('disabled', false);
-        let cod = $("#txtCodigo").val();
-        if (cod == undefined || cod.trim() == "" || parseInt(cod, 10) <= 0) {
-            $("#txtCodigo").val("");
-            $("#txtCodigo").focus();
-            mensajeInfo("Ingresa el codigo de la Matricula");
+       
+
+        if (cod.value.trim() == "") {
+            cod.focus();
+            span.style.color = "#007bff";
+            span.textContent = "Requerido";
             return;
         }
+        let formato = new RegExp(cod.pattern);
+        if (!formato.test(cod.value.trim())) {
+            mensajeError("Codigo invalido contiene caracteres especiales, letras /o Numero Negativos");
+            $("#txtValor").focus();
+            return;
+        }
+           
         $("#txtCodigo").prop('disabled', true);
         
-        var url = dir + "matricula?codMat=" + cod;
+        var url = dir + "matricula?codMat=" + cod.value;
         const datosIn = await fetch(url,
             {
                 method: "GET",
@@ -318,7 +416,6 @@ async function Consultar() {
             }
         ); //JSON.stringify
         const Rpta = await datosIn.json();
-        console.log(Rpta);
         $("#txtCodigo").val(Rpta[0].codigo_Matricula);
         $("#cboTipDoc").val(Rpta[0].codigo_TipoDoc);
         $("#txtNroDoc").val(Rpta[0].nroDoc);
@@ -390,17 +487,6 @@ async function grabarEncabezadoMat() {
     let idCod = $("#txtCodigo").val();
     let descrip = $("#txtDescripcion").val().trim();
     let vrl = $("#txtValor").val().trim();
-
-    if (idCod == undefined || idCod.trim() == "" || parseInt(idCod, 10) < 0) {
-        $("#dvMensaje").html("No se ha definido la accion de grabar, cancele o limpie antes");
-        $("#cboClase").focus();
-        return;
-    }
-    if (descrip == undefined || descrip.trim() == "") {
-        $("#dvMensaje").html("No se ha definido la Descripcion");
-        $("#txtDescripcion").focus();
-        return;
-    }
   
     let idEmple = sessionStorage.getItem('codUsu');
     let idSocio = document.getElementById("txtSocio").dataset.id;      //==========================
@@ -427,7 +513,6 @@ async function grabarEncabezadoMat() {
                 }
             );
             const datosInt = await datosOut.json();
-            console.log(datosInt);
             idCod = datosInt.codigo_Matricula;
             $("#txtCodigo").val(idCod);
             //grabar detalle:tblDetInsc

@@ -70,7 +70,8 @@
                                     <div class="col-md-2">
                                         <div class="form-group">
                                             <label for="txtCodigo">Código:</label>
-                                            <input type="text" class="label_1" id="txtCodigo" width="15" placeholder="Ingrese Código..." disabled style="text-align:center">
+                                            <input type="text" class="label_1" pattern="^[0-9]+" id="txtCodigo" width="15" placeholder="Ingrese Código..." disabled style="text-align:center">
+                                            <span id="Anuncio"></span>
                                         </div>
                                     </div>
                                     <div class="col-md-3">
@@ -127,7 +128,8 @@
                                     <div class="col-md-5">
                                         <div class="form-group">
                                             <label for="txtDescripcion">Descripcion</label>
-                                            <input type="text" class="form-control" id="txtDescripcion" placeholder="Ingrese Descripcción...">
+                                            <input type="text" pattern="^[a-zA-ZÀ-ÿ\s]+$" class="form-control" id="txtDescripcion" placeholder="Ingrese Descripcción...">
+                                            <span></span>
                                         </div>
                                     </div>
                                     <div class="col-md-4">
@@ -154,19 +156,22 @@
                                     <div class="col-md-3">
                                         <div class="form-group">
                                             <label for="txtNroDoc">Nro.DocumentoSocio</label>
-                                            <input type="text" class="form-control" id="txtNroDoc" placeholder="Ingrese Nro Documento...">
+                                            <input type="text" class="form-control" id="txtNroDoc" placeholder="Ingrese Nro Documento..." pattern="^[0-9]+">
+                                            <span></span>
                                         </div>
                                     </div>
                                     <div class="col-md-3">
                                         <div class="form-group">
                                             <label for="txtSocio">Socio</label>
-                                            <input type="text" class="form-control" id="txtSocio"  data-id="" placeholder="Ingrese el Socio...">
+                                            <input type="text" class="form-control" id="txtSocio" data-id="" placeholder="Ingrese el Socio..." pattern="^[a-zA-ZÀ-ÿ\s]+$">
+                                            <span></span>
                                         </div>
                                     </div>
                                     <div class="col-md-3">
                                         <div class="form-group">
                                             <label for="txtValor">Valor</label>
-                                            <input id="txtValor" class="form-control" placeholder="Valor Matricula" />
+                                            <input id="txtValor" pattern="^[0-9]+" class="form-control" placeholder="Valor Matricula" />
+                                            <span></span>
                                         </div>
                                     </div>
 

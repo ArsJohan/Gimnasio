@@ -1,7 +1,6 @@
 ﻿var dir = "http://localhost:52063/api/";
 var oTabla = $("#tablaDatos").DataTable();
 var rpta;
-var f = new Date();
 jQuery(function () {
     //Carga el menú
     $("#dvMenu").load("../Paginas/Menu.html", function () {
@@ -45,7 +44,6 @@ jQuery(function () {
     });
     $("#btnModi").on("click", function () {
         alert("Modificar");
-       /* mensajeInfo("");*/
         let accion = "PUT"
         if(validacion(accion)){
 

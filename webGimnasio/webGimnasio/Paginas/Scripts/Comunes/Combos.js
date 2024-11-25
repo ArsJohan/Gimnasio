@@ -9,7 +9,6 @@
             }
         );
         const Rpta = await Respuesta.json();
-        console.log(Rpta);
         //Recorrer la respuesta en Rpta, para agregarla al combo de tipo de producto
         $(combo).empty();
         //Se recorre la respuesta
