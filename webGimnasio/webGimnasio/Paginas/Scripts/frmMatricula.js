@@ -28,7 +28,6 @@ jQuery(function () {
 
     $("#btnAgre").on("click", function () {
         alert("Agregar");
-        //ejecutarComando("POST");
         let cod = $("#txtCodigo").val();
         if (cod == undefined || cod.trim() == "" || parseInt(cod, 10) <= 0) {
             grabarEncabezadoMat();
@@ -52,7 +51,6 @@ jQuery(function () {
         Cancelar();
     });
     $("#btnImpr").on("click", function () {
-        /*alert("Impresión");*/
         Imprimir();
     });
     $('#dtmFechaFin').datetimepicker({

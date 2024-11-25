@@ -82,7 +82,7 @@ jQuery(function () {
 
     });
 
-    $('#dtmFechaFin').datetimepicker({
+    $('#dtmFechaNac').datetimepicker({
         format: 'YYYY-MM-DD',
 
 
