@@ -69,6 +69,7 @@ jQuery(function () {
     $("#btnCanc").on("click", function () {
         alert("Cancelar");
         Cancelar();
+        mensajeInfo("Se limpio corectamente");
     });
     $("#btnImpr").on("click", function () {
         Imprimir();
@@ -142,12 +143,12 @@ function Imprimir() {
     let apell = $("#txtMonitor").val();
     let tel = $("#txtDescripcion").val();
 
-    let clase = $("#cboClase").find('option:selected').text();  // Cambié TiDo a clase
-    let dia = $("#cboDia").find('option:selected').text();      // Cambié TiDo a dia
-    let hora = $("#cboHora").find('option:selected').text();    // Cambié TiDo a hora
+    let clase = $("#cboClase").find('option:selected').text();  
+    let dia = $("#cboDia").find('option:selected').text();    
+    let hora = $("#cboHora").find('option:selected').text();    
 
     let nroD = $("#txtNroDoc").val();
-    let valor = $("#txtValor").val();                             // Cambié TiDo a valor
+    let valor = $("#txtValor").val();                             
 
     let idEmple = $("#txtIdEmpleado").val();
     let fechaNac = $("#dtmFechaFin").val();
@@ -213,7 +214,7 @@ function Imprimir() {
     doc.setFontSize(10);
     doc.setTextColor(100); // Gris oscuro para el pie de página
     doc.text("Documento generado automáticamente", 20, alto - 20);
-    doc.text(`Fecha: ${f.toLocaleDateString()} Hora: ${f.toLocaleTimeString()}`, ancho - 20, alto - 20, { align: "right" });
+    doc.text(`Fecha: ${f.toLocaleDateString()} Hora: ${f.toLocaleTimeString()}`, ancho - 70, alto - 20, { align: "right" });
 
     // === Guardar el archivo PDF ===
     doc.save(nomFile);
@@ -264,8 +265,9 @@ async function llenarComboHora() {
 function Cancelar() {
     mensajeInfo("");
     Limpiar();
-    $("#txtCodigo").val("0");
+    $("#txtCodigo").val("");
     $("#cboClase").focus();
+
 }
 function Limpiar() {
     mensajeInfo("");
@@ -388,20 +390,22 @@ async function Consultar() {
         let cod = document.getElementById("txtCodigo");
         let span = document.getElementById("Anuncio");
         $("#txtCodigo").prop('disabled', false);
-       
+        
 
         if (cod.value.trim() == "") {
             cod.focus();
             span.style.color = "#007bff";
             span.textContent = "Requerido";
+            mensajeInfo("Ingrese el codigo");
             return;
         }
         let formato = new RegExp(cod.pattern);
         if (!formato.test(cod.value.trim())) {
             mensajeError("Codigo invalido contiene caracteres especiales, letras /o Numero Negativos");
-            $("#txtValor").focus();
+            $("#txtCodigo").focus();
             return;
         }
+        console.log("hhhhhhh");
            
         $("#txtCodigo").prop('disabled', true);
         
@@ -426,8 +430,10 @@ async function Consultar() {
         $("#txtValor").val(Rpta[0].Precio);
         $("#dtmFechaIni").val(Rpta[0].FechaIn);
         $("#dtmFechaFin").val(Rpta[0].FechaFin);
+        span.textContent = null;
         //aca realizara el llenado de la tabla con los artistas registrados
         llenarTabla();
+        mensajeInfo("Se encontro los datos");
     }
     catch (error) {
         mensajeError("Error" + error);

@@ -7,13 +7,13 @@ jQuery(function () {
         let pass = $("#user_password").val();
 
         if (clave.trim() == "" || parseInt(clave) <= 0 ) {
-            mensajeError("Error, clave No valida");
+            mensajeError("Clave o Contraseña erroneos");
             $("#user_clave").focus();
             return;
         }
-        if ( pass == undefined||pass.trim() == "" || pass.length>30)
+        if ( pass == undefined||pass.trim() == "" )
         {
-            mensajeError("Error,Contraseña No valida");
+            mensajeError("Clave o Contraseña erroneos");
             $("#user_password").focus();
             return;
         }

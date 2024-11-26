@@ -58,10 +58,12 @@ jQuery(function () {
     });
     $("#btnBusc").on("click", function () {
         Consultar();
+        mensajeInfo("Se busco correctamente el empleado");
     });
     $("#btnCanc").on("click", function () {
         alert("Cancelar");
         Cancelar();
+        mensajeInfo("Se limpio corectamente");
     });
     $("#btnImpr").on("click", function () {
         /*alert("Impresión");*/
@@ -310,7 +312,7 @@ function Imprimir() {
     doc.setFontSize(10);
     doc.setTextColor(100); // Gris oscuro para el pie de página
     doc.text("Documento generado automáticamente", 20, alto - 20);
-    doc.text(`Fecha: ${f.toLocaleDateString()} Hora: ${f.toLocaleTimeString()}`, ancho - 20, alto - 20, { align: "right" });
+    doc.text(`Fecha: ${f.toLocaleDateString()} Hora: ${f.toLocaleTimeString()}`, ancho - 70, alto - 20, { align: "right" });
 
     // === Guardar el archivo PDF ===
     doc.save(nomFile);
